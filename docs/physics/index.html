@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
+        <title>Platformer Game Kit - Character Physics</title>
+        <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
+        <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/platformer/assets/js/bootstrap.min.js"></script>        
+        <script src="/platformer/assets/js/app.min.js"></script>         
+        <script src="/platformer/assets/js/highlight.pack.js"></script>   
+        <script src="/platformer/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/platformer/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/platformer/assets/js/mermaid.min.js"></script>
+        <script src="/platformer/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/platformer/assets/js/html5shiv.min.js"></script>
+        <script src="/platformer/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/platformer/" class="logo">
+                            <span>Platformer Game Kit</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
+
+<li style="width:100%">
+<form class="search-form" name="search" action="/animancer/search">
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</li> 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#collider">Collider</a></p>
+<p><a href="#rigidbody">Rigidbody</a></p>
+<p><a href="#character-body">Character Body</a></p>
+<p><a href="#ground-character-movement">Ground Character Movement</a></p>
+<p><a href="#air-character-movement">Air Character Movement</a></p>
+<p><a href="#smoothing">Smoothing</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li><a href="/platformer/docs/overview">Overview</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/art/import">Import</a></li>
+                <li><a href="/platformer/docs/art/organization">Organization</a></li>
+                <li><a href="/platformer/docs/art/animations">Animations</a></li>
+
+                    </ul>
+                </li>
+                <li class="selected"><a href="/platformer/docs/physics">Character Physics</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/states">Character States</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/states/locomotion">Idle</a></li>
+                <li><a href="/platformer/docs/states/idle">Idle</a></li>
+                <li><a href="/platformer/docs/states/jump">Jumping</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/combat">Combat</a></li>
+                <li><a href="/platformer/docs/license">License</a></li>
+                <li><a href="/platformer/docs/contact">Contact</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Character Physics</h1>
+		</section>
+	<section class="content">
+		<p>Character physics is managed by several components:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#collider">Collider</a></td>
+<td>Defines the character's shape for interacting with the environment.</td>
+</tr>
+<tr>
+<td><a href="#rigidbody">Rigidbody</a></td>
+<td>Manages the <code>Collider</code>'s movement and prevents it from going inside other objects.</td>
+</tr>
+<tr>
+<td><a href="#character-body">Character&nbsp;Body</a></td>
+<td>Provides the rest of the character (particularly <a href="../states">States</a> and <a href="../brains">Brains</a>) with access to the <code>Collider</code>, <code>Rigidbody</code>, and details such as whether or not they are currently standing on the ground.</td>
+</tr>
+<tr>
+<td><a href="#character-movement">Character&nbsp;Movement</a></td>
+<td>Controls the character's <code>Velocity</code> in accordance with the input from their <a href="../brains">Brain</a>, movement constraints of their current <a href="../states">State</a>, and their movement stats like <code>Speed</code>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="collider">Collider</h1>
+<p><img src="stand-on-corner.png" class="img-responsive img-right"></p>
+<p>Characters use a <code>BoxCollider2D</code> for their collisions. Some platformer games use a capsule or diamond shape, but for pixel art characters like the ones used here it makes the most sense for the physical shape to be a box that aligns perfectly with the character's feet in the <em>Idle</em> animation so they can stand on the edge of a platform properly.</p>
+<p>Due to the physics engine's <a href="https://docs.unity3d.com/Manual/class-Physics2DManager.html">Default Contact Offset</a> (which should not be changed) colliders resting on top of each other actually end up with a small gap between them. To counteract this, the <code>Y</code> position of every character's <code>Sprite</code> object is set to <code>-0.01</code> so that they look like they are properly on the ground even when their collider is slightly above it.</p>
+<p>The <a href="https://docs.unity3d.com/Manual/class-PhysicsMaterial2D.html">Physics Material</a> has its <code>Friction</code> and <code>Bounce</code> both set to <code>0</code>.</p>
+<p><img src="collider.png" class="img-responsive"></p>
+<h1 id="rigidbody">Rigidbody</h1>
+<p>Characters use a <code>Rigidbody2D</code> with the following settings:</p>
+<p><img src="rigidbody.png" class="img-responsive"></p>
+<p>The reasons for those settings are described in the following table (grouped by association rather than in the same order as the Inspector):</p>
+<table class="table">
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Body&nbsp;Type</code><br><code>Simulated</code></td>
+<td><code>Dynamic</code><br><code>Enabled</code></td>
+<td>We want Unity to handle collision checking and resolution for us.</td>
+</tr>
+<tr>
+<td><code>Use&nbsp;Auto&nbsp;Mass</code><br><code>Mass</code></td>
+<td><code>False</code><br><code>1</code></td>
+<td>We aren't doing any collisions between dynamic rigidbodies so mass won't be used for anything. Such collisions could potentially be implemented (consider making a <a href="../contact">Feature Request</a>), but would not currently respect the mass of each object.</td>
+</tr>
+<tr>
+<td><code>Material</code><br><code>Linear&nbsp;Drag</code></td>
+<td><code>Zero</code><br><code>0</code></td>
+<td>We want to fully control the character's grip, acceleration, and deceleration. This is the same <code>Material</code> assigned to the <a href="#collider">Collider</a> with <code>Friction</code> and <code>Bounce</code> both set to <code>0</code></td>
+</tr>
+<tr>
+<td><code>Angular&nbsp;Drag</code><br><code>Constraints</code></td>
+<td><code>0.05</code><br><code>Freeze&nbsp;Rotation</code></td>
+<td>The system doesn't currently support rotated characters so the rotation is locked and drag is left at its default value. Consider making a <a href="../contact">Feature Request</a> if you would like rotation to be supported in a future version.</td>
+</tr>
+<tr>
+<td><code>Gravity&nbsp;Scale</code></td>
+<td><code>2.5</code></td>
+<td>Characters in a platformer game can jump far higher than people in real life, so they also need stronger gravity to prevent the game from feeling "floaty" (unless that's what you actually want).</td>
+</tr>
+<tr>
+<td><code>Collision&nbsp;Detection</code></td>
+<td><code>Continuous</code></td>
+<td>More accurate physics and tries to prevent characters from passing through other objects at high speeds. This could be set to <code>Discrete</code> to improve performance.</td>
+</tr>
+<tr>
+<td><code>Sleeping&nbsp;Mode</code></td>
+<td><code>Start&nbsp;Awake</code></td>
+<td>Unity will automatically stop simulating physics for stationary objects to save performance. This system treats a sleeping rigidbody as if it were on the ground so we don't want a character to be asleep on the first frame in case they are actually in the air.</td>
+</tr>
+<tr>
+<td><code>Interpolation</code></td>
+<td><code>Interpolate</code></td>
+<td>We want character movements to appear as smooth as possible even though the actual physics simulation is only run at a fixed rate.</td>
+</tr>
+</tbody>
+</table>
+<p>A <em>MawFlower</em> is a plant enemy which doesn't move, so it doesn't have a <code>Rigidbody2D</code> at all.</p>
+<h1 id="character-body">Character Body</h1>
+<p>Every character that can move has a <code>CharacterBody2D</code> component which manages the movements of a character. It has references to a <code>Collider</code> and <code>Rigidbody</code>, as well as properties to access its <code>Position</code>, <code>Velocity</code>, and various other details, but perhaps most important is the <code>IsGrounded</code> property which other scripts can use to check if the character is currently touching a surface that is considered to be ground.</p>
+<table class="table">
+  <thead>
+    <tr><th style="width:50%">Component</th>
+    <th style="width:50%">Inspector</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><p>The base <code>CharacterBody2D</code> component doesn't actually do anything on its own, it simply allows other scripts to access its details. It doesn't even update the <code>IsGrounded</code> property which always returns <code>false</code>.</p>The flying <em>Gobbat</em> enemy uses this component because it doesn't care about the ground so there is no point in wasting performance on ground checks.</td>
+      <td><img src="character-body.png" class="img-responsive"></td>
+    </tr>
+    <tr>
+      <td>The <code>BoxCharacterBody2D</code> component <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterBody2D</code>. It performs ground checking and step detection as explained in the table below.</td>
+      <td><img src="box-character-body.png" class="img-responsive"></td>
+    </tr>
+    <tr>
+      <td colspan="2">A <em>MawFlower</em> is a plant enemy which doesn't move, so it doesn't have any Character Body component.</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="box-character-body">Box Character Body</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Collider</code></td>
+<td>A reference to the character's <code>BoxCollider2D</code> component.</td>
+</tr>
+<tr>
+<td><code>Rigidbody</code></td>
+<td>A reference to the character's <code>Rigidbody2D</code> component.</td>
+</tr>
+<tr>
+<td><code>Grip&nbsp;Angle</code></td>
+<td>Determines how steep a slope can be to still count as ground. Any steeper than that and the character will slide down as if it were a wall. The value is measured in degrees. This doesn't really get used in the example scenes because they don't have any slopes, but the videos below show what it looks like.</td>
+</tr>
+<tr>
+<td><code>Step&nbsp;Height</code></td>
+<td>When a character is grounded and tries to move towards a surface that is within this distance up or down, they will automatically snap to it and remain grounded instead of being blocked by it (like a wall) or becoming airborne (like a ledge). This value should be slightly larger than the actual height of your steps to allow for minor inaccuracies in the floating point math used by the physics engine. The video below shows this feature in action.</td>
+</tr>
+<tr>
+<td><code>Verify&nbsp;Available&nbsp;Space</code></td>
+<td>Enabling this adds a small performance cost to more reliably prevent the object from moving into areas where it doesn't quite fit. Otherwise attempting to move into such an area can cause it to jitter back and forth.</td>
+</tr>
+<tr>
+<td><code>Debug&nbsp;Line&nbsp;Duration</code></td>
+<td>Determines how many seconds scene view debug lines are shown for this object. This field only exists in the Unity Editor since it would not do anything in a runtime build.</td>
+</tr>
+</tbody>
+</table>
+<p>Here's what a <code>Grip Angle</code> of <code>49</code> degrees looks like:</p>
+<table class="table">
+  <thead>
+    <tr><th style="width:50%">45 Degrees = Grip</th>
+    <th style="width:50%">50 Degrees = Slip</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><img src="grip-angle.gif" class="img-responsive"></td>
+      <td><img src="slip-angle.gif" class="img-responsive"></td>
+    </tr>
+  </tbody>
+</table>
+<p>Here's a video of the <code>Step Height</code> in action:</p>
+<p><img src="steps.gif" class="img-responsive"></p>
+<h1 id="ground-character-movement">Ground Character Movement</h1>
+<p><img src="ground-character-movement.png" class="img-responsive"></p>
+<p>This component is used by most characters and controls their velocity according to the following factors:</p>
+<ul>
+<li>The horizontal <code>CharacterBrain.MovementDirection</code> determines which direction the character's <a href="../brains">Brain</a> wants to move them (and how fast in case the player is using a controller with the joystick not tilted all the way).</li>
+<li>The <code>CharacterBrain.Run</code> flag determines whether the <code>Walk Speed</code> or <code>Run Speed</code> is used.</li>
+<li>That speed is multiplied by the <code>CharacterState.MovementSpeedMultiplier</code> of the character's current <a href="../states">State</a>.
+<ul>
+<li>For example, <code>LocomotionState</code> and <code>JumpState</code> have a multiplier of <code>1</code> to allow movement at the character's full speed while <code>AttackState</code> and <code>DieState</code> have a multiplier of <code>0</code> to prevent characters from moving while attacking, getting hit, or dying.</li>
+</ul>
+</li>
+<li>The <code>CharacterBody.IsGrounded</code> and the <code>CharacterBrain.Run</code> determine which of the <a href="#smoothing">Smoothing</a> values are used. The <code>Grip Friction</code> also affects the <a href="#smoothing">Smoothing</a> based on the <code>Friction</code> of the ground's <a href="https://docs.unity3d.com/Manual/class-PhysicsMaterial2D.html">Physics Material</a> as explained in the table below.</li>
+<li>It also accounts for the velocity of whatever platform the character is standing on so that characters can stand still and move around properly on moving platforms.</li>
+</ul>
+<table class="table">
+<thead>
+<tr>
+<th>Ground Friction</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ground&nbsp;Friction&nbsp;&gt;=&nbsp;Grip&nbsp;Friction</code></td>
+<td>Uses the full smoothing value described above.</td>
+</tr>
+<tr>
+<td><code>Ground&nbsp;Friction&nbsp;==&nbsp;0</code></td>
+<td>Uses the <code>Frictionless Smoothing</code> value instead. This is applied on slippery surfaces such as <em>Ice</em> and it's generally good to keep this value equal to the <code>Air Smoothing</code> so that the character has the same degree of control over their movements on a slippery surface as when they are airborne.</td>
+</tr>
+<tr>
+<td><code>0&nbsp;&lt;&nbsp;Ground&nbsp;Friction&nbsp;&lt;&nbsp;Grip&nbsp;Friction</code></td>
+<td>A proportional result between the full value described above and the <code>Frictionless Smoothing</code>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="air-character-movement">Air Character Movement</h1>
+<p><img src="air-character-movement.png" class="img-responsive"></p>
+<p>This component is used by the <em>Gobbat</em> enemy and controls its velocity according to the following factors:</p>
+<ul>
+<li>The <code>CharacterBrain.MovementDirection</code> determines which direction the character's <a href="../brains">Brain</a> wants tomove them (and how fast in case the player is using a controller with the joystick not tilted all the way, though this component iscurrently only used by the <em>Gobbat</em> enemy).</li>
+<li>The <code>CharacterState.MovementSpeedMultiplier</code> is used just like in the <code>GroundCharacterMovement</code> component.</li>
+<li>The <code>Horizontal Speed</code> determines the target left/right speed.</li>
+<li>The <code>Ascent Speed</code> determines the target speed while moving upwards and the <code>Descent Speed</code> does the samewhile moving downwards.</li>
+</ul>
+<h1 id="smoothing">Smoothing</h1>
+<p>The <code>Smoothing</code> fields in the character movement components determine how long the character takes to reach their desired speed. Here's what the player's smoothing values look like in slow motion (because it's hard to get a feel for the actual movements from just a video):</p>
+<table class="table">
+  <thead>
+    <tr><th style="width:33.33%">Walk (0 Smoothing)</th>
+    <th style="width:33.33%">Run (0.15 Smoothing)</th>
+    <th style="width:33.33%">Ice (0.3 Smoothing)</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><img src="walk-smoothing.gif" class="img-responsive"></td>
+      <td><img src="run-smoothing.gif" class="img-responsive"></td>
+      <td><img src="ice-smoothing.gif" class="img-responsive"></td>
+    </tr>
+    <tr>
+      <td>0 gives instant acceleration. You immediately start moving at full speed whenever you change direction.</td>
+      <td>0.15 makes the character slide a bit when changing directions so you have less fine control while running.</td>
+      <td>0.3 causes even more sliding on ice and in the air.</td>
+    </tr>
+  </tbody>
+</table>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <strong><div style="text-align:left; display:flex">
+
+<div>
+<p>Documentation</p>
+<p><a href="/platformer/docs/examples">Examples</a></p>
+<p><a href="/platformer/docs/manual">User Manual</a></p>
+<p><a href="/platformer/docs/changes">Change Log</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Download</p>
+<p><a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a></p>
+<p><a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a></p>
+<p><a href="/animancer">Animancer</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Contact</p>
+<p><a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a></p>
+<p><a href="/platformer/forum">Unity Forum</a></p>
+<p><a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Other Assets</p>
+<p><a href="/inspector-gadgets">Inspector Gadgets</a></p>
+<p><a href="/weaver">Weaver</a></p>
+<p><a href="/ultevents">UltEvents</a></p>
+</div>
+
+</div></strong>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
