@@ -118,6 +118,16 @@ h1
     top: 0;
 }
 
+.enemy-name
+{
+    text-align: center;
+}
+
+.enemy-description
+{
+    font-size: 0.8em;
+}
+
 </style>
 
 <img src="images/title.png" class="img-responsive">
@@ -130,6 +140,8 @@ h1
         <p>The <strong>Platformer Game Kit</strong> is a <strong>FREE</strong> <a href="https://unity3d.com">Unity</a> plugin which provides an extensible framework for creating 2D platformer games using <a href="/animancer">Animancer</a>.</p>
         
         <p>It uses sprites from the <a href="https://szadiart.itch.io/animated-character-pack">Animated Character Pack</a> made by <a href="https://itch.io/profile/szadiart">Szadi Art</a> as examples and the <a href="docs/art">Set Up Instructions</a> explain how easy it is to import custom sprites or 3D models and make animations using the <a href="/animancer/docs/manual/tools">Animancer Tools</a> or Unity's inbuilt tools.</p>
+        
+        <p>This documentation explains how each part of the system works to help beginners learn about effective development practices instead of only being intended for non-programmers to put together a rudimentary game without any coding (which is what Unity's own Game Kits do).</p>
         
         <p><strong>This plugin (and documentation) is a work in progress and has not yet been publicly released. <a href="docs/contact">Suggestions and feedback are welcome</a>.</strong></p>
     </td></tr>
@@ -149,6 +161,7 @@ h1
 
 
     <tr><td>
+        <img src="images/platformer.gif" class="img-right">
         <h1><a href="docs"><i class="fa fa-play-circle-o"></i> Character Features</a></h1>
         <ul>
             <li><a href="docs">Step up and down stairs</a></li>
@@ -158,6 +171,42 @@ h1
             <li><a href="docs">Enemies that Patrol, Stand Still, or Fly</a></li>
             <li><a href="docs">Introductions</a></li>
         </ul>
+    </td></tr>
+
+
+
+    <tr><td>
+        <div style="display:flex">
+            <div style="width:20%">
+                <p class="enemy-name">Gobbler</p>
+                <p><img src="images/gobbler.gif" class="img-responsive"></p>
+                <div class="enemy-description">Walks off ledges. Hostile to other enemies.</div>
+            </div>
+            <div style="width:1em"></div>
+            <div style="width:20%">
+                <p class="enemy-name">Gobbat</p>
+                <p><img src="images/gobbat.gif" class="img-responsive"></p>
+                <div class="enemy-description">Flies back and forth.</div>
+            </div>
+            <div style="width:1em"></div>
+            <div style="width:20%">
+                <p class="enemy-name">Maw Flower</p>
+                <p><img src="images/maw-flower.gif" class="img-responsive"></p>
+                <div class="enemy-description">Can't move. Periodically attacks to either side.</div>
+            </div>
+            <div style="width:1em"></div>
+            <div style="width:20%">
+                <p class="enemy-name">Naga</p>
+                <p><img src="images/naga.gif" class="img-responsive"></p>
+                <div class="enemy-description">Patrols along platforms. Big and strong.</div>
+            </div>
+            <div style="width:1em"></div>
+            <div style="width:20%">
+                <p class="enemy-name">Scarecrow</p>
+                <p><img src="images/scarecrow.gif" class="img-responsive"></p>
+                <div class="enemy-description">Patrols along platforms. Wide attack area.</div>
+            </div>
+        </div>
     </td></tr>
 
 

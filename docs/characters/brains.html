@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Jumping</title>
+        <title>Platformer Game Kit - Brains</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
@@ -103,21 +103,41 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/physics">Character Physics</a></li>
                 <li class="treeview active">
-                    <a href="/platformer/docs/states">Character States</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/states/introduction">Introduction</a></li>
-                <li><a href="/platformer/docs/states/locomotion">Idle</a></li>
-                <li><a href="/platformer/docs/states/idle">Idle</a></li>
-                <li class="selected"><a href="/platformer/docs/states/jump">Jumping</a></li>
+                <li><a href="/platformer/docs/characters/physics">Physics</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/brains">Brains</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/jump">Jumping</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
                 <li><a href="/platformer/docs/combat">Combat</a></li>
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
+                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -139,10 +159,80 @@
 
 
 		<section class="content-header">
-			<h1>Jumping</h1>
+			<h1>Brains</h1>
 		</section>
 	<section class="content">
-		<p>To Do</p>
+		<p>Brains are components that decide what a <code>Character</code> wants to do based on the concept introduced in Animancer's <a href="/animancer/docs/examples/fsm/brains">Brains</a> and <a href="/animancer/docs/examples/fsm/more-brains">More Brains</a> examples.</p>
+<p>Aside from a reference to the <code>Character</code> it's controlling, the base <code>CharacterBrain</code> class has two properties:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td><code>MovementDirection</code></td>
+<td>Indicates which direction this brain wants the <code>Character</code> to move.</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>Run</code></td>
+<td>Indicates whether this brain wants the <code>Character</code> to run or not. At the moment <code>PlayerInputBrain</code> is the only one which actually sets this property.</td>
+</tr>
+</tbody>
+</table>
+<p>Each type of brain <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterBrain</code> and controls those properties in different ways. They also reference any <a href="../states">States</a> representing actions the character can intentionally perform.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Brain</th>
+<th>Characters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PlayerInputBrain</code></td>
+<td><em>Player</em></td>
+<td>Controls the <code>Character</code> by using Unity's inbuilt <code>Input</code> system to detect keyboard and mouse input. If you wanted to use Unity's new <a href="https://docs.unity3d.com/Manual/com.unity.inputsystem.html">Input System</a> package, you could make a copy of this class which uses that system instead.</td>
+</tr>
+<tr>
+<td><code>PatrolBrain</code></td>
+<td><em>Gobbler</em></td>
+<td>A brain that moves until it hits a wall then turns around.</td>
+</tr>
+<tr>
+<td><code>PlatformPatrolBrain</code></td>
+<td><em>Naga</em><br><em>Scarecrow</em></td>
+<td>A <code>PatrolBrain</code> which can also turn around when it would walk off a ledge.</td>
+</tr>
+<tr>
+<td><code>AirPatrolBrain</code></td>
+<td><em>Gobbat</em></td>
+<td>A <code>PatrolBrain</code> which also moves up and down along a sine wave.</td>
+</tr>
+<tr>
+<td><code>PeriodicActionBrain</code></td>
+<td><em>MawFlower</em></td>
+<td>A brain which doesn't move but performs a repeating sequence of timed actions.</td>
+</tr>
+<tr>
+<td><code>DumbWalkBrain</code></td>
+<td></td>
+<td>A brain which sets its <code>MovementDirection</code> and <code>Run</code> using Inspector fields. Useful for debugging to control how a character moves while Unity is paused so you can step forward frame by frame (using the button to the right of the Play Mode button).</td>
+</tr>
+</tbody>
+</table>
+<p>Other systems often require all of the <a href="../states">States</a> in a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> to be defined in one place and then referred to using an identifier such as an <code>enum</code> or a <code>string</code> name, but that approach leads to unnecessary complexity and development overhead. This approach instead distributes the states where they are actually used. For example, for a character to be able to jump they require two things:</p>
+<ol>
+<li>A <em>Jump</em> state.</li>
+<li>A <em>Brain</em> that will actually attempt to enter that state.</li>
+</ol>
+<p>The <code>PlayerInputBrain</code> has a field to reference a <code>Jump</code> state and will attempt to enter it when the player presses the <em>Jump</em> button (<code>Spacebar</code> by default). But <code>PlatformPatrolBrain</code> has no <code>Jump</code> field so adding a <em>Jump</em> state to the character would achieve nothing because they would never try to enter that state.</p>
 
 	</section>
                 

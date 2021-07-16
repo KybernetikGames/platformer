@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Idle</title>
+        <title>Platformer Game Kit - Introduction</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,11 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#animations">Animations</a></p>
+<p><a href="#script">Script</a></p>
+<p><a href="#particles">Particles</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -103,21 +105,41 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/physics">Character Physics</a></li>
                 <li class="treeview active">
-                    <a href="/platformer/docs/states">Character States</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/states/introduction">Introduction</a></li>
-                <li class="selected"><a href="/platformer/docs/states/locomotion">Idle</a></li>
-                <li><a href="/platformer/docs/states/idle">Idle</a></li>
-                <li><a href="/platformer/docs/states/jump">Jumping</a></li>
+                <li><a href="/platformer/docs/characters/physics">Physics</a></li>
+                <li><a href="/platformer/docs/characters/brains">Brains</a></li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/jump">Jumping</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
                 <li><a href="/platformer/docs/combat">Combat</a></li>
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
+                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -139,10 +161,56 @@
 
 
 		<section class="content-header">
-			<h1>Idle</h1>
+			<h1>Introduction</h1>
 		</section>
 	<section class="content">
-		<p>To Do</p>
+		<p>Many games play a special animation to introduce a character when the scene starts which is not used again during regular gameplay. For example, Super Smash Bros. Ultimate:</p>
+<iframe width="200" height="113" src="https://www.youtube.com/embed/XXZpGWfi-ak?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Those animations could simply be created as a single <code>AnimationClip</code> (per character) so that it can be played like any other or we could use a <code>ClipTransitionSequence</code> to play several <code>AnimationClip</code>s in a row, but Unity's <a href="/animancer/docs/manual/timeline">Timeline</a> package is a much more powerful tool which creates an asset that Animancer can play using a <code>PlayableAssetState</code>. Instructions for creating Timeline Assets can be found in the <a href="https://docs.unity3d.com/Manual/com.unity.timeline.html">Timeline Documentation</a> and the official <a href="https://learn.unity.com/tutorial/timeline">Timeline Tutorial</a> so it will not be explained here.</p>
+<img src="introduction.gif" class="img-responsive img-right">
+<h1 id="animations">Animations</h1>
+<p>The Timeline used by the <em>Player</em> in the Platformer Game Kit simply uses three <code>AnimationClip</code>s one after the other:</p>
+<ol>
+<li><em>Gino-Jump-Start-FadeIn</em></li>
+<li><em>Gino-Jump-Loop</em></li>
+<li><em>Gino-Jump-Land</em></li>
+</ol>
+<p>The <a href="#particles">Particle Effect</a> is separate from the animations and is explained below.</p>
+<p><img src="timeline.png" class="img-responsive"></p>
+<p>The <code>IntroductionState</code> script can then use a <code>PlayableAssetTransition</code> to play that Timeline Asset like any other <a href="/animancer/docs/manual/transitions">Transition</a>.</p>
+<img src="introduction-state.png" class="img-responsive img-right">
+<h1 id="script">Script</h1>
+<p>The <code>IntroductionState</code> script is very simple. It <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterState</code> class (which gives it a field to reference the <code>Character</code>) and uses a <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized</a> <code>PlayableAssetTransition</code> field to reference the Timeline Asset:</p>
+<pre><code class="language-cs">public sealed class IntroductionState : CharacterState
+{
+    [SerializeField] private PlayableAssetTransition _Animation;
+</code></pre>
+<p>On startup, it assigns the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return the <code>Character</code> to its default state (<em>Idle</em>) and try to enter <code>this</code> state. This means that other scripts don't need to know whether or not the <code>Character</code> has an <code>IntroductionState</code>. If it has one then it will automatically enter itself, and if it doesn't then the <code>Character</code> script will start in its <code>Idle</code> state when it assigns that as its default state.</p>
+<pre><code class="language-cs">    private void Awake()
+    {
+        _Animation.Events.OnEnd = Character.StateMachine.ForceSetDefaultState;
+        Character.StateMachine.TrySetState(this);
+    }
+</code></pre>
+<p>When entering this state, it plays the assigned animation:</p>
+<pre><code class="language-cs">    public override void OnEnterState()
+    {
+        Character.Animancer.Play(_Animation);
+    }
+</code></pre>
+<p>Nothing can interrupt this state:</p>
+<pre><code class="language-cs">    public override bool CanExitState =&gt; false;
+</code></pre>
+<p>And when the <code>ForceSetDefaultState</code> event (assigned in <code>Awake</code>) gets triggered to exit this state, it destroys the <a href="/animancer/docs/manual/playing/states">Animancer State</a> used to play the animation because it won't get used again:</p>
+<pre><code class="language-cs">    public override void OnExitState()
+    {
+        Character.Animancer.States.Destroy(_Animation);
+    }
+}
+</code></pre>
+<h1 id="particles">Particles</h1>
+<p>While the Timeline is playing, a <a href="https://docs.unity3d.com/Manual/ParticleSystems.html">Particle System</a> also plays to show some red orbs rising around the character. Its total duration (<code>Duration + Start Lifetime</code>) is set to match the Timeline Asset and its <code>Stop Action</code> is set to <code>Destroy</code> so that it will automatically destroy its <code>GameObject</code> when it finishes since it won't get used again until we load another scene with the character in it (or instantiate a copy of their prefab). For that reason, the <code>IntroductionState</code> and <code>ParticleSystem</code> are attached to their own <code>GameObject</code> rather than being with the other states.</p>
+<p><img src="particle-system.png" class="img-responsive"></p>
 
 	</section>
                 
@@ -265,5 +333,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

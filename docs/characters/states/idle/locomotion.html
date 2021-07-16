@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Changes</title>
+        <title>Platformer Game Kit - Locomotion</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
@@ -103,24 +103,24 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
                 <li><a href="/platformer/docs/characters/brains">Brains</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
@@ -138,7 +138,7 @@
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
                 <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
-                <li class="treeview active selected">
+                <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -159,23 +159,84 @@
 
 
 		<section class="content-header">
-			<h1>Changes</h1>
+			<h1>Locomotion</h1>
 		</section>
 	<section class="content">
-					<div class="box">
-				<div class="box-body no-padding">
-					<table class="table table-striped table-hover two-cols-alt table-responsive">
-						
-						<tbody>
-								<tr>
-									<td><strong><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></strong></td>
-									<td>
-2021-07-?? - Initial release.									</td>
-								</tr>
-						</tbody>				
-					</table>
-				</div>
-			</div> 
+		<img src="locomotion.png" class="img-responsive img-right">
+<p>The <code>LocomotionState</code> allows the character to move around like the <code>MobileIdleState</code>, but instead of only having one animation, it has several different ones and can swap between <a href="/animancer/docs/playing/states">Animancer's Animation States</a> while remaining in this single <a href="../">Character State</a>. This approach has several advantages compared to using a separate component for each animation:</p>
+<ul>
+<li>It doesn't require another script to continuously check which state the character should be in (this could be done with a <a href="multi-state">Multi State</a> though).</li>
+<li>Avoiding that extra script and not needing each state to have its own reference to the <code>Character</code> is slightly better for performance (though the difference is extremely small).</li>
+<li>It makes it clear that these are the character's standard animations for moving around the environment and you can simply look at the <code>CurrentAnimation</code> property to see how it decides which one to use instead of needing to look through multiple very short scripts to check each of their conditions.</li>
+<li>Only needing to manage a single component is also a bit easier for development and avoids cluttering the Inspector.</li>
+</ul>
+<pre><code class="language-cs">public class LocomotionState : CharacterState
+{
+    [SerializeField]
+    private ClipTransition _Idle;
+    public ClipTransition Idle =&gt; _Idle;
+
+    [SerializeField]
+    private ClipTransition _Walk;
+    public ClipTransition Walk =&gt; _Walk;
+
+    [SerializeField]
+    private ClipTransition _Run;
+    public ClipTransition Run =&gt; _Run;
+
+    [SerializeField]
+    private ClipTransition _Fall;
+    public ClipTransition Fall =&gt; _Fall;
+</code></pre>
+<p>Note that the characters in the Platformer Game Kit don't actually have separate sprites for <em>Walk</em> and <em>Run</em> animations so they simply use the same one both both with the <a href="/animancer/docs/manual/transitions">Transition</a>'s <code>Speed</code> changed.</p>
+<p>The <code>CurrentAnimation</code> property determines which animation the character should currently be using:</p>
+<ul>
+<li>If the <a href="../../physics#character-body">Character Body</a> indicates that it isn't on the ground and a <em>Fall</em> animation is actually assigned then use that animation.</li>
+<li>If the <a href="../../brains">Character Brain</a> is trying to move then choose between <em>Run</em> and <em>Walk</em> depending on the <code>CharacterBrain.Run</code> property (or just <em>Walk</em> if no <em>Run</em> animation is assigned).</li>
+<li>Otherwise the character is standing still on the ground so play the <em>Idle</em> animation.</li>
+</ul>
+<pre><code class="language-cs">    public ClipTransition CurrentAnimation
+    {
+        get
+        {
+            // If airbourne -&gt; Fall.
+            if (!Character.Body.IsGrounded &amp;&amp; _Fall.IsValid)
+                return _Fall;
+
+            // If trying to move -&gt; Run or Walk.
+            if (Character.Brain.MovementDirection.x != 0)
+                return Character.Brain.Run &amp;&amp; _Run.IsValid ? _Run : _Walk;
+
+            // Otherwise Idle.
+            return _Idle;
+        }
+    }
+</code></pre>
+<p>When the character first enters this state it plays the <code>CurrentAnimation</code> and then does so again every <code>Update</code> so that they will always be playing the appropriate animation for the character's current circumstances:</p>
+<pre><code class="language-cs">    public override void OnEnterState()
+    {
+        base.OnEnterState();
+        Character.Animancer.Play(CurrentAnimation);
+    }
+
+    protected virtual void Update()
+    {
+        Character.Animancer.Play(CurrentAnimation);
+    }
+</code></pre>
+<p>And while it's active, it allows the character to move at full speed regardless of which animation is playing:</p>
+<pre><code class="language-cs">    public override float MovementSpeedMultiplier =&gt; 1;
+</code></pre>
+<p>It also uses an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method to <a href="/animancer/docs/manual/playing/edit-mode">apply the currently assigned <em>Idle</em> animation's first frame</a> just like the <code>IdleState</code>.</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+        _Idle?.Clip.EditModeSampleAnimation(Character);
+    }
+#endif
+}
+</code></pre>
 
 	</section>
                 
