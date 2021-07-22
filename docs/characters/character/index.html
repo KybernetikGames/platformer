@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Characters</title>
+        <title>Platformer Game Kit - Character Component</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,13 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#selection-base">Selection Base</a></p>
+<p><a href="#serialized-fields">Serialized Fields</a></p>
+<p><a href="#movement">Movement</a></p>
+<p><a href="#state-machine">State Machine</a></p>
+<p><a href="#inspector">Inspector</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -103,11 +107,11 @@
 
                     </ul>
                 </li>
-                <li class="treeview active selected">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/characters/character">Character Component</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/character">Character Component</a></li>
                 <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
                 <li class="treeview">
@@ -180,87 +184,140 @@
 
 
 		<section class="content-header">
-			<h1>Characters</h1>
+			<h1>Character Component</h1>
 		</section>
 	<section class="content">
-		
-<p>The code structure of characters in the Platformer Game Kit is based on the concepts introduced in <a href="/animancer">Animancer</a>'s <a href="/animancer/docs/examples/fsm/characters">Characters</a> and <a href="/animancer/docs/examples/fsm/brains">Brains</a> examples. The following table summarises the various components that make up each character.</p>
+		<img src="inspector.png" class="img-responsive img-right">
+<p>The <code>Character</code> component is a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code>Character</code> and access any of their other components through it.</p>
+<h1 id="selection-base">Selection Base</h1>
+<img src="hierarchy.png" class="img-responsive img-right">
+<p>Characters are set up with their visuals (<code>SpriteRenderer</code> and <code>AnimancerComponent</code>) on a child object of the <code>Character</code> to avoid having too many components on the root object and potentially allow the visuals to be swapped out without affecting any of the mechanical aspects of the character. The <code>Character</code> component has a <a href="https://docs.unity3d.com/ScriptReference/SelectionBaseAttribute.html"><code>[SelectionBase]</code></a> attribute so that clicking on their sprite in the Scene view will actually select the root object with the <code>Character</code> component instead of selecting the object with the <code>SpriteRenderer</code>.</p>
+<pre><code class="language-cs">[SelectionBase]
+public class Character : MonoBehaviour
+{
+</code></pre>
+<h1 id="serialized-fields">Serialized Fields</h1>
+<p>It has several <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> with properties to allow other scripts to access but not modify) them:</p>
+<pre><code class="language-cs">    [SerializeField]
+    private CharacterAnimancerComponent _Animancer;
+    public CharacterAnimancerComponent Animancer =&gt; _Animancer;
 
-<table class="table">
-  <thead>
-    <th>Component</th>
-    <th>Purpose</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Character</code></td>
-      <td><p>The <a href="character">Character Component</a> holds a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code>Character</code> and access any of their other components through it.</p><img src="character/custom-inspector.png" class="img-responsive"></td>
-    </tr>
-    <tr>
-      <td><code>BoxCollider2D</code><br><code>Rigidbody2D</code><br><code>CharacterBody2D</code><br><code>BoxCharacterBody2D</code><br><code>GroundCharacterMovement</code><br><code>AirCharacterMovement</code></td>
-      <td><a href="physics">Physics</a> components which manage the character's movements and prevent them from passing through other objects. These components don't decide which way the character wants to move, they simply execute the desired movement of the character's <a href="brains">Brain</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterBrain</code><br><code>PlayerInputBrain</code><br><code>BehaviourTreeBrain</code></td>
-      <td>Each character has a <a href="brains">Brain</a> which decides which way they want to move and which actions they want to perform. This includes player input, AI, or anything else that would decide what a character <em>wants</em> to do. These components don't directly execute any of the logic involved in actually moving or performing an action, they simply indicate what they <em>want</em> for other components to execute.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterState</code><br><code>IdleState</code><br><code>JumpState</code><br><code>AttackState</code><br>Etc.</td>
-      <td><a href="states">States</a> are <em>Actions</em> that the character can perform (such as <em>Jump</em> or <em>Attack</em>) and <em>Modes</em> they can be put in (such as <em>Idle</em> or <em>Flinch</em>). Anything a character can do which prevents them from doing other things at the same time is a state.</td>
-    </tr>
-    <tr>
-      <td><code>Health</code></td>
-      <td>Keeps track of the character's current and maximum Hit Points for the <a href="../combat">Combat</a> system.</td>
-    </tr>
-    <tr>
-      <td><code>SpriteRenderer</code></td>
-      <td>Renders the character's current <code>Sprite</code> which gets changed by their animations.</td>
-    </tr>
-    <tr>
-      <td><code>Animator</code></td>
-      <td>The entry point into Unity's animation system required by <a href="/animancer">Animancer</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterAnimancerComponent</code></td>
-      <td>An <code>AnimancerComponent</code> for playing animations using <a href="/animancer">Animancer</a> with a couple of extra responsibilities: it controls whether the <code>SpriteRenderer</code> flips its <code>Sprite</code> horizontally depending on the <a href="brains">Brain</a>'s desired movement and it also manages the character's active <a href="../combat/hit-boxes">Hit Boxes</a>.</td>
-    </tr>
-  </tbody>
-</table>
+    [SerializeField]
+    private CharacterBody2D _Body;
+    public CharacterBody2D Body =&gt; _Body;
 
-			<div class="box">
-				<div class="box-body no-padding">
-					<table class="table table-striped table-hover two-cols-alt table-responsive">
-						
-						<tbody>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/character">Character Component</a></strong></td>
-									<td>
-A centralised group of references to the common parts of a character and a Finite State Machine for their actions.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/animancer">Animancer Component</a></strong></td>
-									<td>
-ToDo									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/physics">Physics</a></strong></td>
-									<td>
-Characters use a BoxCollider2D with a Dynamic Rigidbody2D.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/brains">Brains</a></strong></td>
-									<td>
-Components that decide what a character wants to do.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states">States</a></strong></td>
-									<td>
-Components that represent actions a character can perform.									</td>
-								</tr>
-						</tbody>				
-					</table>
-				</div>
-			</div> 
+    [SerializeField]
+    private Health _Health;
+    public Health Health =&gt; _Health;
+
+    [SerializeField]
+    private CharacterState _Idle;
+    public CharacterState Idle =&gt; _Idle;
+</code></pre>
+<p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method uses <code>AnimancerUtilities.GetComponentInParentOrChildren</code> to automatically find references to nearby components for any fields that are <code>null</code>:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    protected virtual void OnValidate()
+    {
+        gameObject.GetComponentInParentOrChildren(ref _Animancer);
+        gameObject.GetComponentInParentOrChildren(ref _Body);
+        gameObject.GetComponentInParentOrChildren(ref _Health);
+        gameObject.GetComponentInParentOrChildren(ref _Idle);
+    }
+#endif
+</code></pre>
+<h1 id="movement">Movement</h1>
+<p>The character keeps track of the direction they want to move and whether or not they are currently trying to run. These properties are set by the character's <a href="../brains">Brain</a> and accessed by their <a href="../physics#character-movement">Character Movement</a> component:</p>
+<pre><code class="language-cs">    private Vector2 _MovementDirection;
+
+    public Vector2 MovementDirection
+    {
+        get =&gt; _MovementDirection;
+        set
+        {
+            _MovementDirection.x = Mathf.Clamp(value.x, -1, 1);
+            _MovementDirection.y = Mathf.Clamp(value.y, -1, 1);
+        }
+    }
+
+    public float MovementDirectionX
+    {
+        get =&gt; _MovementDirection.x;
+        set =&gt; _MovementDirection.x = Mathf.Clamp(value, -1, 1);
+    }
+
+    public float MovementDirectionY
+    {
+        get =&gt; _MovementDirection.y;
+        set =&gt; _MovementDirection.y = Mathf.Clamp(value, -1, 1);
+    }
+
+    public bool Run { get; set; }
+</code></pre>
+<h1 id="state-machine">State Machine</h1>
+<p>The <code>Character</code> also holds the <a href="/animancer/docs/manual/fsm">Finite State Machine</a> to manage their actions, but rather than a base <code>StateMachine</code> which would only keep track of their <code>CurrentState</code>, it uses a <code>StateMachine&lt;&gt;.WithDefault</code> to use their <code>Idle</code> state as the <a href="/animancer/docs/manual/fsm/changing-states#default-states">Default State</a> they return to after completing other actions:</p>
+<pre><code class="language-cs">    public readonly StateMachine&lt;CharacterState&gt;.WithDefault
+        StateMachine = new StateMachine&lt;CharacterState&gt;.WithDefault();
+
+    protected virtual void Awake()
+    {
+        StateMachine.DefaultState = _Idle;
+</code></pre>
+<p>And to make debugging a bit easier in case we ever need to log the name of an object, it adds the character's name to the name of each child object (but only in the Unity Editor and Development Builds to avoid wasting performance on it in Release Builds):</p>
+<pre><code class="language-cs">#if UNITY_ASSERTIONS
+        foreach (Transform child in transform)
+            child.name = $"{child.name} ({name})";
+#endif
+    }
+</code></pre>
+<h1 id="inspector">Inspector</h1>
+<img src="custom-inspector.png" class="img-responsive img-right">
+<p>Since the <a href="#movement">Movement</a> properties and <a href="#state-machine">State Machine</a> aren't <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a>, they wouldn't normally be displayed in the Inspector so it has a custom <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a> class:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    [UnityEditor.CustomEditor(typeof(Character), true)]
+    public class Editor : UnityEditor.Editor
+    {
+</code></pre>
+<p>It <code>override</code>s <code>OnInspectorGUI</code> and starts by calling <code>base.OnInspectorGUI();</code> to draw the default Inspector first:</p>
+<pre><code class="language-cs">        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+</code></pre>
+<p>The details it wants to display are only relevant in Play Mode, so if the Unity Editor isn't in Play Mode it doesn't do anything else:</p>
+<pre><code class="language-cs">            if (!UnityEditor.EditorApplication.isPlaying)
+                return;
+</code></pre>
+<p>Then it draws each of the additional fields:</p>
+<pre><code class="language-cs">            var target = (Character)this.target;
+
+            target.MovementDirection = UnityEditor.EditorGUILayout.Vector2Field("Movement Direction", target.MovementDirection);
+
+            target.Run = UnityEditor.EditorGUILayout.Toggle("Run", target.Run);
+</code></pre>
+<p>The character's current state is a bit more complex because attempting to re-enter that state every time the Inspector is rendered could cause them to act differently depending on whether their Inspector is visible or not. So it uses <a href="https://docs.unity3d.com/ScriptReference/EditorGUI.BeginChangeCheck.html"><code>EditorGUI.BeginChangeCheck</code></a> and <a href="https://docs.unity3d.com/ScriptReference/EditorGUI.EndChangeCheck.html"><code>EndChangeCheck</code></a> to determine when the field is actually modified and only then try to enter the newly assigned state:</p>
+<pre><code class="language-cs">            UnityEditor.EditorGUI.BeginChangeCheck();
+            var state = UnityEditor.EditorGUILayout.ObjectField(
+                "Current State", target.StateMachine.CurrentState, typeof(CharacterState), true);
+            if (UnityEditor.EditorGUI.EndChangeCheck())
+                target.StateMachine.TrySetState((CharacterState)state);
+        }
+    }
+#endif
+}
+</code></pre>
+<p><a href="https://kybernetik.com.au/inspector-gadgets/pro">Inspector Gadgets Pro</a> would allow that entire <code>Editor</code> class to be replaced by some simple <a href="https://kybernetik.com.au/inspector-gadgets/docs/script-inspector/inspectable-attributes">Inspectable Attributes</a> on the fields and properties it wants to display like so:</p>
+<pre><code class="language-cs">[Inspectable]
+public Vector2 MovementDirection ...
+
+[Inspectable]
+public bool Run { get; set; }
+
+[Inspectable]
+public CharacterState CurrentState
+{
+    get =&gt; StateMachine.CurrentState;
+    set =&gt; StateMachine.TrySetState(value);
+}
+</code></pre>
 
 	</section>
                 
@@ -383,5 +440,5 @@ Components that represent actions a character can perform.									</td>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

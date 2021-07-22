@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Idles</title>
+        <title>Platformer Game Kit - Idle</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
@@ -107,27 +107,47 @@
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
+                <li><a href="/platformer/docs/characters/character">Character Component</a></li>
+                <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
-                <li><a href="/platformer/docs/characters/brains">Brains</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
                 <li class="treeview active selected">
-                    <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/land">Land</a></li>
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/jump">Jumping</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/jump">Jump</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/jump/jump">Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/hold">Hold Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/wall">Wall Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/air">Air Jump</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
 
                     </ul>
                 </li>
@@ -138,6 +158,7 @@
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
                 <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
+                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -159,56 +180,62 @@
 
 
 		<section class="content-header">
-			<h1>Idles</h1>
+			<h1>Idle</h1>
 		</section>
 	<section class="content">
 		
 <img src="character-idle.png" class="img-responsive img-right">
 
-<p>The only <code>CharacterState</code> actually referenced by the core <code>Character</code> component is their <code>Idle</code> state because that's the default state they start in (if an <a href="../introduction">Introduction State</a> doesn't start itself instead) and return to after completing other actions. All other states are either self-contained (like the <a href="../introduction">Introduction</a> state) or controlled by other scripts (such as the <a href="../brains">Brains</a> which directly reference the actions they can perform).</p>
+<p>The only <code>CharacterState</code> actually referenced by the core <code>Character</code> component is their <code>Idle</code> state because that's the default state they start in (if an <a href="../introduction">Introduction State</a> doesn't start itself instead) and return to after completing other actions so every <code>Character</code> needs one. All other states are either self-contained (like the <a href="../introduction">Introduction</a> state) or controlled by other scripts (such as the <a href="../brains">Brains</a> which directly reference the actions they can perform).</p>
 
 <p>The <code>IdleState</code> causes the character to simply play an animation while stationary, but the <code>Character.Idle</code> field actually allows any type of <code>CharacterState</code> to be assigned so that the <em>Idle Character State</em> means <em>"able to move and act freely"</em> rather than specifically <em>"standing still"</em>.</p>
 
-			<div class="box">
-				<div class="box-body no-padding">
-					<table class="table table-striped table-hover two-cols-alt table-responsive">
-						
-						<tbody>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/idle">Idle</a></strong></td>
-									<td>
-Plays a single animation and doesn&#x27;t allow movement.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></strong></td>
-									<td>
-Plays a single animation like Idle, but also allows movement.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></strong></td>
-									<td>
-Plays an Idle, Walk, Run, or Fall animation and allows movement.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></strong></td>
-									<td>
-A &quot;state selector&quot; which simply picks from a list of other states.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></strong></td>
-									<td>
-Slows the character&#x27;s falling by grabbing a wall.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states/idle/landing">Landing</a></strong></td>
-									<td>
-An extra animation used when the character lands on a platform.									</td>
-								</tr>
-						</tbody>				
-					</table>
-				</div>
-			</div> 
-
+<table class="table">
+  <thead>
+    <th>State</th>
+    <th>Class</th>
+    <th>Used By</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="idle">Idle</a></td>
+      <td><code>IdleState</code></td>
+      <td><em>Maw Flower</em></td>
+      <td>Plays a single animation and doesn't allow movement.</td>
+    </tr>
+    <tr>
+      <td><a href="mobile-idle">Mobile Idle</a></td>
+      <td><code>MobileIdleState</code></td>
+      <td><em>Gobbat</em></td>
+      <td>Plays a single animation like <a href="idle">Idle</a>, but also allows movement.</td>
+    </tr>
+    <tr>
+      <td><a href="locomotion">Locomotion</a></td>
+      <td><code>LocomotionState</code></td>
+      <td><em>Player</em>, <em>Gobbler</em>, <em>Naga</em>, <em>Scarecrow</em></td>
+      <td>Plays an <em>Idle</em>, <em>Walk</em>, <em>Run</em>, or <em>Fall</em> animation and allows movement.</td>
+    </tr>
+    <tr>
+      <td><a href="wall-slide">Wall Slide</a></td>
+      <td><code>WallSlideState</code></td>
+      <td><em>Player</em></td>
+      <td>Slows the character's falling by grabbing a wall.</td>
+    </tr>
+    <tr>
+      <td><a href="land">Land</a></td>
+      <td><code>LandState</code></td>
+      <td><em>Player</em></td>
+      <td>An extra animation used when the character lands on a platform.</td>
+    </tr>
+    <tr>
+      <td><a href="../multi-state">Multi State</a></td>
+      <td><code>MultiState</code></td>
+      <td><em>Player</em></td>
+      <td>A "state selector" which simply picks from a list of other states. This is the state assigned as the <em>Player</em>'s actual <code>Character.Idle</code>.</td>
+    </tr>
+  </tbody>
+</table>
 	</section>
                 
             </div>           

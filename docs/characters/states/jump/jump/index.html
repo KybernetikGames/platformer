@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Jumping</title>
+        <title>Platformer Game Kit - Jump</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,12 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#fields">Fields</a></p>
+<p><a href="#initialization">Initialization</a></p>
+<p><a href="#state-life-cycle">State Life Cycle</a></p>
+<p><a href="#velocity-calculation">Velocity Calculation</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -107,27 +110,47 @@
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
+                <li><a href="/platformer/docs/characters/character">Character Component</a></li>
+                <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
-                <li><a href="/platformer/docs/characters/brains">Brains</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
                 <li class="treeview">
-                    <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/land">Land</a></li>
 
                     </ul>
                 </li>
-                <li class="selected"><a href="/platformer/docs/characters/states/jump">Jumping</a></li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/characters/states/jump">Jump</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/platformer/docs/characters/states/jump/jump">Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/hold">Hold Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/wall">Wall Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/air">Air Jump</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
 
                     </ul>
                 </li>
@@ -138,6 +161,7 @@
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
                 <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
+                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -159,10 +183,95 @@
 
 
 		<section class="content-header">
-			<h1>Jumping</h1>
+			<h1>Jump</h1>
 		</section>
 	<section class="content">
-		<p>To Do</p>
+		<img src="jump.gif" class="img-responsive img-right">
+<p><img src="jump.png" class="img-responsive"></p>
+<p>This state requires the character to be on the ground and launches them into the air with an amount of force calculated so that they will reach a specific <code>Height</code> at the top of their jump arc. The <em>Player</em> doesn't actually use this state directly, but all the other jump states <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from it to build upon its basic functionality.</p>
+<h1 id="fields">Fields</h1>
+<p>The field tooltips explain what they each do:</p>
+<pre><code class="language-cs">public class JumpState : CharacterState
+{
+    [SerializeField]
+    private ClipTransition _Animation;
+    public ClipTransition Animation =&gt; _Animation;
+
+    [SerializeField, Range(0, 1)]
+        [Tooltip("Before the jump force is applied, your previous vertical velocity is multiplied by this value")]
+    private float _Inertia = 0.25f;
+    public float Inertia =&gt; _Inertia;
+
+    [SerializeField, Meters]
+    [Tooltip("The peak height of the jump arc")]
+    private float _Height = 3;
+    public float Height =&gt; _Height;
+</code></pre>
+<p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> ensures that the fields always have valid values:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+        PlatformerUtilities.Clamp(ref _Inertia, 0, 1);
+        PlatformerUtilities.NotNegative(ref _Height);
+    }
+#endif
+</code></pre>
+<h1 id="initialization">Initialization</h1>
+<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return to the character's default state (the <code>Character.Idle</code> state):</p>
+<pre><code class="language-cs">    protected virtual void Awake()
+    {
+        _Animation.Events.OnEnd += Character.StateMachine.ForceSetDefaultState;
+    }
+</code></pre>
+<h1 id="state-life-cycle">State Life Cycle</h1>
+<p>This state can only be entered while the character is on the ground:</p>
+<pre><code class="language-cs">    public override bool CanEnterState =&gt; Character.Body.IsGrounded;
+</code></pre>
+<p>When entering this state, it calculates the velocity necessary to reach the desired <code>Height</code> (see <a href="#velocity-calculation">Velocity Calculation</a>), disables the <a href="../../physics#character-body">Character Body</a> so that it won't waste performance on any of its ground checks during the jump animation, and play the animation:</p>
+<pre><code class="language-cs">    public override void OnEnterState()
+    {
+        base.OnEnterState();
+
+        Character.Body.Velocity = CalculateJumpVelocity();
+        Character.Body.enabled = false;
+
+        Character.Animancer.Play(_Animation);
+    }
+</code></pre>
+<p>During the jump animation, the character can move normally:</p>
+<pre><code class="language-cs">    public override float MovementSpeedMultiplier =&gt; 1;
+</code></pre>
+<p>Once the <a href="/animancer/docs/manual/events/end">End Event</a> registered in <code>Awake</code> returns the character to their <a href="../idle">Idle</a> state, it re-enables the <a href="../../physics#character-body">Character Body</a> so it can resume checking whether the character is on the ground or not:</p>
+<pre><code class="language-cs">    public override void OnExitState()
+    {
+        base.OnExitState();
+        Character.Body.enabled = true;
+    }
+</code></pre>
+<h1 id="velocity-calculation">Velocity Calculation</h1>
+<p>Normally, the jump velocity calculation is based on the <code>_Inertia</code> and <code>_Height</code> fields of this class, but the method is <code>virtual</code> so that the <a href="advanced">Advanced Jump State</a> can <code>override</code> it to use different values for wall jumps and air jumps:</p>
+<pre><code class="language-cs">    public virtual Vector2 CalculateJumpVelocity() =&gt; CalculateJumpVelocity(_Inertia, _Height);
+</code></pre>
+<p>The calculation simply multiplies the character's vertical speed by the given <code>inertia</code> value then adds the speed necessary to reach the target <code>height</code>:</p>
+<pre><code class="language-cs">    public Vector2 CalculateJumpVelocity(float inertia, float height)
+    {
+        var velocity = Character.Body.Velocity;
+        velocity.y *= inertia;
+        velocity.y += CalculateJumpSpeed(height);
+        return velocity;
+    }
+</code></pre>
+<p>The mathematical theory behind the calculation is a bit advanced and will not be explained here, but the resulting formula is actually a simple function of the target height and gravity:</p>
+<pre><code class="language-cs">    public float CalculateJumpSpeed(float height)
+    {
+        var gravity = Character.Body.Gravity.y;
+        AnimancerUtilities.Assert(gravity &lt; 0, "Gravity is not negative");
+        return Mathf.Sqrt(-2 * gravity * height);
+    }
+}
+</code></pre>
+<p>That calculation requires gravity to be pointing downwards because the system doesn't currently support rotated characters or rotated gravity. Adding support for those things would be possible, but would require more modifications throughout the system than just this function.</p>
 
 	</section>
                 
@@ -285,5 +394,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

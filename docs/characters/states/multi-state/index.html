@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Characters</title>
+        <title>Platformer Game Kit - Multi-State</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,12 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#execution-order">Execution Order</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#state-life-cycle">State Life Cycle</a></p>
+<p><a href="#internal-transitions">Internal Transitions</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -103,7 +106,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview active selected">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -119,7 +122,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -147,7 +150,7 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
 
                     </ul>
                 </li>
@@ -180,87 +183,121 @@
 
 
 		<section class="content-header">
-			<h1>Characters</h1>
+			<h1>Multi-State</h1>
 		</section>
 	<section class="content">
-		
-<p>The code structure of characters in the Platformer Game Kit is based on the concepts introduced in <a href="/animancer">Animancer</a>'s <a href="/animancer/docs/examples/fsm/characters">Characters</a> and <a href="/animancer/docs/examples/fsm/brains">Brains</a> examples. The following table summarises the various components that make up each character.</p>
-
+		<p>A <code>MultiState</code> contains a list of other states. Attempting to enter the <code>MultiState</code> simply tries to enter each of those other states one by one.</p>
+<p>The <em>Player</em> uses this state for their <a href="../idle">Idle</a> and <a href="../jump">Jump</a>:</p>
 <table class="table">
   <thead>
-    <th>Component</th>
-    <th>Purpose</th>
-  </thead>
+    <tr><th style="width:50%">Idle</th>
+    <th style="width:50%">Jump</th>
+  </tr></thead>
   <tbody>
     <tr>
-      <td><code>Character</code></td>
-      <td><p>The <a href="character">Character Component</a> holds a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code>Character</code> and access any of their other components through it.</p><img src="character/custom-inspector.png" class="img-responsive"></td>
+      <td><img src="idle.png" class="img-responsive img-right"></td>
+      <td><img src="jump.png" class="img-responsive img-right"></td>
     </tr>
     <tr>
-      <td><code>BoxCollider2D</code><br><code>Rigidbody2D</code><br><code>CharacterBody2D</code><br><code>BoxCharacterBody2D</code><br><code>GroundCharacterMovement</code><br><code>AirCharacterMovement</code></td>
-      <td><a href="physics">Physics</a> components which manage the character's movements and prevent them from passing through other objects. These components don't decide which way the character wants to move, they simply execute the desired movement of the character's <a href="brains">Brain</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterBrain</code><br><code>PlayerInputBrain</code><br><code>BehaviourTreeBrain</code></td>
-      <td>Each character has a <a href="brains">Brain</a> which decides which way they want to move and which actions they want to perform. This includes player input, AI, or anything else that would decide what a character <em>wants</em> to do. These components don't directly execute any of the logic involved in actually moving or performing an action, they simply indicate what they <em>want</em> for other components to execute.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterState</code><br><code>IdleState</code><br><code>JumpState</code><br><code>AttackState</code><br>Etc.</td>
-      <td><a href="states">States</a> are <em>Actions</em> that the character can perform (such as <em>Jump</em> or <em>Attack</em>) and <em>Modes</em> they can be put in (such as <em>Idle</em> or <em>Flinch</em>). Anything a character can do which prevents them from doing other things at the same time is a state.</td>
-    </tr>
-    <tr>
-      <td><code>Health</code></td>
-      <td>Keeps track of the character's current and maximum Hit Points for the <a href="../combat">Combat</a> system.</td>
-    </tr>
-    <tr>
-      <td><code>SpriteRenderer</code></td>
-      <td>Renders the character's current <code>Sprite</code> which gets changed by their animations.</td>
-    </tr>
-    <tr>
-      <td><code>Animator</code></td>
-      <td>The entry point into Unity's animation system required by <a href="/animancer">Animancer</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterAnimancerComponent</code></td>
-      <td>An <code>AnimancerComponent</code> for playing animations using <a href="/animancer">Animancer</a> with a couple of extra responsibilities: it controls whether the <code>SpriteRenderer</code> flips its <code>Sprite</code> horizontally depending on the <a href="brains">Brain</a>'s desired movement and it also manages the character's active <a href="../combat/hit-boxes">Hit Boxes</a>.</td>
+      <td><ol>
+          <li><a href="../idle/wall-slide">Wall Slide</a>: allowed while airborne, next to a wall, and moving towards it.</li>
+          <li><a href="../idle/locomotion">Locomotion</a>: always allowed.</li>
+      </ol></td>
+      <td><ol>
+          <li><a href="../jump/wall">Wall Jump</a>: allowed while airborne and next to a wall.</li>
+          <li><a href="../jump/air">Air Jump</a>: allowed while airborne as long as the character hasn't used too many air jumps since they were last on the ground.</li>
+          <li><a href="../jump/hold">Hold Jump</a>: allowed while on the ground.</li>
+      </ol></td>
     </tr>
   </tbody>
 </table>
+<h1 id="execution-order">Execution Order</h1>
+<p>Its <code>DefaultExecutionOrder</code> is set to <code>-1000</code> so that it runs its <code>FixedUpdate</code> method every frame before other states so that when it changes away from a state, that state's <code>FixedUpdate</code> method doesn't run for that frame.</p>
+<pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
+public class MultiState : CharacterState
+{
+    public const int DefaultExecutionOrder = -1000;
+</code></pre>
+<h1 id="fields">Fields</h1>
+<p>The field tooltips explain what they each do:</p>
+<pre><code class="language-cs">    [SerializeField]
+    [Tooltip("While in one of the States, should it try to enter them again in order every " + nameof(FixedUpdate) + "?")]
+    private bool _AutoInternalTransitions;
 
-			<div class="box">
-				<div class="box-body no-padding">
-					<table class="table table-striped table-hover two-cols-alt table-responsive">
-						
-						<tbody>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/character">Character Component</a></strong></td>
-									<td>
-A centralised group of references to the common parts of a character and a Finite State Machine for their actions.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/animancer">Animancer Component</a></strong></td>
-									<td>
-ToDo									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/physics">Physics</a></strong></td>
-									<td>
-Characters use a BoxCollider2D with a Dynamic Rigidbody2D.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/brains">Brains</a></strong></td>
-									<td>
-Components that decide what a character wants to do.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states">States</a></strong></td>
-									<td>
-Components that represent actions a character can perform.									</td>
-								</tr>
-						</tbody>				
-					</table>
-				</div>
-			</div> 
+    [SerializeField]
+    [Tooltip("The other states that this one will try to enter in order")]
+    private CharacterState[] _States;
+    public CharacterState[] States =&gt; _States;
+</code></pre>
+<ul>
+<li><code>_AutoInternalTransitions</code> is explained in the <a href="#internal-transitions">Internal Transitions</a> section.</li>
+<li>The <code>_States</code> field is declared after <code>_AutoInternalTransitions</code> because it looks a bit more organized to have the variable-size array show up at the end of the Inspector after all the single line fields.</li>
+</ul>
+<h1 id="state-life-cycle">State Life Cycle</h1>
+<p><code>CanEnterState</code> simply passes the <code>_States</code> to the <code>StateMachine</code> which will check the <code>CanEnterState</code> property on each of them:</p>
+<pre><code class="language-cs">    public override bool CanEnterState =&gt; Character.StateMachine.CanSetState(_States);
+</code></pre>
+<p><code>CanExitState</code> always returns <code>true</code> because once the <code>MultiState</code> has chosen a sub-state, that state's <code>CanExitState</code> will be used instead:</p>
+<pre><code class="language-cs">    public override bool CanExitState =&gt; true;
+</code></pre>
+<p>When the character actually enters this state, it again passes the <code>_States</code> to the <code>StateMachine</code> to attempt to enter each of them until one is successful. If <code>_AutoInternalTransitions</code> is enabled, it also stores the state that was entered and enables this <code>MultiState</code> component so that its <code>FixedUpdate</code> will get called.</p>
+<pre><code class="language-cs">    private CharacterState _CurrentState;
+
+    public override void OnEnterState()
+    {
+        if (Character.StateMachine.TrySetState(_States))
+        {
+            if (_AutoInternalTransitions)
+            {
+                _CurrentState = Character.StateMachine.CurrentState;
+                enabled = true;
+            }
+        }
+</code></pre>
+<p>If it fails to enter any of the states, it logs an error message listing all of them because a <code>MultiState</code> is not supposed to actually be the current state:</p>
+<pre><code class="language-cs">        else
+        {
+            var text = ObjectPool.AcquireStringBuilder()
+                .AppendLine($"{nameof(MultiState)} failed to enter any of its {nameof(States)}:");
+
+            for (int i = 0; i &lt; _States.Length; i++)
+            {
+                text.Append("    [")
+                    .Append(i)
+                    .Append("] ")
+                    .AppendLine(_States[i].ToString());
+            }
+
+            Debug.LogError(text.ReleaseToString(), this);
+        }
+    }
+</code></pre>
+<p>This means a state like <code>IdleState</code>, <code>MobileIdleState</code>, or <code>LocomotionState</code> should always be the last one in the <code>States</code> array because they don't have any restrictions on when they are allowed to be entered.</p>
+<p>Most states are <code>enabled</code> on entry and disabled again on exit so that their <code>FixedUpdate</code> and similar methods only get called while the character is in that state (this comes from the base <a href="/animancer/docs/manual/fsm/state-types">State Behaviour</a> which the base <code>CharacterState</code> inherits from). But a <code>MultiState</code> needs to enter a different state and still have its <code>FixedUpdate</code> method called while that other state is active so its <code>OnEnterState</code> method (see above) doesn't call <code>base.OnEnterState();</code> and it also <code>override</code>s <code>OnExitState</code> to not call <code>base.OnExitState();</code> either:</p>
+<pre><code class="language-cs">    public override void OnExitState() { }
+</code></pre>
+<h1 id="internal-transitions">Internal Transitions</h1>
+<p>If this component was enabled (by <code>OnEnterState</code> dur to <code>_AutoInternalTransitions</code> being enabled), it uses <code>FixedUpdate</code> to first disable itself if the character is no longer in the sub-state it entered:</p>
+<pre><code class="language-cs">    protected virtual void FixedUpdate()
+    {
+        if (_CurrentState != Character.StateMachine.CurrentState)
+        {
+            enabled = false;
+            return;
+        }
+</code></pre>
+<p>Otherwise, it simply checks through its states every frame to see if any of them can be entered:</p>
+<pre><code class="language-cs">        var newState = Character.StateMachine.CanSetState(_States);
+        if (_CurrentState != newState &amp;&amp; newState != null)
+        {
+            _CurrentState = newState;
+            Character.StateMachine.ForceSetState(newState);
+        }
+    }
+}
+</code></pre>
+<p>Since this state is assigned as the <code>Character.Idle</code> for the <em>Player</em>, it means that whenever they return to their default state (such as when finishing an attack) it will immediately check whether they can <a href="../wall-slide">Wall Slide</a> rather than always entering the <a href="../locomotion">Locomotion State</a> first. It also avoids putting too much responsibility in a single component, which is what would happen if <code>WallSlideState</code> inherited from <code>LocomotionState</code>.</p>
+<p>The <code>MultiState</code> used for the <em>Player</em>'s <a href="../jump">Jumps</a> on the other hand has <code>_AutoInternalTransitions</code> disabled so pressing the jump button simply attempts to activate any of the jump states then allows that state to execute normally.</p>
 
 	</section>
                 
@@ -383,5 +420,5 @@ Components that represent actions a character can perform.									</td>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

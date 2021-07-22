@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Characters</title>
+        <title>Platformer Game Kit - Animancer Component</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,12 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#fields">Fields</a></p>
+<p><a href="#fading">Fading</a></p>
+<p><a href="#facing">Facing</a></p>
+<p><a href="#hit-boxes">Hit Boxes</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -103,12 +106,12 @@
 
                     </ul>
                 </li>
-                <li class="treeview active selected">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/character">Character Component</a></li>
-                <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
@@ -180,87 +183,154 @@
 
 
 		<section class="content-header">
-			<h1>Characters</h1>
+			<h1>Animancer Component</h1>
 		</section>
 	<section class="content">
-		
-<p>The code structure of characters in the Platformer Game Kit is based on the concepts introduced in <a href="/animancer">Animancer</a>'s <a href="/animancer/docs/examples/fsm/characters">Characters</a> and <a href="/animancer/docs/examples/fsm/brains">Brains</a> examples. The following table summarises the various components that make up each character.</p>
+		<img src="animancer.png" class="img-responsive img-right">
+<p>Characters need a few other features in addition to the animation functions of the <code>AnimancerComponent</code>, so rather than having two separate components and needing to both be referenced by the <code>Character</code>, we just have a <code>CharacterAnimancerComponent</code> <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from the base <code>AnimancerComponent</code>.</p>
+<p>The main things it manages are:</p>
+<ul>
+<li>The direction the character is <a href="#facing">Facing</a>.</li>
+<li>The character's currently active <a href="#hit-boxes">Hit Boxes</a>.</li>
+</ul>
+<h1 id="fields">Fields</h1>
+<p>The <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> and <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method are self-explanatory:</p>
+<pre><code class="language-cs">public sealed class CharacterAnimancerComponent : AnimancerComponent
+{
+    [SerializeField]
+    private SpriteRenderer _Renderer;
+    public SpriteRenderer Renderer =&gt; _Renderer;
 
-<table class="table">
-  <thead>
-    <th>Component</th>
-    <th>Purpose</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Character</code></td>
-      <td><p>The <a href="character">Character Component</a> holds a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code>Character</code> and access any of their other components through it.</p><img src="character/custom-inspector.png" class="img-responsive"></td>
-    </tr>
-    <tr>
-      <td><code>BoxCollider2D</code><br><code>Rigidbody2D</code><br><code>CharacterBody2D</code><br><code>BoxCharacterBody2D</code><br><code>GroundCharacterMovement</code><br><code>AirCharacterMovement</code></td>
-      <td><a href="physics">Physics</a> components which manage the character's movements and prevent them from passing through other objects. These components don't decide which way the character wants to move, they simply execute the desired movement of the character's <a href="brains">Brain</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterBrain</code><br><code>PlayerInputBrain</code><br><code>BehaviourTreeBrain</code></td>
-      <td>Each character has a <a href="brains">Brain</a> which decides which way they want to move and which actions they want to perform. This includes player input, AI, or anything else that would decide what a character <em>wants</em> to do. These components don't directly execute any of the logic involved in actually moving or performing an action, they simply indicate what they <em>want</em> for other components to execute.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterState</code><br><code>IdleState</code><br><code>JumpState</code><br><code>AttackState</code><br>Etc.</td>
-      <td><a href="states">States</a> are <em>Actions</em> that the character can perform (such as <em>Jump</em> or <em>Attack</em>) and <em>Modes</em> they can be put in (such as <em>Idle</em> or <em>Flinch</em>). Anything a character can do which prevents them from doing other things at the same time is a state.</td>
-    </tr>
-    <tr>
-      <td><code>Health</code></td>
-      <td>Keeps track of the character's current and maximum Hit Points for the <a href="../combat">Combat</a> system.</td>
-    </tr>
-    <tr>
-      <td><code>SpriteRenderer</code></td>
-      <td>Renders the character's current <code>Sprite</code> which gets changed by their animations.</td>
-    </tr>
-    <tr>
-      <td><code>Animator</code></td>
-      <td>The entry point into Unity's animation system required by <a href="/animancer">Animancer</a>.</td>
-    </tr>
-    <tr>
-      <td><code>CharacterAnimancerComponent</code></td>
-      <td>An <code>AnimancerComponent</code> for playing animations using <a href="/animancer">Animancer</a> with a couple of extra responsibilities: it controls whether the <code>SpriteRenderer</code> flips its <code>Sprite</code> horizontally depending on the <a href="brains">Brain</a>'s desired movement and it also manages the character's active <a href="../combat/hit-boxes">Hit Boxes</a>.</td>
-    </tr>
-  </tbody>
-</table>
+    [SerializeField]
+    private Character _Character;
+    public Character Character =&gt; _Character;
 
-			<div class="box">
-				<div class="box-body no-padding">
-					<table class="table table-striped table-hover two-cols-alt table-responsive">
-						
-						<tbody>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/character">Character Component</a></strong></td>
-									<td>
-A centralised group of references to the common parts of a character and a Finite State Machine for their actions.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/animancer">Animancer Component</a></strong></td>
-									<td>
-ToDo									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/physics">Physics</a></strong></td>
-									<td>
-Characters use a BoxCollider2D with a Dynamic Rigidbody2D.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/brains">Brains</a></strong></td>
-									<td>
-Components that decide what a character wants to do.									</td>
-								</tr>
-								<tr>
-									<td><strong><a href="/platformer/docs/characters/states">States</a></strong></td>
-									<td>
-Components that represent actions a character can perform.									</td>
-								</tr>
-						</tbody>				
-					</table>
-				</div>
-			</div> 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        gameObject.GetComponentInParentOrChildren(ref _Renderer);
+        gameObject.GetComponentInParentOrChildren(ref _Character);
+    }
+#endif
+</code></pre>
+<h1 id="fading">Fading</h1>
+<p>Most of the Platformer Game Kit would work exactly the same with 3D Models or bone based <code>Sprite</code> animations, but since this script manages the direction the character is <a href="#facing">Facing</a>, it is written specifically for <code>Sprite</code> based animations which means that <a href="/animancer/docs/manual/blending/fading">Cross Fading</a> will not actually do anything useful so it uses the <code>DontAllowFade</code> system to log a warning if ever a fade occurs by accident (generally due to an incorrectly configured <a href="/animancer/docs/manual/transitions">Transition</a>):</p>
+<pre><code class="language-cs">#if UNITY_ASSERTIONS
+    private void Awake()
+    {
+        DontAllowFade.Assert(this);
+    }
+#endif
+</code></pre>
+<p>There is also a separate script called <code>DefaultFadeDuration.cs</code> in the <em>Utilities</em> folder to automatically set the <code>AnimancerPlayable.DefaultFadeDuration</code> to <code>0</code> instead of the usual <code>0.25</code>:</p>
+<pre><code class="language-cs">namespace Animancer
+{
+    internal static class DefaultFadeDuration
+    {
+        [UnityEngine.RuntimeInitializeOnLoadMethod(UnityEngine.RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Initialize() =&gt; AnimancerPlayable.DefaultFadeDuration = 0;
+    }
+}
+</code></pre>
+<p>Even though that script is part of the Platformer Game Kit, it's important for that initialization to be done by a class named <code>DefaultFadeDuration</code> in the <code>Animancer</code> namespace so that Animancer can find and run it immediately when it loads (before even the <code>[RuntimeInitializeOnLoadMethod]</code> gets executed) so that <a href="/animancer/docs/manual/transitions">Transitions</a> can use the correct value as their default.</p>
+<img src="sprite-renderer.png" class="img-responsive img-right">
+<h1 id="facing">Facing</h1>
+<p>This system determines whether a character is facing left or right by simply using the <code>Flip X</code> toggle on the <code>SpriteRenderer</code> so it exposes several properties for accessing it and converting to and from actual directions:</p>
+<pre><code class="language-cs">    public bool FacingLeft
+    {
+        get =&gt; _Renderer.flipX;
+        set =&gt; _Renderer.flipX = value;
+    }
+
+    public float FacingX
+    {
+        get =&gt; _Renderer.flipX ? -1f : 1f;
+        set
+        {
+            if (value != 0)
+                _Renderer.flipX = value &lt; 0;
+        }
+    }
+
+    public Vector2 Facing
+    {
+        get =&gt; new Vector2(FacingX, 0);
+        set =&gt; FacingX = value.x;
+    }
+</code></pre>
+<p>Every <code>Update</code>, if the character's current state's <code>CanTurn</code> property returns true, the <code>Facing</code> is set to match their <code>MovementDirection</code>:</p>
+<pre><code class="language-cs">    private void Update()
+    {
+        if (Character.StateMachine.CurrentState.CanTurn)
+            Facing = Character.MovementDirection;
+    }
+</code></pre>
+<h1 id="hit-boxes">Hit Boxes</h1>
+<p>The <a href="../../combat">Combat</a> system uses <a href="/animancer/docs/manual/events/animancer">Animancer Events</a> to determine when to activate each of the <a href="#hit-boxes">Hit Boxes</a> in an attack animation. Each frame can have different hit details as shown in the following images:</p>
+<p></p><table><tbody><tr>
+<td><img src="hit-1.png" class="img-responsive"></td>
+<td style="width:1em"></td>
+<td><img src="hit-2.png" class="img-responsive"></td>
+</tr></tbody></table><p></p>
+<p>The events are set up so that the attack data could potentially be shared by multiple characters, which means they can't directly reference their character and need to instead get the character each time an event occurs using one of the following methods:</p>
+<pre><code class="language-cs">    public static CharacterAnimancerComponent GetCurrent() =&gt; Get(AnimancerEvent.CurrentState);
+
+    public static CharacterAnimancerComponent Get(AnimancerNode node) =&gt; Get(node.Root);
+    
+    public static CharacterAnimancerComponent Get(AnimancerPlayable animancer) =&gt; animancer.Component as CharacterAnimancerComponent;
+</code></pre>
+<p>Even though each attack can consist of multiple different hit boxes, a single attack can only hit each target once so the system needs to keep track of the character's active hit boxes and the targets they have already hit:</p>
+<pre><code class="language-cs">    private Dictionary&lt;HitData, HitTrigger&gt; _ActiveHits;
+    private HashSet&lt;Hit.ITarget&gt; _IgnoreHits;
+
+    public void AddHitBox(HitData data)
+    {
+        if (_IgnoreHits == null)
+        {
+            ObjectPool.Acquire(out _ActiveHits);
+            ObjectPool.Acquire(out _IgnoreHits);
+        }
+
+        _ActiveHits.Add(data, HitTrigger.Activate(Character, data, FacingLeft, _IgnoreHits));
+    }
+
+    public void RemoveHitBox(HitData data)
+    {
+        if (_ActiveHits.TryGetValue(data, out var trigger))
+        {
+            trigger.Deactivate();
+            _ActiveHits.Remove(data);
+        }
+    }
+</code></pre>
+<p>And when an attack ends or this script gets disabled (generally because it was destroyed) it clears all the hit boxes and returns the set of objects that have been hit to the <code>ObjectPool</code>:</p>
+<pre><code class="language-cs">    public void EndHitSequence()
+    {
+        if (_IgnoreHits == null)
+            return;
+
+        ClearHitBoxes();
+        ObjectPool.Release(ref _ActiveHits);
+        ObjectPool.Release(ref _IgnoreHits);
+    }
+
+    public void ClearHitBoxes()
+    {
+        if (_ActiveHits != null)
+        {
+            foreach (var trigger in _ActiveHits.Values)
+                trigger.Deactivate();
+            _ActiveHits.Clear();
+        }
+    }
+
+    protected override void OnDisable()
+    {
+        EndHitSequence();
+        base.OnDisable();
+    }
+}
+</code></pre>
 
 	</section>
                 
@@ -383,5 +453,5 @@ Components that represent actions a character can perform.									</td>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

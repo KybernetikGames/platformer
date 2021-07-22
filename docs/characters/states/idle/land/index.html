@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Multi-State</title>
+        <title>Platformer Game Kit - Land</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,11 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#fields">Fields</a></p>
+<p><a href="#initialization">Initialization</a></p>
+<p><a href="#state-entry">State Entry</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -107,27 +109,47 @@
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
+                <li><a href="/platformer/docs/characters/character">Character Component</a></li>
+                <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
                 <li><a href="/platformer/docs/characters/physics">Physics</a></li>
-                <li><a href="/platformer/docs/characters/brains">Brains</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
                 <li class="treeview active">
-                    <a href="/platformer/docs/characters/states/idle">Idles</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
-                <li class="selected"><a href="/platformer/docs/characters/states/idle/multi-state">Multi-State</a></li>
                 <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
-                <li><a href="/platformer/docs/characters/states/idle/landing">Landing</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/states/idle/land">Land</a></li>
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/jump">Jumping</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/jump">Jump</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/jump/jump">Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/hold">Hold Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/wall">Wall Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/air">Air Jump</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
 
                     </ul>
                 </li>
@@ -138,6 +160,7 @@
                 <li><a href="/platformer/docs/license">License</a></li>
                 <li><a href="/platformer/docs/contact">Contact</a></li>
                 <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
+                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -159,89 +182,84 @@
 
 
 		<section class="content-header">
-			<h1>Multi-State</h1>
+			<h1>Land</h1>
 		</section>
 	<section class="content">
-		<img src="multi.png" class="img-responsive img-right">
-<p>A <code>MultiState</code> contains a list of other states. Attempting to enter the <code>MultiState</code> simply tries to enter each of those other states one by one. The <em>Player</em> uses this state to first attempt to enter the <a href="wall-slide">Wall Slide State</a>, and if that fails it instead enters the <a href="locomotion">Locomotion State</a>.</p>
-<p>Its <code>DefaultExecutionOrder</code> is set to <code>-1000</code> so that it runs its <code>FixedUpdate</code> method every frame before other states, meaning that whatever state it selects will still be able to run its <code>FixedUpdate</code> method for that frame (and the previous state won't run its one).</p>
-<pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
-public class MultiState : CharacterState
+		<img src="land.gif" class="img-responsive img-right">
+<p><img src="land.png" class="img-responsive"></p>
+<p>This state simply plays a quick animation when the character lands on a platform before going to their regular <em>Idle</em> state. It's self-contained and automatically starts itself as necessary like the <a href="../../introduction">Introduction</a> state. The video to the right is slowed down to properly show the animation since it is so quick.</p>
+<h1 id="fields">Fields</h1>
+<p>The field tooltips explain what they each do:</p>
+<pre><code class="language-cs">public class LandState : CharacterState
 {
-    public const int DefaultExecutionOrder = -1000;
-</code></pre>
-<p>The only character currently using this component is the <em>Player</em> where it needs to check every frame whether they should be in the <a href="wall-slide">Wall Slide</a> or <a href="locomotion">Locomotion</a> state, but it could theoretically be used as a once-off selector that simply makes a choice each time it is entered so the <code>Auto Internal Transitions</code> field allows you to prevent it from changing between its sub-states:</p>
-<pre><code class="language-cs">    [SerializeField]
-    [Tooltip(&quot;While in one of the States, should it try to enter them again in order every &quot; + nameof(FixedUpdate) + &quot;?&quot;)]
-    private bool _AutoInternalTransitions;
-
     [SerializeField]
-    private CharacterState[] _States;
-    public CharacterState[] States =&gt; _States;
-</code></pre>
-<p>The <code>_States</code> field is declared after <code>_AutoInternalTransitions</code> because it looks a bit more organized to have the variable-size array show up at the end of the Inspector after all the single line fields.</p>
-<p><code>CanEnterState</code> simply passes the <code>_States</code> to the <code>StateMachine</code> which will check the <code>CanEnterState</code> property on each of them:</p>
-<pre><code class="language-cs">    public override bool CanEnterState =&gt; Character.StateMachine.CanSetState(_States);
-</code></pre>
-<p><code>CanExitState</code> always returns <code>true</code> because once the <code>MultiState</code> has chosen a sub-state, that state's <code>CanExitState</code> will be used instead:</p>
-<pre><code class="language-cs">    public override bool CanExitState =&gt; true;
-</code></pre>
-<p>When the character actually enters this state, it again passes the <code>_States</code> to the <code>StateMachine</code> to attempt to enter each of them until one is successful. If <code>_AutoInternalTransitions</code> is enabled, it also stores the state that was entered and enables this <code>MultiState</code> component so that its <code>FixedUpdate</code> will get called.</p>
-<pre><code class="language-cs">    private CharacterState _CurrentState;
+    private ClipTransition _Animation;
 
-    public override void OnEnterState()
+    [SerializeField, MetersPerSecond]
+    [Tooltip("This state will only activate if the character is moving at least this fast downwards when they land")]
+    private float _MinimumVerticalSpeed = 7;
+
+    [SerializeField, Range(0, 1)]
+    [Tooltip("The multiple of the character's regular speed at which they can move while in this state")]
+    private float _MovementSpeedMultiplier = 1;
+
+    public override float MovementSpeedMultiplier =&gt; _MovementSpeedMultiplier;
+</code></pre>
+<p>The <code>_MovementSpeedMultiplier</code> field controls how fast the character can move during the <em>Landing</em> animation. The <em>Player</em> has it set to the default <code>1</code> so the animation is purely cosmetic and doesn't influence their actual movement.</p>
+<p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> ensures that the fields always have valid values and also logs a warning if this component isn't on the same <code>GameObject</code> as a <code>Collider2D</code> because it needs to receive the <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html"><code>OnCollisionEnter2D</code></a> <a href="/animancer/docs/introduction/cs/methods/messages">Message</a>:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    protected override void OnValidate()
     {
-        if (Character.StateMachine.TrySetState(_States))
-        {
-            if (_AutoInternalTransitions)
-            {
-                _CurrentState = Character.StateMachine.CurrentState;
-                enabled = true;
-            }
-        }
+        base.OnValidate();
+        PlatformerUtilities.NotNegative(ref _MinimumVerticalSpeed);
+        PlatformerUtilities.Clamp(ref _MovementSpeedMultiplier, 0, 1);
+
+        if (GetComponent&lt;Collider2D&gt;() == null)
+            Debug.LogWarning($"{nameof(LandState)} must be on the same {nameof(GameObject)} as a {nameof(Collider2D)}" +
+                $" so that it can receive {nameof(OnCollisionEnter2D)} messages.", this);
+    }
+#endif
 </code></pre>
-<p>If it fails to enter any of the states, it logs an error message listing all of them because a <code>MultiState</code> is not supposed to actually be the current state:</p>
-<pre><code class="language-cs">        else
-        {
-            var text = ObjectPool.AcquireStringBuilder()
-                .AppendLine($&quot;{nameof(MultiState)} failed to enter any of its {nameof(States)}:&quot;);
+<h1 id="initialization">Initialization</h1>
+<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to enter the character's default state (the <code>Character.Idle</code> state) and also registers its <code>OnGroundedChanged</code> method to be called when the <a href="../../../physics#character-body">Character Body</a> changes from <em>grounded</em> to <em>airborne</em> or vide versa:</p>
+<pre><code class="language-cs">    private void Awake()
+    {
+        _Animation.Events.OnEnd += Character.StateMachine.ForceSetDefaultState;
 
-            for (int i = 0; i &lt; _States.Length; i++)
-            {
-                text.Append(&quot;    [&quot;)
-                    .Append(i)
-                    .Append(&quot;] &quot;)
-                    .AppendLine(_States[i].ToString());
-            }
-
-            Debug.LogError(text.ReleaseToString(), this);
-        }
+        Character.Body.OnGroundedChanged += OnGroundedChanged;
     }
 </code></pre>
-<p>This means a state like <code>IdleState</code>, <code>MobileIdleState</code>, or <code>LocomotionState</code> should always be the last one in the <code>States</code> array because they don't have any restrictions on when they are allowed to be entered.</p>
-<p>Most states are <code>enabled</code> on entry and disabled again on exit so that their <code>FixedUpdate</code> and similar methods only get called while the character is in that state (this comes from the base <a href="/animancer/docs/manual/fsm/state-types">State Behaviour</a> which the base <code>CharacterState</code> inherits from). But a <code>MultiState</code> needs to enter a different state and still have its <code>FixedUpdate</code> method called while that other state is active so its <code>OnEnterState</code> method (see above) doesn't call <code>base.OnEnterState();</code> and it also <code>override</code>s <code>OnExitState</code> to not call <code>base.OnExitState();</code> either:</p>
-<pre><code class="language-cs">    public override void OnExitState() { }
-</code></pre>
-<p>If this component was enabled by <code>OnEnterState</code>, it uses <code>FixedUpdate</code> to first disable itself if the character is no longer in the sub-state it entered:</p>
-<pre><code class="language-cs">    protected virtual void FixedUpdate()
+<h1 id="state-entry">State Entry</h1>
+<p>Entering this state is a two step process:</p>
+<ol>
+<li>First, the <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnCollisionEnter2D.html"><code>OnCollisionEnter2D</code></a> message must be received with a sufficiently fast downward speed (so that tiny drops don't cause the <em>Landing</em> animation to play). When that happens, store the amount of time that has passed since the scene was loaded:</li>
+</ol>
+<pre><code class="language-cs">    private float _GroundContactTime = float.NaN;
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_CurrentState != Character.StateMachine.CurrentState)
-        {
-            enabled = false;
-            return;
-        }
+        if (collision.relativeVelocity.y &gt;= _MinimumVerticalSpeed)
+            _GroundContactTime = Time.timeSinceLevelLoad;
+    }
 </code></pre>
-<p>Otherwise, it simply checks through its states every frame to see if any of them can be entered:</p>
-<pre><code class="language-cs">        var newState = Character.StateMachine.CanSetState(_States);
-        if (_CurrentState != newState &amp;&amp; newState != null)
-        {
-            _CurrentState = newState;
-            Character.StateMachine.ForceSetState(newState);
-        }
+<ol start="2">
+<li>Then, if the <a href="../../../physics#character-body">Character Body</a> becomes grounded within one <code>FixedUpdate</code> of the last valid collision the character enters this state.</li>
+</ol>
+<pre><code class="language-cs">    private void OnGroundedChanged(bool isGrounded)
+    {
+        if (isGrounded &amp;&amp;
+            _GroundContactTime &gt;= Time.timeSinceLevelLoad - Time.fixedDeltaTime * 1.5f)
+            Character.StateMachine.TrySetState(this);
+    }
+</code></pre>
+<p>Entering this state simply plays the animation:</p>
+<pre><code class="language-cs">    public override void OnEnterState()
+    {
+        base.OnEnterState();
+        Character.Animancer.Play(_Animation);
     }
 }
 </code></pre>
-<p>Since this state is assigned as the <code>Character.Idle</code> for the <em>Player</em>, it means that whenever they return to their default state (such as when finishing an attack) it will immediately check whether they can <a href="wall-slide">Wall Slide</a> rather than always entering the <a href="locomotion">Locomotion State</a> first. It also avoids putting too much responsibility in a single component, which is what would happen if <code>WallSlideState</code> inherited from <code>LocomotionState</code>.</p>
 
 	</section>
                 
@@ -364,5 +382,5 @@ public class MultiState : CharacterState
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
