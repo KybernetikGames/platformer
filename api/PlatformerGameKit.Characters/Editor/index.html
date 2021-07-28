@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - API - Character.Character.Editor Class</title>
+        <title>Platformer Game Kit - API - CharacterBody2D.CharacterBody2D.Editor Class</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -63,7 +63,7 @@
         <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
-<form class="search-form" name="search" action="/animancer/search">
+<form class="search-form" name="search" action="/platformer/search">
 <span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
 <div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
@@ -172,8 +172,8 @@
 
 
 <section class="content-header">
-			<h3><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a>.</h3>
-	<h1>Character<wbr>.Editor <small>Class</small></h1>
+			<h3><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a>.</h3>
+	<h1>CharacterBody2D<wbr>.Editor <small>Class</small></h1>
 </section>
 <section class="content">
 	
@@ -207,7 +207,7 @@
 						<div class="mermaid">
 							graph BT
 	Type--&gt;Base0["Editor"]
-	Type["Character.Editor"]
+	Type["CharacterBody2D.Editor"]
 class Type type-node
 
 						</div>
@@ -217,26 +217,16 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[UnityEditor.CustomEditor(typeof(Character), true)]
-public class Character.Editor : Editor</code></pre>
+	<pre><code>[UnityEditor.CustomEditor(typeof(CharacterBody2D), true)]
+public class CharacterBody2D.Editor : Editor</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
     <code class="cs">https://kybernetik.com.au/inspector-gadgets/pro</code> would allow this to
     be implemented much easier by simply placing
-    <code class="cs">https://kybernetik.com.au/inspector-gadgets/docs/script-inspector/inspectable-attributes</code> on the fields and properties we want to display like so:
+    <code class="cs">https://kybernetik.com.au/inspector-gadgets/docs/script-inspector/inspectable-attributes</code> on the properties we want to display like so:
     <p></p><pre><code class="cs">[Inspectable]
-public Vector2 MovementDirection ...
-
-[Inspectable]
-public bool Run { get; set; }
-
-[Inspectable]
-public CharacterState CurrentState
-{
-    get =&gt; StateMachine.CurrentState;
-    set =&gt; StateMachine.TrySetState(value);
-}</code></pre>
+public bool IsGrounded ...</code></pre>
     </div>
 
 
@@ -277,7 +267,7 @@ public CharacterState CurrentState
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters/Editor/D92979BF">OnInspectorGUI<wbr>()<wbr></a></td>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/Editor/2967CC65">OnInspectorGUI<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div></div>

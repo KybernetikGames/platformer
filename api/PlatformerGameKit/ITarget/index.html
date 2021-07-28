@@ -63,7 +63,7 @@
         <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
-<form class="search-form" name="search" action="/animancer/search">
+<form class="search-form" name="search" action="/platformer/search">
 <span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
 <div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
@@ -212,8 +212,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/platformer/api/PlatformerGameKit/Destructible">Destructible</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit/Health">Health</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit/Destructible">Destructible</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -223,10 +223,10 @@
 							graph BT
 	Type["Hit.ITarget"]
 class Type type-node
-	Implementing0["Destructible"]-.-&gt;Type
-	click Implementing0 "/platformer/api/PlatformerGameKit/Destructible"
-	Implementing1["Health"]-.-&gt;Type
-	click Implementing1 "/platformer/api/PlatformerGameKit/Health"
+	Implementing0["Health"]-.-&gt;Type
+	click Implementing0 "/platformer/api/PlatformerGameKit/Health"
+	Implementing1["Destructible"]-.-&gt;Type
+	click Implementing1 "/platformer/api/PlatformerGameKit/Destructible"
 
 						</div>
 					</div>
