@@ -57,9 +57,9 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
         <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
@@ -95,7 +95,17 @@
                     <ul class="sidebar-menu">
                         
 
-                <li><a href="/platformer/docs/overview">Overview</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/package">Package</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/package/download">Download</a></li>
+                <li><a href="/platformer/docs/package/contact">Contact</a></li>
+                <li><a href="/platformer/docs/package/license">License</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/scenes">Scenes</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -118,7 +128,17 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
-                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/behaviour/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/general">General Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/specific">Specific Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/enemies">Enemies</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
@@ -127,6 +147,7 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -150,26 +171,46 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
-
-                    </ul>
-                </li>
-
-                    </ul>
-                </li>
-                <li><a href="/platformer/docs/combat">Combat</a></li>
-                <li><a href="/platformer/docs/license">License</a></li>
-                <li><a href="/platformer/docs/contact">Contact</a></li>
-                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
-                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
-                    <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/attack">Attack</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/basic">Basic Action</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></li>
 
                     </ul>
                 </li>
+                <li><a href="/platformer/docs/characters/states/flinch">Flinch</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/combat">Combat</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/combat/hits">Hits</a></li>
+                <li><a href="/platformer/docs/combat/melee">Melee Attacks</a></li>
+                <li><a href="/platformer/docs/combat/ranged">Ranged Attacks</a></li>
+                <li><a href="/platformer/docs/combat/teams">Teams</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/other">Other Topics</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/other/camera-man">Camera Man</a></li>
+                <li><a href="/platformer/docs/other/camera-shake">Camera Shake</a></li>
+                <li><a href="/platformer/docs/other/layers">Physics Layers</a></li>
+                <li><a href="/platformer/docs/other/moving">Moving Platforms</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/changes">Changes</a></li>
 
                     </ul>
                             

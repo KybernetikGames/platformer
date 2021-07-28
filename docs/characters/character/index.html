@@ -57,9 +57,9 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
         <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
@@ -84,6 +84,7 @@
 <p><a href="#serialized-fields">Serialized Fields</a></p>
 <p><a href="#movement">Movement</a></p>
 <p><a href="#state-machine">State Machine</a></p>
+<p><a href="#states">States</a></p>
 <p><a href="#inspector">Inspector</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -96,7 +97,17 @@
                     <ul class="sidebar-menu">
                         
 
-                <li><a href="/platformer/docs/overview">Overview</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/package">Package</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/package/download">Download</a></li>
+                <li><a href="/platformer/docs/package/contact">Contact</a></li>
+                <li><a href="/platformer/docs/package/license">License</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/scenes">Scenes</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -119,7 +130,17 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
-                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/behaviour/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/general">General Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/specific">Specific Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/enemies">Enemies</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
@@ -128,6 +149,7 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -151,26 +173,46 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
-
-                    </ul>
-                </li>
-
-                    </ul>
-                </li>
-                <li><a href="/platformer/docs/combat">Combat</a></li>
-                <li><a href="/platformer/docs/license">License</a></li>
-                <li><a href="/platformer/docs/contact">Contact</a></li>
-                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
-                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
-                    <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/attack">Attack</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/basic">Basic Action</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></li>
 
                     </ul>
                 </li>
+                <li><a href="/platformer/docs/characters/states/flinch">Flinch</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/combat">Combat</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/combat/hits">Hits</a></li>
+                <li><a href="/platformer/docs/combat/melee">Melee Attacks</a></li>
+                <li><a href="/platformer/docs/combat/ranged">Ranged Attacks</a></li>
+                <li><a href="/platformer/docs/combat/teams">Teams</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/other">Other Topics</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/other/camera-man">Camera Man</a></li>
+                <li><a href="/platformer/docs/other/camera-shake">Camera Shake</a></li>
+                <li><a href="/platformer/docs/other/layers">Physics Layers</a></li>
+                <li><a href="/platformer/docs/other/moving">Moving Platforms</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/changes">Changes</a></li>
 
                     </ul>
                             
@@ -253,6 +295,7 @@ public class Character : MonoBehaviour
 
     public bool Run { get; set; }
 </code></pre>
+<p>These are not <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> because setting their values in a Scene or Prefab wouldn't be very useful and would waste some performance. But it is still useful to see them so the custom <a href="#inspector">Inspector</a> displays them only in Play Mode.</p>
 <h1 id="state-machine">State Machine</h1>
 <p>The <code>Character</code> also holds the <a href="/animancer/docs/manual/fsm">Finite State Machine</a> to manage their actions, but rather than a base <code>StateMachine</code> which would only keep track of their <code>CurrentState</code>, it uses a <code>StateMachine&lt;&gt;.WithDefault</code> to use their <code>Idle</code> state as the <a href="/animancer/docs/manual/fsm/changing-states#default-states">Default State</a> they return to after completing other actions:</p>
 <pre><code class="language-cs">    public readonly StateMachine&lt;CharacterState&gt;.WithDefault
@@ -269,6 +312,14 @@ public class Character : MonoBehaviour
 #endif
     }
 </code></pre>
+<h1 id="states">States</h1>
+<p>The only <a href="../states">Character State</a> that a character has by default is their <code>Idle</code> state. All other states are either self-contained (like the <a href="../states/introduction">Introduction</a> state which activates itself) or are referenced by whichever component actually tries to use them (a <a href="../brains">Character Brain</a> that knows how to attack will have a field to assign an <em>Attack</em> state).</p>
+<p>Other <a href="/animancer/docs/manual/fsm">Finite State Machine</a> systems often require all of the <a href="../states">States</a> to be defined in one place and then referred to using an identifier such as an <code>enum</code> or a <code>string</code> name, but that approach leads to unnecessary complexity and development overhead. This approach instead distributes the states where they are actually used. For example, for a character to be able to jump they require two things:</p>
+<ol>
+<li>A <em>Jump</em> state.</li>
+<li>A <em>Brain</em> that will actually attempt to enter that state.</li>
+</ol>
+<p>The <code>PlayerInputBrain</code> has a field to reference a <code>Jump</code> state and will attempt to enter it when the player presses the <em>Jump</em> button (<code>Spacebar</code> by default). But if a brain never attempts to jump then adding a <em>Jump</em> state to that character would achieve nothing because they would never try to enter that state.</p>
 <h1 id="inspector">Inspector</h1>
 <img src="custom-inspector.png" class="img-responsive img-right">
 <p>Since the <a href="#movement">Movement</a> properties and <a href="#state-machine">State Machine</a> aren't <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a>, they wouldn't normally be displayed in the Inspector so it has a custom <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a> class:</p>

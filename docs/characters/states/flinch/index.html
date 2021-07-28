@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Overview</title>
+        <title>Platformer Game Kit - Flinch</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -57,9 +57,9 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
         <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
@@ -80,8 +80,11 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#pro-only-features">Pro-Only Features</a></p>
-<p><a href="#characters">Characters</a></p>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#movement">Movement</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#initialization">Initialization</a></p>
+<p><a href="#state-life-cycle">State Life Cycle</a></p>
+<p><a href="#player-death">Player Death</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -93,7 +96,17 @@
                     <ul class="sidebar-menu">
                         
 
-                <li class="selected"><a href="/platformer/docs/overview">Overview</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/package">Package</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/package/download">Download</a></li>
+                <li><a href="/platformer/docs/package/contact">Contact</a></li>
+                <li><a href="/platformer/docs/package/license">License</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/scenes">Scenes</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -104,7 +117,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
@@ -116,15 +129,26 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
-                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/behaviour/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/general">General Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/specific">Specific Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/enemies">Enemies</a></li>
 
                     </ul>
                 </li>
-                <li class="treeview">
+
+                    </ul>
+                </li>
+                <li class="treeview active">
                     <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -148,26 +172,46 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
-
-                    </ul>
-                </li>
-
-                    </ul>
-                </li>
-                <li><a href="/platformer/docs/combat">Combat</a></li>
-                <li><a href="/platformer/docs/license">License</a></li>
-                <li><a href="/platformer/docs/contact">Contact</a></li>
-                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
-                <li><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
-                    <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/attack">Attack</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/basic">Basic Action</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></li>
 
                     </ul>
                 </li>
+                <li class="selected"><a href="/platformer/docs/characters/states/flinch">Flinch</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/combat">Combat</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/combat/hits">Hits</a></li>
+                <li><a href="/platformer/docs/combat/melee">Melee Attacks</a></li>
+                <li><a href="/platformer/docs/combat/ranged">Ranged Attacks</a></li>
+                <li><a href="/platformer/docs/combat/teams">Teams</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/other">Other Topics</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/other/camera-man">Camera Man</a></li>
+                <li><a href="/platformer/docs/other/camera-shake">Camera Shake</a></li>
+                <li><a href="/platformer/docs/other/layers">Physics Layers</a></li>
+                <li><a href="/platformer/docs/other/moving">Moving Platforms</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/changes">Changes</a></li>
 
                     </ul>
                             
@@ -181,73 +225,109 @@
 
 
 		<section class="content-header">
-			<h1>Overview</h1>
+			<h1>Flinch</h1>
 		</section>
 	<section class="content">
-		<h1 id="pro-only-features">Pro-Only Features</h1>
-<p>This system can be used freely with <a href="/animancer/lite">Animancer Lite</a>, however it uses some <strong><a href="../../introduction/features">Pro-Only Features</a></strong> which you can try out in the Unity Editor but using them in Runtime Builds requires <a href="/animancer/pro">Animancer Pro</a>:</p>
+		<img src="flinch.png" class="img-responsive img-right">
+<p>This state activates itself in response to the <code>Character</code> getting hit by an attack (specifically, when the <code>Health.OnCurrentHealthChanged</code> event occurs). None of the other scripts in the system actually reference this one, it's fully automated.</p>
+<p>It has a <code>Flinch Animation</code> for normal hits and a <code>Die Animation</code> for when the <code>Health.CurrentHealth</code> reaches 0.</p>
 <table class="table">
-<thead>
-<tr>
-<th>Feature</th>
-<th>Used By</th>
-<th>In Animancer Lite without that feature</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../manual/tools">Animancer Tools</a></td>
-<td>These tools were used to set up the <code>Sprite</code>s and create the animations included in this system as explained on the <a href="art">Art</a> page.</td>
-<td>Unlike other Pro-Only features, these tools aren't usable in Animancer Lite and without them you would need to use the tools built into Unity (which are also explained on the <a href="art">Art</a> page). This only affects the asset set up process and makes no difference in regards to Runtime Builds.</td>
-</tr>
-<tr>
-<td><a href="../../manual/exents/animancer">Animancer Events</a></td>
-<td>The combat system uses events to activate the hit triggers corresponding to each frame of the attack animations.</td>
-<td>In Runtime Builds, the attack animations will still play but they will not actually deal damage to enemies or break destructible blocks.</td>
-</tr>
-<tr>
-<td><a href="../../manual/timeline">Timeline</a></td>
-<td>When the player spawns, they play an <em>Introduction</em> animation made using Unity's Timeline package.</td>
-<td>In Runtime Builds, the player simply goes straight to their <em>Idle</em> state on startup.</td>
-</tr>
-<tr>
-<td>Animation Speed</td>
-<td>The player character <em>Runs</em> by playing the <em>Walk</em> animation at a faster speed.</td>
-<td>In Runtime Builds, the animation speed doesn't change. To avoid this, we would need to either have a separate <em>Run</em> animation or make another copy of the <em>Walk</em> animation with the modified speed.</td>
-</tr>
-</tbody>
+  <thead>
+    <tr><th>Enemy</th>
+    <th>Player</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><img src="enemy-flinch.gif"></td>
+      <td><img src="player-flinch.gif"></td>
+    </tr>
+    <tr>
+      <td>All characters have a <code>Flinch Animation</code> to play when they get hit.</td>
+      <td>The <em>Player</em> also has some <a href="../../../other/camera#shake">Camera Shake</a> when they get hit (separate from this state).</td>
+    </tr>
+    <tr>
+      <td><p>None of the enemies actually have separate <code>Sprite</code>s for a <code>Die Animation</code> so they simply use a copy of their <code>Flinch Animation</code> which also animates their <code>SpriteRenderer.color</code> to fade them out.</p><img src="enemy-die.gif" class="img-responsive"></td>
+      <td><p>The <em>Player</em> has a proper die animation.</p><a href="#player-death">Player Death</a> also reloads the level after a few seconds as explained below.</td>
+    </tr>
+  </tbody>
 </table>
-<h1 id="characters">Characters</h1>
-<table class="table">
-<thead>
-<tr>
-<th>Character</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>Gino</em></td>
-<td>The player character.</td>
-</tr>
-<tr>
-<td><em>Gobbler</em></td>
-<td>A monster that walks forward until it reaches a wall then turns around. If an enemy is in front of it, it attacks them. This enemy is on a different <a href=".">Team</a> to the others so it will attack them as well as the player.</td>
-</tr>
-<tr>
-<td><em>Gobbat</em></td>
-<td>A monster that flies horizontally in a sine wave pattern and turns around if it hits a wall.</td>
-</tr>
-<tr>
-<td><em>Maw Flower</em></td>
-<td>A plant monster that can't move and periodically attacks to either side in a fixed pattern.</td>
-</tr>
-<tr>
-<td><em>Naga</em><br><em>Scarecrow</em></td>
-<td>Monsters that move and attack like <em>Gobblers</em>, but will also turn around if they would walk off a ledge.</td>
-</tr>
-</tbody>
-</table>
+<h1 id="movement">Movement</h1>
+<p>Flinching will interupt other actions and for most characters it prevents them from moving during the <code>Flinch Animation</code>, but the <em>Gobbat</em> enemy has its <code>_FlinchMovementSpeedMultiplier</code> field set to <code>0.5</code> so it can still fly at half speed rather than stopping completely.</p>
+<pre><code class="language-cs">public sealed class FlinchState : CharacterState
+{
+    [SerializeField, Range(0, 1)]
+    [Tooltip("The character's speed is multiplied by this value while flinching")]
+    private float _FlinchMovementSpeedMultiplier;
+</code></pre>
+<p>That field is only used while the character is alive, otherwise they can't move:</p>
+<pre><code class="language-cs">    public override float MovementSpeedMultiplier =&gt; Character.Health.CurrentHealth &gt; 0 ? _FlinchMovementSpeedMultiplier : 0;
+</code></pre>
+<p>Regardless of whether movement is allowed in this state, turning isn't:</p>
+<pre><code class="language-cs">    public override bool CanTurn =&gt; false;
+</code></pre>
+<h1 id="fields">Fields</h1>
+<p>The other fields are self-explanatory:</p>
+<pre><code class="language-cs">    [SerializeField]
+    [Tooltip("The animation to play when the character gets hit by an attack")]
+    private ClipTransition _FlinchAnimation;
+    public ClipTransition FlinchAnimation =&gt; _FlinchAnimation;
+
+    [SerializeField]
+    [Tooltip("The animation to play when the character's health reaches 0")]
+    private ClipTransition _DieAnimation;
+    public ClipTransition DieAnimation =&gt; _DieAnimation;
+</code></pre>
+<h1 id="initialization">Initialization</h1>
+<p>On startup, this state configures its end events so that after the <code>Flinch Animation</code> it returns to its default <code>Idle</code> state and after the <code>Die Animation</code> the <code>GameObject</code> is destroyed:</p>
+<pre><code class="language-cs">    private void Awake()
+    {
+        _FlinchAnimation.Events.OnEnd += Character.StateMachine.ForceSetDefaultState;
+        _DieAnimation.Events.OnEnd += () =&gt; Destroy(Character.gameObject);
+</code></pre>
+<p>All characters in the Platformer Game Kit are placed directly in scenes, but in a game where characters are spawned by scripts it would be neneficial to use an object pooling system <a href="/weaver/docs/misc/object-pooling">like the one included in Weaver</a> to deactivate characters when they die so they can be reused instead of destroying them (which costs performance for garbage collection) and recreating them (which costs performance too). Unfortunately, Animancer's <code>ObjectPool</code> system is not designed for scene objects so it wouldn't be helpful here.</p>
+<p>It also registers callbacks to the <code>Health.OnHitReceived</code> and <code>Health.OnCurrentHealthChanged</code> events to set itself as the current state when the character gets hit or dies:</p>
+<pre><code class="language-cs">        Character.Health.OnHitReceived += (hit) =&gt;
+        {
+            if (hit.damage &gt; 0)
+                Character.StateMachine.ForceSetState(this);
+        };
+
+        Character.Health.OnCurrentHealthChanged += (oldValue, newValue) =&gt;
+        {
+            if (newValue &lt;= 0)
+                Character.StateMachine.ForceSetState(this);
+        };
+    }
+</code></pre>
+<p>Note that <code>ForceSetState</code> is being used rather than <code>TrySetState</code> to ignore the previous state's <code>CanExitState</code> property. The <a href="/animancer/docs/manual/fsm/changing-states">Changing States</a> page explains those methods in more detail.</p>
+<h1 id="state-life-cycle">State Life Cycle</h1>
+<p>Entering this state simply plays the appropriate animation based on the <code>Health.CurrentHealth</code>:</p>
+<pre><code class="language-cs">    public override void OnEnterState()
+    {
+        base.OnEnterState();
+        var animation = Character.Health.CurrentHealth &gt; 0 ? _FlinchAnimation : _DieAnimation;
+        Character.Animancer.Play(animation);
+    }
+</code></pre>
+<p>And while in this state, nothing is allowed to interrupt it (unless they use <code>ForceSetState</code> like this state):</p>
+<pre><code class="language-cs">    public override bool CanExitState =&gt; false;
+</code></pre>
+<h1 id="player-death">Player Death</h1>
+<p>The Platformer Game Kit doesn't currently have a death / game over screen or main menu, so instead it just has a method to reload the current scene:</p>
+<pre><code class="language-cs">    public void ReloadCurrentScene()
+    {
+        var scene = SceneManager.GetActiveScene();
+#if UNITY_EDITOR
+        UnityEditor.SceneManagement.EditorSceneManager.LoadSceneInPlayMode(scene.path, default);
+#else
+        SceneManager.LoadScene(scene.buildIndex);
+#endif
+    }
+}
+</code></pre>
+<p>That method isn't called anywhere in the code. Instead, it is assigned to the <a href="/animancer/docs/manual/events/end">End Event</a> of the <em>Player</em>'s <code>Die Animation</code> with the <code>End Time</code> set to <code>3s</code>:</p>
+<p><img src="reload-event.png" class="img-responsive"></p>
+<p>So when the player dies, they play the <em>Gino-Die</em> animation which leaves them laying on the ground and stuck in the <code>FlinchState</code> but the animation time keeps increasing after the last frame and once 3 seconds pass it calls that method to restart the current level.</p>
 
 	</section>
                 

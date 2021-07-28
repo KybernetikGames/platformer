@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
+        <title>Platformer Game Kit - Advanced Attack</title>
+        <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
+        <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/platformer/assets/js/bootstrap.min.js"></script>        
+        <script src="/platformer/assets/js/app.min.js"></script>         
+        <script src="/platformer/assets/js/highlight.pack.js"></script>   
+        <script src="/platformer/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/platformer/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/platformer/assets/js/mermaid.min.js"></script>
+        <script src="/platformer/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/platformer/assets/js/html5shiv.min.js"></script>
+        <script src="/platformer/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/platformer/" class="logo">
+                            <span>Platformer Game Kit</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
+
+<li style="width:100%">
+<form class="search-form" name="search" action="/animancer/search">
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</li> 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#fields">Fields</a></p>
+<p><a href="#initialization">Initialization</a></p>
+<p><a href="#state-entry">State Entry</a></p>
+<p><a href="#combos">Combos</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/platformer/docs/package">Package</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/package/download">Download</a></li>
+                <li><a href="/platformer/docs/package/contact">Contact</a></li>
+                <li><a href="/platformer/docs/package/license">License</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/scenes">Scenes</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/art/import">Import</a></li>
+                <li><a href="/platformer/docs/art/organization">Organization</a></li>
+                <li><a href="/platformer/docs/art/animations">Animations</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/characters">Characters</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/character">Character Component</a></li>
+                <li><a href="/platformer/docs/characters/animancer">Animancer Component</a></li>
+                <li><a href="/platformer/docs/characters/physics">Physics</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/behaviour/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/general">General Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/specific">Specific Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/enemies">Enemies</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/characters/states">States</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/idle/idle">Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/mobile-idle">Mobile Idle</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/locomotion">Locomotion</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/wall-slide">Wall Slide</a></li>
+                <li><a href="/platformer/docs/characters/states/idle/land">Land</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/states/jump">Jump</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/jump/jump">Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/hold">Hold Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/wall">Wall Jump</a></li>
+                <li><a href="/platformer/docs/characters/states/jump/air">Air Jump</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/characters/states/attack">Attack</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/states/attack/basic">Basic Action</a></li>
+                <li class="selected"><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/characters/states/flinch">Flinch</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/combat">Combat</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/combat/hits">Hits</a></li>
+                <li><a href="/platformer/docs/combat/melee">Melee Attacks</a></li>
+                <li><a href="/platformer/docs/combat/ranged">Ranged Attacks</a></li>
+                <li><a href="/platformer/docs/combat/teams">Teams</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/other">Other Topics</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/other/camera-man">Camera Man</a></li>
+                <li><a href="/platformer/docs/other/camera-shake">Camera Shake</a></li>
+                <li><a href="/platformer/docs/other/layers">Physics Layers</a></li>
+                <li><a href="/platformer/docs/other/moving">Moving Platforms</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/changes">Changes</a></li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Advanced Attack</h1>
+		</section>
+	<section class="content">
+		<img src="advanced.png" class="img-responsive img-right">
+<p><img src="advanced.gif" class="img-responsive"></p>
+<p>This is the <em>Player</em>'s attack state which has combos and separate animations for ground, air, and while aiming upwards. It could be used by other characters, but none of the enemies have more than one attack animation and their <a href="../../../brains">Brains</a> would also need to be changed to make use of combos and jumping.</p>
+<h1 id="fields">Fields</h1>
+<p>The fields are all arrays of <code>AttackTransition</code>s, though the <code>Ground Animations</code> are the only group with multiple animations to perform a combo:</p>
+<pre><code class="language-cs">public sealed class AdvancedAttackState : AttackState
+{
+    const string TooltipPrefix = "The animation combo used when the character is";
+
+    [SerializeField]
+    [Tooltip(TooltipPrefix + "grounded")]
+    private AttackTransition[] _GroundAnimations;
+
+    [SerializeField]
+    [Tooltip(TooltipPrefix + "grounded and trying to move upwards")]
+    private AttackTransition[] _GroundUpAnimations;
+
+    [SerializeField]
+    [Tooltip(TooltipPrefix + "airborne")]
+    private AttackTransition[] _AirAnimations;
+
+    [SerializeField]
+    [Tooltip(TooltipPrefix + "airborne and trying to move upwards")]
+    private AttackTransition[] _AirUpAnimations;
+</code></pre>
+<h1 id="initialization">Initialization</h1>
+<p>All of the animations use the same <code>OnAnimationEnd</code> method to handle <a href="#combos">Combos</a>:</p>
+<pre><code class="language-cs">    private void Awake()
+    {
+        Action onEnd = OnAnimationEnd;
+
+        for (int i = 0; i &lt; _GroundAnimations.Length; i++)
+            _GroundAnimations[i].Events.OnEnd += onEnd;
+
+        for (int i = 0; i &lt; _GroundUpAnimations.Length; i++)
+            _GroundUpAnimations[i].Events.OnEnd += onEnd;
+
+        for (int i = 0; i &lt; _AirAnimations.Length; i++)
+            _AirAnimations[i].Events.OnEnd += onEnd;
+
+        for (int i = 0; i &lt; _AirUpAnimations.Length; i++)
+            _AirUpAnimations[i].Events.OnEnd += onEnd;
+</code></pre>
+<p>It also registers a callback to the <code>CharacterBody2D.OnGroundedChanged</code> event so that the attack will be cancelled if the character lands during an air attack or becomes airbourne during a ground attack:</p>
+<pre><code class="language-cs">        Character.Body.OnGroundedChanged += OnGroundedChanged;
+    }
+    
+    private void OnGroundedChanged(bool isGrounded)
+    {
+        if (Character.StateMachine.CurrentState == this)
+            Character.StateMachine.ForceSetDefaultState();
+    }
+</code></pre>
+<h1 id="state-entry">State Entry</h1>
+<p>Entering this state resets the current attack index to start with the first animation in whichever group ends up getting played and also clears the <a href="#combos">Combo</a> flag before playing an animation:</p>
+<pre><code class="language-cs">    private int _CurrentIndex;
+    private bool _Combo;
+
+    public override void OnEnterState()
+    {
+        base.OnEnterState();
+        _CurrentIndex = 0;
+        _Combo = false;
+        PlayAnimation();
+    }
+</code></pre>
+<p>To play an animation, it first clears any active <a href="../../../animancer#hit-boxes">Hit Boxes</a> then determines which group of animations it should be using and plays the one at the current index:</p>
+<pre><code class="language-cs">    private void PlayAnimation()
+    {
+        Character.Animancer.EndHitSequence();
+        var animation = CurrentAnimations[_CurrentIndex];
+        Character.Animancer.Play(animation);
+    }
+</code></pre>
+<p>Determining which animation group to use is simply based on the whether or not the character is currently on the ground and aiming upwards:</p>
+<pre><code class="language-cs">    private AttackTransition[] CurrentAnimations
+    {
+        get
+        {
+            if (Character.Body.IsGrounded)
+            {
+                if (Character.MovementDirectionY &gt; 0.5f &amp;&amp; _GroundUpAnimations.Length &gt; 0)
+                    return _GroundUpAnimations;
+                else
+                    return _GroundAnimations;
+            }
+            else
+            {
+                if (Character.MovementDirectionY &gt; 0.5f &amp;&amp; _AirUpAnimations.Length &gt; 0)
+                    return _AirUpAnimations;
+                else
+                    return _AirAnimations;
+            }
+        }
+    }
+</code></pre>
+<h1 id="combos">Combos</h1>
+<p>While in this state, if the <a href="../../../brains">Character Brain</a> attempts to enter it again, it sets the <code>_Combo</code> flag but still returns <code>false</code> to finish the current attack:</p>
+<pre><code class="language-cs">    public override bool CanExitState
+    {
+        get
+        {
+            if (Character.StateMachine.NextState == this)
+                _Combo = true;
+
+            return false;
+        }
+    }
+</code></pre>
+<p>If the <code>_Combo</code> flag was set when the animation ends, the current attack index is incremented and if there is still another animation remaining in the current group it is played:</p>
+<pre><code class="language-cs">    private void OnAnimationEnd()
+    {
+        if (_Combo)
+        {
+            _Combo = false;
+            _CurrentIndex++;
+
+            if (_CurrentIndex &lt; CurrentAnimations.Length)
+            {
+                PlayAnimation();
+                return;
+            }
+        }
+</code></pre>
+<p>Otherwise the character returns to their <a href="../../idle">Idle</a> state normally:</p>
+<pre><code class="language-cs">        Character.StateMachine.ForceSetDefaultState();
+    }
+}
+</code></pre>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <strong><div style="text-align:left; display:flex">
+
+<div>
+<p>Documentation</p>
+<p><a href="/platformer/docs/examples">Examples</a></p>
+<p><a href="/platformer/docs/manual">User Manual</a></p>
+<p><a href="/platformer/docs/changes">Change Log</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Download</p>
+<p><a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a></p>
+<p><a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a></p>
+<p><a href="/animancer">Animancer</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Contact</p>
+<p><a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a></p>
+<p><a href="/platformer/forum">Unity Forum</a></p>
+<p><a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a></p>
+</div>
+
+<div style="width:10%"></div>
+
+<div>
+<p>Other Assets</p>
+<p><a href="/inspector-gadgets">Inspector Gadgets</a></p>
+<p><a href="/weaver">Weaver</a></p>
+<p><a href="/ultevents">UltEvents</a></p>
+</div>
+
+</div></strong>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

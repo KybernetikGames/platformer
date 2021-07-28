@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Using the System</title>
+        <title>Platformer Game Kit - Moving Platforms</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -82,7 +80,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#gizmos">Gizmos</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -92,7 +92,17 @@
                     <ul class="sidebar-menu">
                         
 
-                <li><a href="/platformer/docs/overview">Overview</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/package">Package</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/package/download">Download</a></li>
+                <li><a href="/platformer/docs/package/contact">Contact</a></li>
+                <li><a href="/platformer/docs/package/license">License</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/scenes">Scenes</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/art">Art</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -115,7 +125,17 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
-                <li><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/behaviour/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/general">General Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/specific">Specific Nodes</a></li>
+                <li><a href="/platformer/docs/characters/brains/behaviour/enemies">Enemies</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
@@ -124,6 +144,7 @@
                     <ul class="treeview-menu">
                         
                 <li><a href="/platformer/docs/characters/states/introduction">Introduction</a></li>
+                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/states/idle">Idle</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -147,26 +168,46 @@
 
                     </ul>
                 </li>
-                <li><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></li>
-
-                    </ul>
-                </li>
-
-                    </ul>
-                </li>
-                <li><a href="/platformer/docs/combat">Combat</a></li>
-                <li><a href="/platformer/docs/license">License</a></li>
-                <li><a href="/platformer/docs/contact">Contact</a></li>
-                <li><a href="/platformer/docs/misc">Miscellaneous Topics</a></li>
-                <li class="selected"><a href="/platformer/docs/using">Using the System</a></li>
                 <li class="treeview">
-                    <a href="/platformer/docs/changes">Changes</a> <a href="#" class="expand"></a>
+                    <a href="/platformer/docs/characters/states/attack">Attack</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/changes/platformer-1-0">Platformer Game Kit v1.0</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/basic">Basic Action</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></li>
+                <li><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></li>
 
                     </ul>
                 </li>
+                <li><a href="/platformer/docs/characters/states/flinch">Flinch</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/platformer/docs/combat">Combat</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/combat/hits">Hits</a></li>
+                <li><a href="/platformer/docs/combat/melee">Melee Attacks</a></li>
+                <li><a href="/platformer/docs/combat/ranged">Ranged Attacks</a></li>
+                <li><a href="/platformer/docs/combat/teams">Teams</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/platformer/docs/other">Other Topics</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/other/camera-man">Camera Man</a></li>
+                <li><a href="/platformer/docs/other/camera-shake">Camera Shake</a></li>
+                <li><a href="/platformer/docs/other/layers">Physics Layers</a></li>
+                <li class="selected"><a href="/platformer/docs/other/moving">Moving Platforms</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/platformer/docs/changes">Changes</a></li>
 
                     </ul>
                             
@@ -180,14 +221,131 @@
 
 
 		<section class="content-header">
-			<h1>Using the System</h1>
+			<h1>Moving Platforms</h1>
 		</section>
 	<section class="content">
-		<p>To Do:</p>
-<ul>
-<li>Putting together a character prefab</li>
-<li>Writing new brains or actions</li>
-</ul>
+		<p><img src="platform.gif" class="img-responsive"></p>
+<p>The <code>MovingObject2D</code> component is a very simple system for moving platforms (or any object) back and forth between two points. Its main purpose is just to demonstrate the way the <a href="../../characters/physics">Character Physics</a> interacts with moving platforms, but in a real game you would likely want to find or make a more powerful system with features like following multiple points in a path, curved paths, and variable speeds.</p>
+<p><img src="inspector.png" class="img-responsive"></p>
+<p>The script is set to update very early so that it moves before other objects do anything based on its position or velocity:</p>
+<pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
+public sealed class MovingObject2D : MonoBehaviour
+{
+    public const int DefaultExecutionOrder = -10000;
+</code></pre>
+<p>The fields have tooltips explaining what they do, <a href="/animancer/docs/manual/other/units">Units Attributes</a> where appropriate, and an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method to automatically find the <code>_Rigidbody</code> if it's missing and prevent the <code>_Speed</code> from being set to a negative value:</p>
+<pre><code>    [SerializeField]
+    [Tooltip("The object to move")]
+    private Rigidbody2D _Rigidbody;
+
+    [SerializeField]
+    [Tooltip("The destination to move to (relative to the starting position)")]
+    private Vector2 _Movement;
+
+    [SerializeField, MetersPerSecond]
+    [Tooltip("The speed at which the object moves")]
+    private float _Speed = 3;
+
+    [SerializeField]
+    [Tooltip("Should it keep moving back and forth between the start and end?")]
+    private bool _Loop = true;
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        gameObject.GetComponentInParentOrChildren(ref _Rigidbody);
+        PlatformerUtilities.NotNegative(ref _Speed);
+    }
+#endif
+</code></pre>
+<p>On startup, it stores its current position as the start point:</p>
+<pre><code>    private Vector2 _StartingPosition;
+
+    private void Awake()
+    {
+        _StartingPosition = _Rigidbody.position;
+    }
+</code></pre>
+<p>In <code>FixedUpdate</code> it calculates its <code>destination</code> based on the <code>_StartingPosition</code> and adds the <code>_Movement</code> if it is currently <code>_Return</code>ing:</p>
+<pre><code>    private bool _Return;
+
+    private void FixedUpdate()
+    {
+        var movement = _Speed * Time.deltaTime;
+        var startingPosition = _Rigidbody.position;
+        var position = startingPosition;
+
+        Move:
+
+        var destination = _StartingPosition;
+        if (!_Return)
+            destination += _Movement;
+</code></pre>
+<p>Then it calculates how far it has to go to reach that <code>destination</code>:</p>
+<pre><code class="language-cs">        var offset = destination - position;
+        var distance = offset.magnitude;
+</code></pre>
+<p>If the remaining <code>distance</code> is still larger than the <code>movement</code> this frame, add it to the current position:</p>
+<pre><code class="language-cs">        if (distance &gt; movement)// Still going.
+        {
+            position += offset * movement / distance;
+            
+            _Rigidbody.velocity = (position - startingPosition) / Time.deltaTime;
+            _Rigidbody.MovePosition(position);
+        }
+</code></pre>
+<p>Otherwise, it will reach the <code>destination</code> this frame so if <code>_Loop</code> is enabled, subtract the remaining <code>distance</code> from the amount left to move this frame then go back up to the <code>Move:</code> label near the start of the method to continue the rest of this frame's movement back the other way:</p>
+<pre><code class="language-cs">        else if (_Loop)
+        {
+            position = destination;
+            movement -= distance;
+            _Return = !_Return;
+            goto Move;
+        }
+</code></pre>
+<p>Otherwise just snap to the <code>destination</code> and stop moving:</p>
+<pre><code class="language-cs">        else
+        {
+            _Rigidbody.velocity = default;
+            _Rigidbody.MovePosition(destination);
+            enabled = false;
+            return;
+        }
+</code></pre>
+<h1 id="gizmos">Gizmos</h1>
+<p>The script also has an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html"><code>OnDrawGizmos</code></a> method which draws some lines in the Scene view to help visualise where the <code>_Movement</code> will actually end up.</p>
+<p><img src="gizmos.gif" class="img-responsive"></p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        var collider = GetComponent&lt;Collider2D&gt;();
+        if (collider == null)
+        {
+            var start = UnityEditor.EditorApplication.isPlaying ? (Vector3)_StartingPosition : transform.position;
+
+            Gizmos.DrawLine(start, start + (Vector3)_Movement);
+            return;
+        }
+
+        var bounds = collider.bounds;
+        var center = UnityEditor.EditorApplication.isPlaying ? (Vector3)_StartingPosition : bounds.center;
+        var extents = bounds.extents;
+
+        var corner = extents;
+        Gizmos.DrawLine(center + corner, center + corner + (Vector3)_Movement);
+
+        corner.y = -corner.y;
+        Gizmos.DrawLine(center + corner, center + corner + (Vector3)_Movement);
+
+        corner.x = -corner.x;
+        Gizmos.DrawLine(center + corner, center + corner + (Vector3)_Movement);
+
+        corner.y = -corner.y;
+        Gizmos.DrawLine(center + corner, center + corner + (Vector3)_Movement);
+    }
+#endif
+}
+</code></pre>
 
 	</section>
                 
@@ -310,5 +468,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
