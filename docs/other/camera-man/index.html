@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <title>Platformer Game Kit - Camera Man</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -224,53 +222,53 @@
 			<h1>Camera Man</h1>
 		</section>
 	<section class="content">
-		<p>The <code>CameraMan</code> script is responsible for moving the <code>Camera</code> to follow the <em>Player</em>.</p>
+		<p>The <code><a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a></code> script is responsible for moving the <code>Camera</code> to follow the <em>Player</em>.</p>
 <p><img src="inspector.png" class="img-responsive"></p>
 <p>It has references to the <code>Camera</code> as well as the <em>Player</em>'s <code>Transform</code> and <code>Rigidbody2D</code>:</p>
-<pre><code class="language-cs">public sealed class CameraMan : MonoBehaviour
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a> : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip(&quot;The camera this script is controlling&quot;)]
+    [Tooltip("The camera this script is controlling")]
     private Camera _Camera;
     public ref Camera Camera =&gt; ref _Camera;
 
     [SerializeField]
-    [Tooltip(&quot;The object this script is tracking&quot;)]
+    [Tooltip("The object this script is tracking")]
     private Transform _Target;
     public ref Transform Target =&gt; ref _Target;
 
     [SerializeField]
-    [Tooltip(&quot;[Optional] The Rigidbody2D of the Target&quot;)]
+    [Tooltip("[Optional] The Rigidbody2D of the Target")]
     private Rigidbody2D _TargetRigidbody;
     public ref Rigidbody2D TargetRigidbody =&gt; ref _TargetRigidbody;
 </code></pre>
 <p>There are also various other fields to determine the way it moves with <a href="/animancer/docs/manual/other/units">Units Attributes</a> where appropriate:</p>
 <pre><code class="language-cs">    [SerializeField]
-    [Tooltip(&quot;The position offset from the target to the camera&quot;)]
+    [Tooltip("The position offset from the target to the camera")]
     private Vector3 _Offset;
     public ref Vector3 Offset =&gt; ref _Offset;
 
     [SerializeField, Multiplier]
-    [Tooltip(&quot;Determines how much the distance from the camera to where it is supposed to be affects its velocity&quot;)]
+    [Tooltip("Determines how much the distance from the camera to where it is supposed to be affects its velocity")]
     private float _OffsetFactor = 1;
     public ref float OffsetFactor =&gt; ref _OffsetFactor;
 
     [SerializeField, Multiplier]
-    [Tooltip(&quot;Determines how much the velocity of the Target Rigidbody affects the velocity of the camera&quot;)]
+    [Tooltip("Determines how much the velocity of the Target Rigidbody affects the velocity of the camera")]
     private float _VelocityFactor = 1;
     public ref float VelocityFactor =&gt; ref _VelocityFactor;
 
     [SerializeField, MetersPerSecondPerSecond]
-    [Tooltip(&quot;The flat rate at which the camera accelerates&quot;)]
+    [Tooltip("The flat rate at which the camera accelerates")]
     private float _LinearAcceleration = 1;
     public ref float LinearAcceleration =&gt; ref _LinearAcceleration;
 
     [SerializeField, Multiplier]
-    [Tooltip(&quot;The additional rate at which the camera accelerates in proportion to how far away its velocity is from the desired value&quot;)]
+    [Tooltip("The additional rate at which the camera accelerates in proportion to how far away its velocity is from the desired value")]
     private float _DynamicAcceleration = 1;
     public ref float DynamicAcceleration =&gt; ref _DynamicAcceleration;
 </code></pre>
-<p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method ensures that all fields have valid values and if there is no <code>_Target</code> it tries to find an object with the <code>&quot;Player&quot;</code> tag:</p>
+<p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method ensures that all fields have valid values and if there is no <code>_Target</code> it tries to find an object with the <code>"Player"</code> tag:</p>
 <pre><code class="language-cs">#if UNITY_EDITOR
     private void OnValidate()
     {
@@ -278,7 +276,7 @@
 
         if ((_Target == null || _TargetRigidbody == null) &amp;&amp; !UnityEditor.EditorUtility.IsPersistent(this))
         {
-            var target = GameObject.FindGameObjectWithTag(&quot;Player&quot;);
+            var target = GameObject.FindGameObjectWithTag("Player");
             if (target != null)
             {
                 if (_Target == null)
@@ -316,10 +314,10 @@
 <p>It has an <code>[ExecuteAlways]</code> attribute and <code>#if UNITY_EDITOR</code> block to run in Edit Mode:</p>
 <ul>
 <li>If you modify the position of its <code>Transform</code> component, it will update its <code>_Offset</code> field accordingly (the opposite of <code>OnValidate</code>).</li>
-<li>If the <code>_Target</code> is moved, the <code>CameraMan</code> will automatically follow it.</li>
+<li>If the <code>_Target</code> is moved, the <code><a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a></code> will automatically follow it.</li>
 </ul>
 <pre><code class="language-cs">[ExecuteAlways]
-public sealed class CameraMan : MonoBehaviour
+public sealed class <a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a> : MonoBehaviour
 {
     ...
     
@@ -507,5 +505,5 @@ public sealed class CameraMan : MonoBehaviour
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

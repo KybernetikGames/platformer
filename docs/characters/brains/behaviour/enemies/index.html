@@ -230,19 +230,19 @@
 	<section class="content">
 		<p>This page describes the actual behaviour of each enemy type.</p>
 <ul>
-<li>They all use <code>On Awake</code> to <code>SetMovementForward</code> so they start moving in whichever direction they are facing.</li>
-<li>Most of them (except the <a href="#maw-flower">Maw Flower</a>) use a <code>Selector</code> as their root <code>On Fixed Update</code> node to pick a single successful action each frame.</li>
-<li>The first node in that <code>Selector</code> is <code>Invert</code> containing <code>IsIdle</code>.
+<li>They all use <code>On Awake</code> to <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward">SetMovementForward</a></code> so they start moving in whichever direction they are facing.</li>
+<li>Most of them (except the <a href="#maw-flower">Maw Flower</a>) use a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code> as their root <code>On Fixed Update</code> node to pick a single successful action each frame.</li>
+<li>The first node in that <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code> is <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Invert">Invert</a></code> containing <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle">IsIdle</a></code>.
 <ul>
-<li>If the <code>Character</code> is in their <a href="../../../states/idle">Idle State</a>, <code>IsIdle</code> will <code>Pass</code>, then the <code>Invert</code> will flip it to <code>Fail</code> so the <code>Selector</code> will continue onto its next node.</li>
-<li>If the <code>Character</code> is not in their <a href="../../../states/idle">Idle State</a>, <code>IsIdle</code> will <code>Fail</code>, then the <code>Invert</code> will flip it to <code>Pass</code> so the <code>Selector</code> will stop executing the rest of its children (since it "selected" a successful child).</li>
+<li>If the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is in their <a href="../../../states/idle">Idle State</a>, <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle">IsIdle</a></code> will <code>Pass</code>, then the <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Invert">Invert</a></code> will flip it to <code>Fail</code> so the <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code> will continue onto its next node.</li>
+<li>If the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is not in their <a href="../../../states/idle">Idle State</a>, <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle">IsIdle</a></code> will <code>Fail</code>, then the <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Invert">Invert</a></code> will flip it to <code>Pass</code> so the <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code> will stop executing the rest of its children (since it "selected" a successful child).</li>
 </ul>
 </li>
 <li>There are several other common node groups:
 <ul>
-<li><code>Sequence</code>: <code>IsEnemyInFront</code> -&gt; <code>TrySetState</code> allows the <code>Character</code> to enter their <a href="../../../states/attack">Attack State</a> when they see an enemy in front of them (the <em>Player</em> is the enemy of these monsters and the <em>Gobbler</em> is also hostile to the others because it's on a different <a href="../../../../combat/teams">Team</a>).</li>
-<li><code>Sequence</code>: <code>IsWallInFront</code> -&gt; <code>TurnAround</code> allows the <code>Character</code> to turn around when they run into a wall.</li>
-<li><code>Selector</code>: <code>IsGroundInFront</code> -&gt; <code>TurnAround</code> allows the <code>Character</code> to turn around when they would walk off a ledge.</li>
+<li><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code>: <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront">IsEnemyInFront</a></code> -&gt; <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></code> allows the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to enter their <a href="../../../states/attack">Attack State</a> when they see an enemy in front of them (the <em>Player</em> is the enemy of these monsters and the <em>Gobbler</em> is also hostile to the others because it's on a different <a href="../../../../combat/teams">Team</a>).</li>
+<li><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code>: <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront">IsWallInFront</a></code> -&gt; <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code> allows the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to turn around when they run into a wall.</li>
+<li><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code>: <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront">IsGroundInFront</a></code> -&gt; <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code> allows the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to turn around when they would walk off a ledge.</li>
 </ul>
 </li>
 </ul>
@@ -251,15 +251,15 @@
 <p><img src="/platformer/images/gobbler.gif" class="img-responsive"></p>
 <p><img src="gobbler.png" class="img-responsive"></p>
 <h1 id="gobbat">Gobbat</h1>
-<p>A flying monster which patrols back and forth between walls and uses <code>SetMovementSine</code> to bob up and down as it goes.</p>
+<p>A flying monster which patrols back and forth between walls and uses <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine">SetMovementSine</a></code> to bob up and down as it goes.</p>
 <p><img src="/platformer/images/gobbat.gif" class="img-responsive"></p>
 <p><img src="gobbat.png" class="img-responsive"></p>
 <h1 id="maw-flower">Maw Flower</h1>
-<p>A plant monster which can't move and attacks periodically to either side. Unlike the other enemies, this one uses a <code>Sequence</code> as its root <code>On Fixed Update</code> node so that when it is in its <a href="../../../states/idle">Idle State</a> it will wait a short time (2 loops of its <em>Idle</em> animation) then <code>TrySetState</code> to attack in whichever direction it's facing and <code>TurnAround</code> so that the next attack will be in the other direction.</p>
+<p>A plant monster which can't move and attacks periodically to either side. Unlike the other enemies, this one uses a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code> as its root <code>On Fixed Update</code> node so that when it is in its <a href="../../../states/idle">Idle State</a> it will wait a short time (2 loops of its <em>Idle</em> animation) then <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></code> to attack in whichever direction it's facing and <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code> so that the next attack will be in the other direction.</p>
 <p><img src="/platformer/images/maw-flower.gif" class="img-responsive"></p>
 <p><img src="maw-flower.png" class="img-responsive"></p>
 <h1 id="naga">Naga</h1>
-<p>A large snake monster which patrols back and forth on its platform. Its <code>On Awake</code> node is a <code>Sequence</code> to both <code>SetMovementForward</code> and register a <code>FaceAttacker</code> callback.</p>
+<p>A large snake monster which patrols back and forth on its platform. Its <code>On Awake</code> node is a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code> to both <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward">SetMovementForward</a></code> and register a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker">FaceAttacker</a></code> callback.</p>
 <p><img src="/platformer/images/naga.gif" class="img-responsive"></p>
 <p><img src="naga.png" class="img-responsive"></p>
 <h1 id="scarecrow">Scarecrow</h1>

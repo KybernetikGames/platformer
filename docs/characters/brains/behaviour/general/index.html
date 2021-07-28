@@ -228,7 +228,7 @@
 	<section class="content">
 		<p>This page describes the core nodes which have could be used directly in any other project (unlike the <a href="../specific">Specific Nodes</a> which interact with other systems in the Platformer Game Kit).</p>
 <h1 id="groups">Groups</h1>
-<p><code>GroupNode</code>s contain an array of child nodes which they execute in different ways:</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/GroupNode">GroupNode</a></code>s contain an array of child nodes which they execute in different ways:</p>
 <table class="table">
   <thead>
     <tr><th>Node</th>
@@ -237,7 +237,7 @@
   </tr></thead>
   <tbody>
     <tr>
-      <td><code>Selector</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code></td>
       <td>Executes each child until one returns <code>Result.Pass</code> similar to the <code>||</code> operator in C#.</td>
       <td>
 <pre><code class="language-cs">if&nbsp;(Children[0].Execute()&nbsp;||
@@ -247,7 +247,7 @@
 </td>
     </tr>
     <tr>
-      <td><code>Sequence</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code></td>
       <td>Executes each child until one returns <code>Result.Pending</code> or <code>Result.Fail</code> similar to the <code>&amp;&amp;</code> operator in C#.</td>
       <td>
 <pre><code class="language-cs">if&nbsp;(Children[0].Execute()&nbsp;&amp;&amp;
@@ -259,7 +259,7 @@
   </tbody>
 </table>
 <h1 id="modifiers">Modifiers</h1>
-<p><code>ModifierNode</code>s contain a single child which they <code>Execute</code> and modify the result of:</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/ModifierNode">ModifierNode</a></code>s contain a single child which they <code>Execute</code> and modify the result of:</p>
 <table class="table">
   <thead>
     <tr><th>Node</th>
@@ -268,10 +268,10 @@
   </tr></thead>
   <tbody>
     <tr>
-      <td><code>Ignore</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Ignore">Ignore</a></code></td>
       <td>Executes the child then ignores its result and returns a fixed result.</td>
       <td>
-<pre><code class="language-cs">[SerializeField]&nbsp;Result&nbsp;_Result;
+<pre><code class="language-cs">[SerializeField]&nbsp;<a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Result">Result</a>&nbsp;_Result;
 ...
 Child.Execute();
 return _Result;</code></pre>
@@ -279,7 +279,7 @@ return _Result;</code></pre>
 
     </tr>
     <tr>
-      <td><code>Invert</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Invert">Invert</a></code></td>
       <td>Executes the child and reverses its result so <code>Result.Pass</code> becomes <code>Result.Fail</code> and vice-versa. <code>Result.Pending</code> is unchanged.</td>
       <td>
 <pre><code class="language-cs">switch (Child.Execute())
@@ -293,7 +293,7 @@ return _Result;</code></pre>
   </tbody>
 </table>
 <h1 id="leaves">Leaves</h1>
-<p><code>LeafNode</code>s execute individual logic and don't have any children:</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/LeafNode">LeafNode</a></code>s execute individual logic and don't have any children:</p>
 <table class="table">
 <thead>
 <tr>
@@ -303,24 +303,24 @@ return _Result;</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code>ActionNode</code></td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/ActionNode">ActionNode</a></code></td>
 <td>Invokes a <code>System.Action</code> <a href="/animancer/docs/introduction/cs/methods/delegates">Delegate</a>. Returns <code>Result.Pass</code> as long as no <a href="/animancer/docs/introduction/cs/other#exceptions">Exception</a> is thrown. Otherwise <code>Result.Fail</code>. This node is not serializable.</td>
 </tr>
 <tr>
-<td><code>FuncNode</code></td>
-<td>Invokes a <code>System.Func&lt;Result&gt;</code> <a href="/animancer/docs/introduction/cs/methods/delegates">Delegate</a>. Returns the result of the invocation. This node is not serializable.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode">FuncNode</a></code></td>
+<td>Invokes a <code>System.Func&lt;<a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Result">Result</a>&gt;</code> <a href="/animancer/docs/introduction/cs/methods/delegates">Delegate</a>. Returns the result of the invocation. This node is not serializable.</td>
 </tr>
 <tr>
-<td><code>UnityEventNode</code></td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode">UnityEventNode</a></code></td>
 <td>Invokes a <a href="/animancer/docs/introduction/cs/methods/delegates#unity-events"><code>UnityEvent</code></a>. Returns <code>Result.Pass</code> as long as no <a href="/animancer/docs/introduction/cs/other#exceptions">Exception</a> is thrown. Otherwise <code>Result.Fail</code>.</td>
 </tr>
 <tr>
-<td><code>Wait</code></td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Wait">Wait</a></code></td>
 <td>Returns <code>Result.Pending</code> and increments a timer before returning <code>Result.Pass</code> once and resetting the timer.</td>
 </tr>
 </tbody>
 </table>
-<p>Most <code>LeafNode</code>s are <a href="../specific#leaves">Specific Nodes</a>.</p>
+<p>Most <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/LeafNode">LeafNode</a></code>s are <a href="../specific#leaves">Specific Nodes</a>.</p>
 
 	</section>
                 

@@ -229,8 +229,8 @@
 		</section>
 	<section class="content">
 		<img src="flinch.png" class="img-responsive img-right">
-<p>This state activates itself in response to the <code>Character</code> getting hit by an attack (specifically, when the <code>Health.OnCurrentHealthChanged</code> event occurs). None of the other scripts in the system actually reference this one, it's fully automated.</p>
-<p>It has a <code>Flinch Animation</code> for normal hits and a <code>Die Animation</code> for when the <code>Health.CurrentHealth</code> reaches 0.</p>
+<p>This state activates itself in response to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> getting hit by an attack (specifically, when the <code>Health.OnCurrentHealthChanged</code> event occurs). None of the other scripts in the system actually reference this one, it's fully automated.</p>
+<p>It has a <code>Flinch Animation</code> for normal hits and a <code>Die Animation</code> for when the <code><a href="/platformer/api/PlatformerGameKit/Health/754830B3">Health.CurrentHealth</a></code> reaches 0.</p>
 <table class="table">
   <thead>
     <tr><th>Enemy</th>
@@ -253,7 +253,7 @@
 </table>
 <h1 id="movement">Movement</h1>
 <p>Flinching will interupt other actions and for most characters it prevents them from moving during the <code>Flinch Animation</code>, but the <em>Gobbat</em> enemy has its <code>_FlinchMovementSpeedMultiplier</code> field set to <code>0.5</code> so it can still fly at half speed rather than stopping completely.</p>
-<pre><code class="language-cs">public sealed class FlinchState : CharacterState
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters.States/FlinchState">FlinchState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField, Range(0, 1)]
     [Tooltip("The character's speed is multiplied by this value while flinching")]
@@ -299,9 +299,9 @@
         };
     }
 </code></pre>
-<p>Note that <code>ForceSetState</code> is being used rather than <code>TrySetState</code> to ignore the previous state's <code>CanExitState</code> property. The <a href="/animancer/docs/manual/fsm/changing-states">Changing States</a> page explains those methods in more detail.</p>
+<p>Note that <code>ForceSetState</code> is being used rather than <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></code> to ignore the previous state's <code>CanExitState</code> property. The <a href="/animancer/docs/manual/fsm/changing-states">Changing States</a> page explains those methods in more detail.</p>
 <h1 id="state-life-cycle">State Life Cycle</h1>
-<p>Entering this state simply plays the appropriate animation based on the <code>Health.CurrentHealth</code>:</p>
+<p>Entering this state simply plays the appropriate animation based on the <code><a href="/platformer/api/PlatformerGameKit/Health/754830B3">Health.CurrentHealth</a></code>:</p>
 <pre><code class="language-cs">    public override void OnEnterState()
     {
         base.OnEnterState();
@@ -327,7 +327,7 @@
 </code></pre>
 <p>That method isn't called anywhere in the code. Instead, it is assigned to the <a href="/animancer/docs/manual/events/end">End Event</a> of the <em>Player</em>'s <code>Die Animation</code> with the <code>End Time</code> set to <code>3s</code>:</p>
 <p><img src="reload-event.png" class="img-responsive"></p>
-<p>So when the player dies, they play the <em>Gino-Die</em> animation which leaves them laying on the ground and stuck in the <code>FlinchState</code> but the animation time keeps increasing after the last frame and once 3 seconds pass it calls that method to restart the current level.</p>
+<p>So when the player dies, they play the <em>Gino-Die</em> animation which leaves them laying on the ground and stuck in the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/FlinchState">FlinchState</a></code> but the animation time keeps increasing after the last frame and once 3 seconds pass it calls that method to restart the current level.</p>
 
 	</section>
                 

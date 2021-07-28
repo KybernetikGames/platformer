@@ -229,16 +229,16 @@
 	<section class="content">
 		<img src="throw-inspector.png" class="img-responsive img-right">
 <p><img src="../../characters/states/attack/basic/throw.gif" class="img-responsive"></p>
-<p>Ranged attacks involve a character playing an animation during which a <a href="#projectiles">Projectile</a> is fired. The action itself is implemented by the <code>ProjectileAttackTransition</code> class which inherits from Animancer's regular <code>ClipTransition</code>. This allows it to be selected as the animation on a <a href="../../characters/states/attack/basic">Basic Action State</a>.</p>
+<p>Ranged attacks involve a character playing an animation during which a <a href="#projectiles">Projectile</a> is fired. The action itself is implemented by the <code><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">ProjectileAttackTransition</a></code> class which inherits from Animancer's regular <code>ClipTransition</code>. This allows it to be selected as the animation on a <a href="../../characters/states/attack/basic">Basic Action State</a>.</p>
 <h1 id="fields">Fields</h1>
 <p>The fields have tooltips to explain what they do:</p>
 <pre><code class="language-cs">[Serializable]
-public partial class ProjectileAttackTransition : ClipTransition
+public partial class <a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">ProjectileAttackTransition</a> : ClipTransition
 {
     [SerializeField]
     [Tooltip("The prefab that will be instantiated to create the projectile")]
-    private Projectile _ProjectilePrefab;
-    public ref Projectile ProjectilePrefab =&gt; ref _ProjectilePrefab;
+    private <a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a> _ProjectilePrefab;
+    public ref <a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a> ProjectilePrefab =&gt; ref _ProjectilePrefab;
 
     [SerializeField]
     [Tooltip("The local position where the projectile will be created")]
@@ -259,7 +259,7 @@ public partial class ProjectileAttackTransition : ClipTransition
 <p>Rather than launching the projectile at the very start or end of the animation, it uses an <a href="/animancer/docs/manual/events/animancer">Animancer Event</a> to tell it when to fire. It uses an <a href="/animancer/docs/manual/events/animancer#event-names">Event Names</a> attribute so that the correct name can be selected from a dropdown menu in the Inspector instead of needing to be typed manually:</p>
 <pre><code class="language-cs">[Serializable]
 [EventNames(EventName)]
-public partial class ProjectileAttackTransition : ClipTransition, ISerializationCallbackReceiver
+public partial class <a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">ProjectileAttackTransition</a> : ClipTransition, ISerializationCallbackReceiver
 {
     public const string EventName = "Fire";
 
@@ -316,16 +316,16 @@ public partial class ProjectileAttackTransition : ClipTransition, ISerialization
 }
 </code></pre>
 <h1 id="projectiles">Projectiles</h1>
-<p>The <code>Projectile</code> component manages the launching and impact of projectiles.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a></code> component manages the launching and impact of projectiles.</p>
 <p><img src="projectile-inspector.png" class="img-responsive"></p>
 <p>It has several <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a>:</p>
 <ul>
 <li>A <code>Rigidbody2D</code> to set the velocity when launched.</li>
-<li>A <code>SpriteRenderer</code> which isn't used in this class, but the <code>ProjectileAttackTransition</code> can use it to set whether or not the sprite is flipped horizontally.</li>
+<li>A <code>SpriteRenderer</code> which isn't used in this class, but the <code><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">ProjectileAttackTransition</a></code> can use it to set whether or not the sprite is flipped horizontally.</li>
 <li>A <code>SoloAnimation</code> component which starts disabled and is used to play an <a href="#impact-animation">Impact Animation</a> when the projectile hits something.</li>
 <li>A maximum <code>Lifetime</code> to limit the projectile's range.</li>
 </ul>
-<pre><code class="language-cs">public sealed class Projectile : MonoBehaviour
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a> : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D _Rigidbody;
@@ -351,7 +351,7 @@ public partial class ProjectileAttackTransition : ClipTransition, ISerialization
         gameObject.GetComponentInParentOrChildren(ref _Renderer);
         gameObject.GetComponentInParentOrChildren(ref _ImpactAnimation);
 </code></pre>
-<p>Since the <code>Projectile</code> wants <code>OnTriggerEnter2D</code> messages, it also makes sure that its collider is set as a trigger. Since it is modifying another component, it specifically checks that value actually needs to be changed to avoid constantly flagging the other object as modified.</p>
+<p>Since the <code><a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a></code> wants <code>OnTriggerEnter2D</code> messages, it also makes sure that its collider is set as a trigger. Since it is modifying another component, it specifically checks that value actually needs to be changed to avoid constantly flagging the other object as modified.</p>
 <pre><code class="language-cs">        if (TryGetComponent&lt;Collider2D&gt;(out var collider) &amp;&amp;
             !collider.isTrigger)
             collider.isTrigger = true;
@@ -359,24 +359,24 @@ public partial class ProjectileAttackTransition : ClipTransition, ISerialization
 #endif
 </code></pre>
 <p>When launched, it sets the <code>velocity</code>, stores the details of the attack, and resisters the object to be destroyed if its <code>Lifetime</code> expires:</p>
-<pre><code class="language-cs">    public Team Team { get; set; }
+<pre><code class="language-cs">    public <a href="/platformer/api/PlatformerGameKit/Team">Team</a> <a href="/platformer/api/PlatformerGameKit/Team">Team</a> { get; set; }
     public int Damage { get; set; }
-    public HashSet&lt;Hit.ITarget&gt; Ignore { get; set; }
+    public HashSet&lt;<a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a>&gt; <a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Ignore">Ignore</a> { get; set; }
 
-    public void Fire(Vector2 velocity, Team team, int damage, HashSet&lt;Hit.ITarget&gt; ignore)
+    public void Fire(Vector2 velocity, <a href="/platformer/api/PlatformerGameKit/Team">Team</a> team, int damage, HashSet&lt;<a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a>&gt; ignore)
     {
         _Rigidbody.velocity = velocity;
 
-        Team = team;
+        <a href="/platformer/api/PlatformerGameKit/Team">Team</a> = team;
         Damage = damage;
-        Ignore = ignore;
+        <a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Ignore">Ignore</a> = ignore;
 
         Destroy(gameObject, _Lifetime);
     }
 </code></pre>
 <p>When the projectile's trigger touches something:</p>
 <ul>
-<li>If the object doesn't have any component that implements the <code>Hit.ITarget</code> interface, the method continues to destroy the projectile. This happens when the projectile touches a wall.</li>
+<li>If the object doesn't have any component that implements the <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code> interface, the method continues to destroy the projectile. This happens when the projectile touches a wall.</li>
 <li>Otherwise the projectile tries to hit the target:
 <ul>
 <li>If it fails to hit, the method returns immediately so it can continue onwards and try to hit other things. This happens when the projectile passes through an ally (or it would if the <em>Player</em> had any allies).</li>

@@ -230,31 +230,31 @@
 		</section>
 	<section class="content">
 		<img src="inspector.png" class="img-responsive img-right">
-<p>The <code>Character</code> component is a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code>Character</code> and access any of their other components through it.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> component is a centralised group of references to the common parts of a character and a <a href="/animancer/docs/manual/fsm">Finite State Machine</a> for their actions. Anything that every character (or almost every character) would have goes here so that other scripts can simply reference a <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> and access any of their other components through it.</p>
 <h1 id="selection-base">Selection Base</h1>
 <img src="hierarchy.png" class="img-responsive img-right">
-<p>Characters are set up with their visuals (<code>SpriteRenderer</code> and <code>AnimancerComponent</code>) on a child object of the <code>Character</code> to avoid having too many components on the root object and potentially allow the visuals to be swapped out without affecting any of the mechanical aspects of the character. The <code>Character</code> component has a <a href="https://docs.unity3d.com/ScriptReference/SelectionBaseAttribute.html"><code>[SelectionBase]</code></a> attribute so that clicking on their sprite in the Scene view will actually select the root object with the <code>Character</code> component instead of selecting the object with the <code>SpriteRenderer</code>.</p>
+<p>Characters are set up with their visuals (<code>SpriteRenderer</code> and <code>AnimancerComponent</code>) on a child object of the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to avoid having too many components on the root object and potentially allow the visuals to be swapped out without affecting any of the mechanical aspects of the character. The <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> component has a <a href="https://docs.unity3d.com/ScriptReference/SelectionBaseAttribute.html"><code>[SelectionBase]</code></a> attribute so that clicking on their sprite in the Scene view will actually select the root object with the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> component instead of selecting the object with the <code>SpriteRenderer</code>.</p>
 <pre><code class="language-cs">[SelectionBase]
-public class Character : MonoBehaviour
+public class <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> : MonoBehaviour
 {
 </code></pre>
 <h1 id="serialized-fields">Serialized Fields</h1>
 <p>It has several <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> with properties to allow other scripts to access but not modify) them:</p>
 <pre><code class="language-cs">    [SerializeField]
-    private CharacterAnimancerComponent _Animancer;
-    public CharacterAnimancerComponent Animancer =&gt; _Animancer;
+    private <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> _Animancer;
+    public <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> Animancer =&gt; _Animancer;
 
     [SerializeField]
-    private CharacterBody2D _Body;
-    public CharacterBody2D Body =&gt; _Body;
+    private <a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a> _Body;
+    public <a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a> Body =&gt; _Body;
 
     [SerializeField]
-    private Health _Health;
-    public Health Health =&gt; _Health;
+    private <a href="/platformer/api/PlatformerGameKit/Health">Health</a> _Health;
+    public <a href="/platformer/api/PlatformerGameKit/Health">Health</a> <a href="/platformer/api/PlatformerGameKit/Health">Health</a> =&gt; _Health;
 
     [SerializeField]
-    private CharacterState _Idle;
-    public CharacterState Idle =&gt; _Idle;
+    private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _Idle;
+    public <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> Idle =&gt; _Idle;
 </code></pre>
 <p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method uses <code>AnimancerUtilities.GetComponentInParentOrChildren</code> to automatically find references to nearby components for any fields that are <code>null</code>:</p>
 <pre><code class="language-cs">#if UNITY_EDITOR
@@ -297,9 +297,9 @@ public class Character : MonoBehaviour
 </code></pre>
 <p>These are not <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> because setting their values in a Scene or Prefab wouldn't be very useful and would waste some performance. But it is still useful to see them so the custom <a href="#inspector">Inspector</a> displays them only in Play Mode.</p>
 <h1 id="state-machine">State Machine</h1>
-<p>The <code>Character</code> also holds the <a href="/animancer/docs/manual/fsm">Finite State Machine</a> to manage their actions, but rather than a base <code>StateMachine</code> which would only keep track of their <code>CurrentState</code>, it uses a <code>StateMachine&lt;&gt;.WithDefault</code> to use their <code>Idle</code> state as the <a href="/animancer/docs/manual/fsm/changing-states#default-states">Default State</a> they return to after completing other actions:</p>
-<pre><code class="language-cs">    public readonly StateMachine&lt;CharacterState&gt;.WithDefault
-        StateMachine = new StateMachine&lt;CharacterState&gt;.WithDefault();
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> also holds the <a href="/animancer/docs/manual/fsm">Finite State Machine</a> to manage their actions, but rather than a base <code>StateMachine</code> which would only keep track of their <code>CurrentState</code>, it uses a <code>StateMachine&lt;&gt;.WithDefault</code> to use their <code>Idle</code> state as the <a href="/animancer/docs/manual/fsm/changing-states#default-states">Default State</a> they return to after completing other actions:</p>
+<pre><code class="language-cs">    public readonly StateMachine&lt;<a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>&gt;.WithDefault
+        StateMachine = new StateMachine&lt;<a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>&gt;.WithDefault();
 
     protected virtual void Awake()
     {
@@ -319,7 +319,7 @@ public class Character : MonoBehaviour
 <li>A <em>Jump</em> state.</li>
 <li>A <em>Brain</em> that will actually attempt to enter that state.</li>
 </ol>
-<p>The <code>PlayerInputBrain</code> has a field to reference a <code>Jump</code> state and will attempt to enter it when the player presses the <em>Jump</em> button (<code>Spacebar</code> by default). But if a brain never attempts to jump then adding a <em>Jump</em> state to that character would achieve nothing because they would never try to enter that state.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code> has a field to reference a <code>Jump</code> state and will attempt to enter it when the player presses the <em>Jump</em> button (<code>Spacebar</code> by default). But if a brain never attempts to jump then adding a <em>Jump</em> state to that character would achieve nothing because they would never try to enter that state.</p>
 <h1 id="inspector">Inspector</h1>
 <img src="custom-inspector.png" class="img-responsive img-right">
 <p>Since the <a href="#movement">Movement</a> properties and <a href="#state-machine">State Machine</a> aren't <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a>, they wouldn't normally be displayed in the Inspector so it has a custom <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a> class:</p>
@@ -363,7 +363,7 @@ public Vector2 MovementDirection ...
 public bool Run { get; set; }
 
 [Inspectable]
-public CharacterState CurrentState
+public <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> CurrentState
 {
     get =&gt; StateMachine.CurrentState;
     set =&gt; StateMachine.TrySetState(value);

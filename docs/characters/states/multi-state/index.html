@@ -227,7 +227,7 @@
 			<h1>Multi-State</h1>
 		</section>
 	<section class="content">
-		<p>A <code>MultiState</code> contains a list of other states. Attempting to enter the <code>MultiState</code> simply tries to enter each of those other states one by one.</p>
+		<p>A <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> contains a list of other states. Attempting to enter the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> simply tries to enter each of those other states one by one.</p>
 <p>The <em>Player</em> uses this state for their <a href="../idle">Idle</a> and <a href="../jump">Jump</a>:</p>
 <table class="table">
   <thead>
@@ -255,7 +255,7 @@
 <h1 id="execution-order">Execution Order</h1>
 <p>Its <code>DefaultExecutionOrder</code> is set to <code>-1000</code> so that it runs its <code>FixedUpdate</code> method every frame before other states so that when it changes away from a state, that state's <code>FixedUpdate</code> method doesn't run for that frame.</p>
 <pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
-public class MultiState : CharacterState
+public class <a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     public const int DefaultExecutionOrder = -1000;
 </code></pre>
@@ -278,11 +278,11 @@ public class MultiState : CharacterState
 <p><code>CanEnterState</code> simply passes the <code>_States</code> to the <code>StateMachine</code> which will check the <code>CanEnterState</code> property on each of them:</p>
 <pre><code class="language-cs">    public override bool CanEnterState =&gt; Character.StateMachine.CanSetState(_States);
 </code></pre>
-<p><code>CanExitState</code> always returns <code>true</code> because once the <code>MultiState</code> has chosen a sub-state, that state's <code>CanExitState</code> will be used instead:</p>
+<p><code>CanExitState</code> always returns <code>true</code> because once the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> has chosen a sub-state, that state's <code>CanExitState</code> will be used instead:</p>
 <pre><code class="language-cs">    public override bool CanExitState =&gt; true;
 </code></pre>
-<p>When the character actually enters this state, it again passes the <code>_States</code> to the <code>StateMachine</code> to attempt to enter each of them until one is successful. If <code>_AutoInternalTransitions</code> is enabled, it also stores the state that was entered and enables this <code>MultiState</code> component so that its <code>FixedUpdate</code> will get called.</p>
-<pre><code class="language-cs">    private CharacterState _CurrentState;
+<p>When the character actually enters this state, it again passes the <code>_States</code> to the <code>StateMachine</code> to attempt to enter each of them until one is successful. If <code>_AutoInternalTransitions</code> is enabled, it also stores the state that was entered and enables this <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> component so that its <code>FixedUpdate</code> will get called.</p>
+<pre><code class="language-cs">    private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _CurrentState;
 
     public override void OnEnterState()
     {
@@ -295,7 +295,7 @@ public class MultiState : CharacterState
             }
         }
 </code></pre>
-<p>If it fails to enter any of the states, it logs an error message listing all of them because a <code>MultiState</code> is not supposed to actually be the current state:</p>
+<p>If it fails to enter any of the states, it logs an error message listing all of them because a <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> is not supposed to actually be the current state:</p>
 <pre><code class="language-cs">        else
         {
             var text = ObjectPool.AcquireStringBuilder()
@@ -313,8 +313,8 @@ public class MultiState : CharacterState
         }
     }
 </code></pre>
-<p>This means a state like <code>IdleState</code>, <code>MobileIdleState</code>, or <code>LocomotionState</code> should always be the last one in the <code>States</code> array because they don't have any restrictions on when they are allowed to be entered.</p>
-<p>Most states are <code>enabled</code> on entry and disabled again on exit so that their <code>FixedUpdate</code> and similar methods only get called while the character is in that state (this comes from the base <a href="/animancer/docs/manual/fsm/state-types">State Behaviour</a> which the base <code>CharacterState</code> inherits from). But a <code>MultiState</code> needs to enter a different state and still have its <code>FixedUpdate</code> method called while that other state is active so its <code>OnEnterState</code> method (see above) doesn't call <code>base.OnEnterState();</code> and it also <code>override</code>s <code>OnExitState</code> to not call <code>base.OnExitState();</code> either:</p>
+<p>This means a state like <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IdleState">IdleState</a></code>, <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MobileIdleState">MobileIdleState</a></code>, or <code><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></code> should always be the last one in the <code>States</code> array because they don't have any restrictions on when they are allowed to be entered.</p>
+<p>Most states are <code>enabled</code> on entry and disabled again on exit so that their <code>FixedUpdate</code> and similar methods only get called while the character is in that state (this comes from the base <a href="/animancer/docs/manual/fsm/state-types">State Behaviour</a> which the base <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a></code> inherits from). But a <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> needs to enter a different state and still have its <code>FixedUpdate</code> method called while that other state is active so its <code>OnEnterState</code> method (see above) doesn't call <code>base.OnEnterState();</code> and it also <code>override</code>s <code>OnExitState</code> to not call <code>base.OnExitState();</code> either:</p>
 <pre><code class="language-cs">    public override void OnExitState() { }
 </code></pre>
 <h1 id="internal-transitions">Internal Transitions</h1>
@@ -337,8 +337,8 @@ public class MultiState : CharacterState
     }
 }
 </code></pre>
-<p>Since this state is assigned as the <code>Character.Idle</code> for the <em>Player</em>, it means that whenever they return to their default state (such as when finishing an attack) it will immediately check whether they can <a href="../wall-slide">Wall Slide</a> rather than always entering the <a href="../locomotion">Locomotion State</a> first. It also avoids putting too much responsibility in a single component, which is what would happen if <code>WallSlideState</code> inherited from <code>LocomotionState</code>.</p>
-<p>The <code>MultiState</code> used for the <em>Player</em>'s <a href="../jump">Jumps</a> on the other hand has <code>_AutoInternalTransitions</code> disabled so pressing the jump button simply attempts to activate any of the jump states then allows that state to execute normally.</p>
+<p>Since this state is assigned as the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/5667C1C1">Character.Idle</a></code> for the <em>Player</em>, it means that whenever they return to their default state (such as when finishing an attack) it will immediately check whether they can <a href="../wall-slide">Wall Slide</a> rather than always entering the <a href="../locomotion">Locomotion State</a> first. It also avoids putting too much responsibility in a single component, which is what would happen if <code><a href="/platformer/api/PlatformerGameKit.Characters.States/WallSlideState">WallSlideState</a></code> inherited from <code><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></code>.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code> used for the <em>Player</em>'s <a href="../jump">Jumps</a> on the other hand has <code>_AutoInternalTransitions</code> disabled so pressing the jump button simply attempts to activate any of the jump states then allows that state to execute normally.</p>
 
 	</section>
                 

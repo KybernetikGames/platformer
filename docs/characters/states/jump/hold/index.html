@@ -228,8 +228,8 @@
 <p><img src="hold.png" class="img-responsive"></p>
 <p>This state <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <a href="../jump">Jump State</a> and allows the jump button to be held down to jump higher.</p>
 <h1 id="state">State</h1>
-<p>It simply applies some additional upwards acceleration to the character during each frame of the animation before the character returns to their <a href="../../idle">Idle</a> state (most likely to <em>Fall</em> since they should be in the air). The <code>HoldJumpState</code> script itself is basically self-explanatory:</p>
-<pre><code class="language-cs">public class HoldJumpState : JumpState
+<p>It simply applies some additional upwards acceleration to the character during each frame of the animation before the character returns to their <a href="../../idle">Idle</a> state (most likely to <em>Fall</em> since they should be in the air). The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/HoldJumpState">HoldJumpState</a></code> script itself is basically self-explanatory:</p>
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.States/HoldJumpState">HoldJumpState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a>
 {
     [SerializeField, MetersPerSecondPerSecond(Rule = Value.IsNotNegative)]
     [Tooltip("The continuous acceleration applied while holding the jump button")]

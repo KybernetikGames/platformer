@@ -229,9 +229,9 @@
 <p><img src="../../characters/states/attack/basic/basic.gif" class="img-responsive"></p>
 <p>In general, each frame of the animation has its own hit data so that the shape can change to match the visual appearance of the <code>Sprite</code>.</p>
 <p><img src="preview.gif" class="img-responsive"></p>
-<p>This system is based around the <code>AttackTransition</code> class which is a <a href="/animancer/docs/manual/transitions">Transition</a> that inherits from the regular <code>ClipTransition</code> to add details about each of its hit boxes:</p>
+<p>This system is based around the <code><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></code> class which is a <a href="/animancer/docs/manual/transitions">Transition</a> that inherits from the regular <code>ClipTransition</code> to add details about each of its hit boxes:</p>
 <pre><code class="language-cs">[Serializable]
-public partial class AttackTransition : ClipTransition
+public partial class <a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a> : ClipTransition
 {
     [SerializeField]
     private HitData[] _Hits;
@@ -266,12 +266,12 @@ public partial class AttackTransition : ClipTransition
 }
 </code></pre>
 <h1 id="drawer">Drawer</h1>
-<p><code>AttackTransition</code> implements the <code>ITransitionGUI</code> interface so that it can draw additional GUI elements in the Inspector and <a href="/animancer/docs/manual/transitions/previews">Transition Preview Window</a>:</p>
+<p><code><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></code> implements the <code>ITransitionGUI</code> interface so that it can draw additional GUI elements in the Inspector and <a href="/animancer/docs/manual/transitions/previews">Transition Preview Window</a>:</p>
 <p><img src="preview.gif" class="img-responsive"></p>
 <img src="hit-trigger.png" class="img-responsive img-right" style="padding-bottom:1em">
 <h1 id="hit-triggers">Hit Triggers</h1>
-<p>The <code>HitTrigger</code> script stores the details of an active hit and manages the shape of its <code>PolygonCollider2D</code> (with <code>Is Trigger</code> enabled) so that when it receives an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerEnter2D.html"><code>OnTriggerEnter2D</code></a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerStay2D.html"><code>OnTriggerStay2D</code></a> message it can attempt to <a href="../hit">Hit</a> the triggering object.</p>
-<p><code>HitTrigger</code> objects are instantiated as copied of a prefab located in <em>Assets/Plugins/Platformer Game Kit/Prefabs/Resources</em> and are managed as an object pool so <code>HitTrigger.Activate</code> gets a spare instance or creates a new one if there weren't any and <code>HitTrigger.Deactivate</code> returns it to the pool so it can be reused.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a></code> script stores the details of an active hit and manages the shape of its <code>PolygonCollider2D</code> (with <code>Is Trigger</code> enabled) so that when it receives an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerEnter2D.html"><code>OnTriggerEnter2D</code></a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerStay2D.html"><code>OnTriggerStay2D</code></a> message it can attempt to <a href="../hit">Hit</a> the triggering object.</p>
+<p><code><a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a></code> objects are instantiated as copied of a prefab located in <em>Assets/Plugins/Platformer Game Kit/Prefabs/Resources</em> and are managed as an object pool so <code>HitTrigger.Activate</code> gets a spare instance or creates a new one if there weren't any and <code>HitTrigger.Deactivate</code> returns it to the pool so it can be reused.</p>
 
 	</section>
                 

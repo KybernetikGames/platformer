@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <title>Platformer Game Kit - Brains</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -225,19 +223,19 @@
 		</section>
 	<section class="content">
 		
-<p>Brains decide what a <code>Character</code> wants to do so that other components can execute those actions. For example, a brain would choose which direction to move and when to jump, then the <a href="../physics#character-movement">Character Movement</a> component moves them in that direction and the <a href="../states/jump">Jump</a> component launches them into the air and plays the appropriate animations. Animancer's <a href="/animancer/docs/examples/fsm/brains">Brains</a> and <a href="/animancer/docs/examples/fsm/more-brains">More Brains</a> examples explain the concept in more detail.</p>
+<p>Brains decide what a <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> wants to do so that other components can execute those actions. For example, a brain would choose which direction to move and when to jump, then the <a href="../physics#character-movement">Character Movement</a> component moves them in that direction and the <a href="../states/jump">Jump</a> component launches them into the air and plays the appropriate animations. Animancer's <a href="/animancer/docs/examples/fsm/brains">Brains</a> and <a href="/animancer/docs/examples/fsm/more-brains">More Brains</a> examples explain the concept in more detail.</p>
 
-<p><details><summary>Each type of brain <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterBrain</code> to make use of its <code>DefaultExecutionOrder</code> (so it can determine how it wants to control things before everything else executes those actions) and a reference to the <code>Character</code>, but there is nothing special about it so any script could potentially control a <code>Character</code>:</summary>
+<p></p><details><summary>Each type of brain <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a></code> to make use of its <code>DefaultExecutionOrder</code> (so it can determine how it wants to control things before everything else executes those actions) and a reference to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>, but there is nothing special about it so any script could potentially control a <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>:</summary>
 
 <pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
-public abstract class CharacterBrain : MonoBehaviour
+public abstract class <a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a> : MonoBehaviour
 {
     public const int DefaultExecutionOrder = -10000;
 
     [SerializeField]
-    private Character _Character;
+    private <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> _Character;
 
-    public ref Character Character => ref _Character;
+    public ref <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> =&gt; ref _Character;
 
 #if UNITY_EDITOR
     protected virtual void OnValidate()
@@ -246,7 +244,7 @@ public abstract class CharacterBrain : MonoBehaviour
     }
 #endif
 }
-</code></pre></details></p>
+</code></pre></details><p></p>
 
 			<div class="box">
 				<div class="box-body no-padding">
@@ -256,7 +254,7 @@ public abstract class CharacterBrain : MonoBehaviour
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></strong></td>
 									<td>
-Controls the character using Unity&#x27;s inbuilt Input system to detect keyboard and mouse input.									</td>
+Controls the character using Unity's inbuilt Input system to detect keyboard and mouse input.									</td>
 								</tr>
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a></strong></td>
@@ -389,5 +387,5 @@ Controls the character using a very simple Behaviour Tree system to allow enemy 
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

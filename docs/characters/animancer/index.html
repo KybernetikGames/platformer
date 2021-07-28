@@ -228,7 +228,7 @@
 		</section>
 	<section class="content">
 		<img src="animancer.png" class="img-responsive img-right">
-<p>Characters need a few other features in addition to the animation functions of the <code>AnimancerComponent</code>, so rather than having two separate components and needing to both be referenced by the <code>Character</code>, we just have a <code>CharacterAnimancerComponent</code> <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from the base <code>AnimancerComponent</code>.</p>
+<p>Characters need a few other features in addition to the animation functions of the <code>AnimancerComponent</code>, so rather than having two separate components and needing to both be referenced by the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>, we just have a <code><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a></code> <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from the base <code>AnimancerComponent</code>.</p>
 <p>The main things it manages are:</p>
 <ul>
 <li>The direction the character is <a href="#facing">Facing</a>.</li>
@@ -236,15 +236,15 @@
 </ul>
 <h1 id="fields">Fields</h1>
 <p>The <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> and <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method are self-explanatory:</p>
-<pre><code class="language-cs">public sealed class CharacterAnimancerComponent : AnimancerComponent
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> : AnimancerComponent
 {
     [SerializeField]
     private SpriteRenderer _Renderer;
     public SpriteRenderer Renderer =&gt; _Renderer;
 
     [SerializeField]
-    private Character _Character;
-    public Character Character =&gt; _Character;
+    private <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> _Character;
+    public <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> <a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a> =&gt; _Character;
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -314,15 +314,15 @@
 <td><img src="hit-2.png" class="img-responsive"></td>
 </tr></tbody></table><p></p>
 <p>The events are set up so that the attack data could potentially be shared by multiple characters, which means they can't directly reference their character and need to instead get the character each time an event occurs using one of the following methods:</p>
-<pre><code class="language-cs">    public static CharacterAnimancerComponent GetCurrent() =&gt; Get(AnimancerEvent.CurrentState);
+<pre><code class="language-cs">    public static <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> GetCurrent() =&gt; Get(AnimancerEvent.CurrentState);
 
-    public static CharacterAnimancerComponent Get(AnimancerNode node) =&gt; Get(node.Root);
+    public static <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> Get(AnimancerNode node) =&gt; Get(node.Root);
     
-    public static CharacterAnimancerComponent Get(AnimancerPlayable animancer) =&gt; animancer.Component as CharacterAnimancerComponent;
+    public static <a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">CharacterAnimancerComponent</a> Get(AnimancerPlayable animancer) =&gt; animancer.Component as CharacterAnimancerComponent;
 </code></pre>
 <p>Even though each attack can consist of multiple different hit boxes, a single attack can only hit each target once so the system needs to keep track of the character's active hit boxes and the targets they have already hit:</p>
-<pre><code class="language-cs">    private Dictionary&lt;HitData, HitTrigger&gt; _ActiveHits;
-    private HashSet&lt;Hit.ITarget&gt; _IgnoreHits;
+<pre><code class="language-cs">    private Dictionary&lt;HitData, <a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a>&gt; _ActiveHits;
+    private HashSet&lt;<a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a>&gt; _IgnoreHits;
 
     public void AddHitBox(HitData data)
     {

@@ -227,7 +227,7 @@
 	<section class="content">
 		<p>This page describes the nodes which directly interact with other parts of the Platformer Game Kit (unlike the <a href="../general">General Nodes</a> which could be reused in any other project).</p>
 <h1 id="conditions">Conditions</h1>
-<p><code>ConditionNode</code>s are like <a href="#leaves">Leaf Nodes</a>, but they immediately check a condition to return <code>Result.Pass</code> or <code>Result.Fail</code> (not <code>Result.Pending</code>):</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/ConditionNode">ConditionNode</a></code>s are like <a href="#leaves">Leaf Nodes</a>, but they immediately check a condition to return <code>Result.Pass</code> or <code>Result.Fail</code> (not <code>Result.Pending</code>):</p>
 <table class="table">
 <thead>
 <tr>
@@ -237,25 +237,25 @@
 </thead>
 <tbody>
 <tr>
-<td><code>IsEnemyInFront</code></td>
-<td>Checks if an enemy of the <code>Character</code> is in front of them (for the monsters, the <em>Player</em> is their enemy). Generally used in a <code>Sequence</code> followed by <code>TrySetState</code> to attack the enemy.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront">IsEnemyInFront</a></code></td>
+<td>Checks if an enemy of the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is in front of them (for the monsters, the <em>Player</em> is their enemy). Generally used in a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code> followed by <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></code> to attack the enemy.</td>
 </tr>
 <tr>
-<td><code>IsGroundInFront</code></td>
-<td>Checks if there is ground for the <code>Character</code> to stand on in front of them. Generally used in a <code>Sequence</code> followed by <code>TurnAround</code>.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront">IsGroundInFront</a></code></td>
+<td>Checks if there is ground for the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to stand on in front of them. Generally used in a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code> followed by <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code>.</td>
 </tr>
 <tr>
-<td><code>IsIdle</code></td>
-<td>Checks if the <code>Character</code> is currently in their <a href="../../../states/idle">Idle</a> state. Generally used under an <code>Invert</code> node so that when the <code>Character</code> is not <a href="../../../states/idle">Idle</a> the brain's main <code>Selector</code> stops early without executing the rest of its logic. For example, while attacking there's no point in trying to perform other actions.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle">IsIdle</a></code></td>
+<td>Checks if the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is currently in their <a href="../../../states/idle">Idle</a> state. Generally used under an <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Invert">Invert</a></code> node so that when the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is not <a href="../../../states/idle">Idle</a> the brain's main <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Selector">Selector</a></code> stops early without executing the rest of its logic. For example, while attacking there's no point in trying to perform other actions.</td>
 </tr>
 <tr>
-<td><code>IsWallInFront</code></td>
-<td>Checks if there is a wall in front of the <code>Character</code>. Generally used in a <code>Sequence</code> followed by <code>TurnAround</code>.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront">IsWallInFront</a></code></td>
+<td>Checks if there is a wall in front of the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>. Generally used in a <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence">Sequence</a></code> followed by <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code>.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="leaves">Leaves</h1>
-<p><code>LeafNode</code>s execute individual logic. Some have are <a href="../general#leaves">General Nodes</a> while others are specific:</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/LeafNode">LeafNode</a></code>s execute individual logic. Some have are <a href="../general#leaves">General Nodes</a> while others are specific:</p>
 <table class="table">
 <thead>
 <tr>
@@ -265,24 +265,24 @@
 </thead>
 <tbody>
 <tr>
-<td><code>FaceAttacker</code></td>
-<td>Registers a callback to the <code>Health.OnCurrentHealthChanged</code> event so that when the <code>Character</code> gets hit by an attack from behind they will turn around to face the attacker. This node is used by the <em>Naga</em> enemy in its <code>On Awake</code> tree rather than <code>On Fixed Update</code> since it only neede to be registered once.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker">FaceAttacker</a></code></td>
+<td>Registers a callback to the <code>Health.OnCurrentHealthChanged</code> event so that when the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> gets hit by an attack from behind they will turn around to face the attacker. This node is used by the <em>Naga</em> enemy in its <code>On Awake</code> tree rather than <code>On Fixed Update</code> since it only neede to be registered once.</td>
 </tr>
 <tr>
-<td><code>SetMovementForward</code></td>
-<td>Sets the <code>Character.MovementDirectionX</code> to be in whichever direction they are currently facing. This node is used by all enemies in their <code>On Awake</code> tree rather than <code>On Fixed Update</code> since it only neede to be set once.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward">SetMovementForward</a></code></td>
+<td>Sets the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/D9F83294">Character.MovementDirectionX</a></code> to be in whichever direction they are currently facing. This node is used by all enemies in their <code>On Awake</code> tree rather than <code>On Fixed Update</code> since it only neede to be set once.</td>
 </tr>
 <tr>
-<td><code>SetMovementSine</code></td>
-<td>Sets the <code>Character.MovementDirectionY</code> to cause them to fly up and down in a sine wave. This node is used by the <em>Gobbat</em> enemy.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine">SetMovementSine</a></code></td>
+<td>Sets the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/4FC835E3">Character.MovementDirectionY</a></code> to cause them to fly up and down in a sine wave. This node is used by the <em>Gobbat</em> enemy.</td>
 </tr>
 <tr>
-<td><code>TrySetState</code></td>
-<td>Attempts to change the state of the <code>Character.StateMachine</code>. This node is used by all enemies to enter their <a href="../../../states/attack">Attack State</a> after an <code>IsEnemyInFront</code> condition succeeds, but it would work with any <a href="../../../states">Character State</a>.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></code></td>
+<td>Attempts to change the state of the <code>Character.StateMachine</code>. This node is used by all enemies to enter their <a href="../../../states/attack">Attack State</a> after an <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront">IsEnemyInFront</a></code> condition succeeds, but it would work with any <a href="../../../states">Character State</a>.</td>
 </tr>
 <tr>
-<td><code>TurnAround</code></td>
-<td>Flips the <code>Character.MovementDirectionX</code> to point the other way.</td>
+<td><code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></code></td>
+<td>Flips the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/D9F83294">Character.MovementDirectionX</a></code> to point the other way.</td>
 </tr>
 </tbody>
 </table>

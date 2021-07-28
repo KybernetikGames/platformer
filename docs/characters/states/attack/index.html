@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <title>Platformer Game Kit - Attack</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -227,7 +225,7 @@
 		
 <img src="attack.gif" class="img-responsive img-right">
 
-<p>Attack states are actions that characters can perform to deal damage to enemies. They all <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from the base <code>AttackState</code> to share the same basic features:</p>
+<p>Attack states are actions that characters can perform to deal damage to enemies. They all <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from the base <code><a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a></code> to share the same basic features:</p>
 
 <ul>
   <li>Can't turn around during attacks.</li>
@@ -235,11 +233,11 @@
   <li>When the state ends, it clears any of the <a href="../../animancer#hit-boxes">Hit Boxes</a> that are still active.</li>
 </ul>
 
-<pre><code class="language-cs">public abstract class AttackState : CharacterState
+<pre><code class="language-cs">public abstract class <a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
-    public override bool CanTurn => false;
+    public override bool CanTurn =&gt; false;
 
-    public override bool CanExitState => false;
+    public override bool CanExitState =&gt; false;
 
     public override void OnExitState()
     {
@@ -261,12 +259,12 @@ A general action that plays an animation then returns to idle.									</td>
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/states/attack/advanced">Advanced Attack</a></strong></td>
 									<td>
-The Player&#x27;s attack state which has combos and separate animations for ground, air, and while aiming upwards.									</td>
+The Player's attack state which has combos and separate animations for ground, air, and while aiming upwards.									</td>
 								</tr>
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/states/attack/side">Side Attack</a></strong></td>
 									<td>
-The Maw Flower&#x27;s attack state has different animations depending on whether it wants to attack to the left or right.									</td>
+The Maw Flower's attack state has different animations depending on whether it wants to attack to the left or right.									</td>
 								</tr>
 						</tbody>				
 					</table>
@@ -394,5 +392,5 @@ The Maw Flower&#x27;s attack state has different animations depending on whether
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

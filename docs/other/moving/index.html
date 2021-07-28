@@ -225,11 +225,11 @@
 		</section>
 	<section class="content">
 		<p><img src="platform.gif" class="img-responsive"></p>
-<p>The <code>MovingObject2D</code> component is a very simple system for moving platforms (or any object) back and forth between two points. Its main purpose is just to demonstrate the way the <a href="../../characters/physics">Character Physics</a> interacts with moving platforms, but in a real game you would likely want to find or make a more powerful system with features like following multiple points in a path, curved paths, and variable speeds.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit/MovingObject2D">MovingObject2D</a></code> component is a very simple system for moving platforms (or any object) back and forth between two points. Its main purpose is just to demonstrate the way the <a href="../../characters/physics">Character Physics</a> interacts with moving platforms, but in a real game you would likely want to find or make a more powerful system with features like following multiple points in a path, curved paths, and variable speeds.</p>
 <p><img src="inspector.png" class="img-responsive"></p>
 <p>The script is set to update very early so that it moves before other objects do anything based on its position or velocity:</p>
 <pre><code class="language-cs">[DefaultExecutionOrder(DefaultExecutionOrder)]
-public sealed class MovingObject2D : MonoBehaviour
+public sealed class <a href="/platformer/api/PlatformerGameKit/MovingObject2D">MovingObject2D</a> : MonoBehaviour
 {
     public const int DefaultExecutionOrder = -10000;
 </code></pre>

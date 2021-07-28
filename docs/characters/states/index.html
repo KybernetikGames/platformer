@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <title>Platformer Game Kit - States</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
-        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/platformer/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/platformer/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/platformer/assets/css/override.css" rel="stylesheet" />
+        <link href="/platformer/assets/css/override.css" rel="stylesheet">
         <script src="/platformer/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/platformer/assets/js/bootstrap.min.js"></script>        
         <script src="/platformer/assets/js/app.min.js"></script>         
@@ -58,16 +56,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"/> Documentation</a></li>
-        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"/> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"/> API v1.0</a></li>
-        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"/> Contact</a></li>
-        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"/> Other Assets</a></li>
+                                    <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
+        <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
+        <li><a href="/kailas-dierk/unity-assets"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
 <li style="width:100%">
 <form class="search-form" name="search" action="/animancer/search">
-<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..." /></span>
-<div class="search-button"><button type="submit"><i class="fa fa-search"/></i></button></div>
+<span><input class="search-input" id="search" name="q" type="text" placeholder="Search..."></span>
+<div class="search-button"><button type="submit"><i class="fa fa-search"></i></button></div>
 </form>
 </li> 
                         </ul>       
@@ -225,38 +223,38 @@
 		</section>
 	<section class="content">
 		
-<p>Every state a character can be in inherits from the base <code>CharacterState</code> component. There are several general categories that states fall into:</p>
+<p>Every state a character can be in inherits from the base <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a></code> component. There are several general categories that states fall into:</p>
 
 <table class="table">
   <thead>
-    <th>Category</th>
+    <tr><th>Category</th>
     <th>Description</th>
     <th>Usage</th>
     <th>Examples</th>
-  </thead>
+  </tr></thead>
   <tbody>
     <tr>
       <td><strong>Idle</strong></td>
       <td>The character's default state which they return to automatically after performing an action.</td>
-      <td>Assigned to the <code>Character.Idle</code> field.</td>
-      <td><code>IdleState</code><br><code>LocomotionState</code><br><code>WallSlideState</code></td>
+      <td>Assigned to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/5667C1C1">Character.Idle</a></code> field.</td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.States/IdleState">IdleState</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.States/WallSlideState">WallSlideState</a></code></td>
     </tr>
     <tr>
       <td><strong>Action</strong></td>
       <td>Something the character can do intentionally.</td>
       <td>Referenced by the <a href="../brains">Character Brain</a>.</td>
-      <td><code>JumpState</code><br><code>AttackState</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a></code></td>
     </tr>
     <tr>
       <td><strong>Reaction</strong></td>
       <td>Something the character will do automatically in response to a specific event.</td>
       <td>Registers itself to be started by the relevant event so generally nothing else needs to reference it directly.</td>
-      <td><code>IntroductionState</code><br><code>LandState</code><br><code>FlinchState</code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.States/LandState">LandState</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.States/FlinchState">FlinchState</a></code></td>
     </tr>
     <tr>
       <td><strong>Special</strong></td>
-      <td colspan=2><a href="multi-state">Multi-State</a> is in a category of its own because it isn't really a state but rather is used to select from a list of other states.</td>
-      <td><code>MultiState</code></td>
+      <td colspan="2"><a href="multi-state">Multi-State</a> is in a category of its own because it isn't really a state but rather is used to select from a list of other states.</td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></code></td>
     </tr>
   </tbody>
 </table>
@@ -276,7 +274,7 @@ A state used for a character to show off when they first spawn.									</td>
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/states/multi-state">Multi-State</a></strong></td>
 									<td>
-A &quot;state selector&quot; which simply picks from a list of other states.									</td>
+A "state selector" which simply picks from a list of other states.									</td>
 								</tr>
 								<tr>
 									<td><strong><a href="/platformer/docs/characters/states/idle">Idle</a></strong></td>
@@ -424,5 +422,5 @@ A state used when a character gets hit by an attack.									</td>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

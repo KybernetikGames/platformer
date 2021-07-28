@@ -228,11 +228,11 @@
 		</section>
 	<section class="content">
 		<img src="inspector.png" class="img-responsive img-right">
-<p>This brain controls the <code>Character</code> using Unity's inbuilt <a href="https://docs.unity3d.com/Manual/class-InputManager.html">Input Manager</a> to detect keyboard and mouse input.</p>
+<p>This brain controls the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> using Unity's inbuilt <a href="https://docs.unity3d.com/Manual/class-InputManager.html">Input Manager</a> to detect keyboard and mouse input.</p>
 <p>If you want to use Unity's new <a href="https://docs.unity3d.com/Manual/com.unity.inputsystem.html">Input System</a>, you could make a copy of this script which uses that system instead but you wouldn't need to make any modifications elsewhere since the rest of the character doesn't care what's controlling it.</p>
 <h1 id="fields">Fields</h1>
-<p>The <code>PlayerInputBrain</code> script has <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> to choose which buttons it will use. The Platformer Game Kit is currently only designed for a single <em>Player</em>, but this would allow it to support multiple players by simply giving them each different button names.</p>
-<pre><code class="language-cs">public sealed class PlayerInputBrain : CharacterBrain
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code> script has <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> to choose which buttons it will use. The Platformer Game Kit is currently only designed for a single <em>Player</em>, but this would allow it to support multiple players by simply giving them each different button names.</p>
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a> : <a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a>
 {
     [Header("Input Names")]
 
@@ -269,10 +269,10 @@
 <li><a href="../../states/jump/air">Air Jump</a> if they are in the air and haven't already jumped too many times.</li>
 <li><a href="../../states/jump/hold">Hold Jump</a> if they are on the ground.</li>
 </ul>
-<p>Using a <a href="../../states/multi">Multi State</a> means that the <code>PlayerInputBrain</code> doesn't need to be aware of any of that logic, but since they all <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from <a href="../../states/jump/hold">Hold Jump</a> the brain does need to end the state if the <code>_JumpButton</code> is released early so that the <em>Player</em> can quickly tap the button for a short jump or hold it to jump higher.</p>
-<pre><code class="language-cs">    [SerializeField] private CharacterState _Jump;
+<p>Using a <a href="../../states/multi">Multi State</a> means that the <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code> doesn't need to be aware of any of that logic, but since they all <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from <a href="../../states/jump/hold">Hold Jump</a> the brain does need to end the state if the <code>_JumpButton</code> is released early so that the <em>Player</em> can quickly tap the button for a short jump or hold it to jump higher.</p>
+<pre><code class="language-cs">    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _Jump;
     
-    private CharacterState _CurrentJumpState;
+    private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _CurrentJumpState;
     
     private void Update()
     {
@@ -284,7 +284,7 @@
                 Character.StateMachine.TrySetState(_Jump))
                 _CurrentJumpState = Character.StateMachine.CurrentState;
 </code></pre>
-<p>Then if the character is still in that state and the <code>_JumpButton</code> is released, return to the <code>Character</code>'s default state (<code>Idle</code>):</p>
+<p>Then if the character is still in that state and the <code>_JumpButton</code> is released, return to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>'s default state (<code>Idle</code>):</p>
 <pre><code class="language-cs">            if (_CurrentJumpState == Character.StateMachine.CurrentState &amp;&amp;
                 Input.GetButtonUp(_JumpButton))
                 Character.StateMachine.TrySetDefaultState();
@@ -294,8 +294,8 @@
 <h1 id="attacking">Attacking</h1>
 <img src="../../states/attack/attack.gif" class="img-responsive img-right">
 <p><a href="../../states/attack">Attacking</a> is simple: if a state is assigned and the corresponding button is pressed, try to enter that state:</p>
-<pre><code class="language-cs">    [SerializeField] private CharacterState _PrimaryAttack;
-    [SerializeField] private CharacterState _SecondaryAttack;
+<pre><code class="language-cs">    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _PrimaryAttack;
+    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _SecondaryAttack;
     
     private void Update()
     {
@@ -310,9 +310,9 @@
 <h1 id="movement">Movement</h1>
 <img src="../../states/idle/locomotion/locomotion.gif" class="img-responsive img-right">
 <p>Movement is also simple: just use the corresponding buttons to set the <a href="../../character#movement">Character Movement</a> properties:</p>
-<pre><code class="language-cs">        Character.Run = Input.GetButton(_RunButton);
+<pre><code class="language-cs">        <a href="/platformer/api/PlatformerGameKit.Characters/Character/D083B402">Character.Run</a> = Input.GetButton(_RunButton);
 
-        Character.MovementDirection = new Vector2(
+        <a href="/platformer/api/PlatformerGameKit.Characters/Character/F72DA959">Character.MovementDirection</a> = new Vector2(
             Input.GetAxisRaw(_XAxisName),
             Input.GetAxisRaw(_YAxisName));
     }

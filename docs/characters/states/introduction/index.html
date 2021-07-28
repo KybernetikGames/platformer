@@ -239,15 +239,15 @@
 </ol>
 <p>The <a href="#particles">Particle Effect</a> is separate from the animations and is explained below.</p>
 <p><img src="timeline.png" class="img-responsive"></p>
-<p>The <code>IntroductionState</code> script can then use a <code>PlayableAssetTransition</code> to play that Timeline Asset like any other <a href="/animancer/docs/manual/transitions">Transition</a>.</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></code> script can then use a <code>PlayableAssetTransition</code> to play that Timeline Asset like any other <a href="/animancer/docs/manual/transitions">Transition</a>.</p>
 <img src="introduction-state.png" class="img-responsive img-right">
 <h1 id="script">Script</h1>
-<p>The <code>IntroductionState</code> script is very simple. It <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterState</code> class (which gives it a field to reference the <code>Character</code>) and uses a <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized</a> <code>PlayableAssetTransition</code> field to reference the Timeline Asset:</p>
-<pre><code class="language-cs">public sealed class IntroductionState : CharacterState
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></code> script is very simple. It <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a></code> class (which gives it a field to reference the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>) and uses a <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized</a> <code>PlayableAssetTransition</code> field to reference the Timeline Asset:</p>
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField] private PlayableAssetTransition _Animation;
 </code></pre>
-<p>On startup, it assigns the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return the <code>Character</code> to its default state (<em>Idle</em>) and try to enter <code>this</code> state. This means that other scripts don't need to know whether or not the <code>Character</code> has an <code>IntroductionState</code>. If it has one then it will automatically enter itself, and if it doesn't then the <code>Character</code> script will start in its <code>Idle</code> state when it assigns that as its default state.</p>
+<p>On startup, it assigns the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> to its default state (<em>Idle</em>) and try to enter <code>this</code> state. This means that other scripts don't need to know whether or not the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> has an <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></code>. If it has one then it will automatically enter itself, and if it doesn't then the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> script will start in its <code>Idle</code> state when it assigns that as its default state.</p>
 <pre><code class="language-cs">    private void Awake()
     {
         _Animation.Events.OnEnd = Character.StateMachine.ForceSetDefaultState;
@@ -271,7 +271,7 @@
 }
 </code></pre>
 <h1 id="particles">Particles</h1>
-<p>While the Timeline is playing, a <a href="https://docs.unity3d.com/Manual/ParticleSystems.html">Particle System</a> also plays to show some red orbs rising around the character. Its total duration (<code>Duration + Start Lifetime</code>) is set to match the Timeline Asset and its <code>Stop Action</code> is set to <code>Destroy</code> so that it will automatically destroy its <code>GameObject</code> when it finishes since it won't get used again until we load another scene with the character in it (or instantiate a copy of their prefab). For that reason, the <code>IntroductionState</code> and <code>ParticleSystem</code> are attached to their own <code>GameObject</code> rather than being with the other states.</p>
+<p>While the Timeline is playing, a <a href="https://docs.unity3d.com/Manual/ParticleSystems.html">Particle System</a> also plays to show some red orbs rising around the character. Its total duration (<code>Duration + Start Lifetime</code>) is set to match the Timeline Asset and its <code>Stop Action</code> is set to <code>Destroy</code> so that it will automatically destroy its <code>GameObject</code> when it finishes since it won't get used again until we load another scene with the character in it (or instantiate a copy of their prefab). For that reason, the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></code> and <code>ParticleSystem</code> are attached to their own <code>GameObject</code> rather than being with the other states.</p>
 <p><img src="particle-system.png" class="img-responsive"></p>
 
 	</section>

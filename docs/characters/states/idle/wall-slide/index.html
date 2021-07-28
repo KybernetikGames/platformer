@@ -231,7 +231,7 @@
 <p>This state can be entered while a character is falling and touching a wall to grab onto it and slow their fall. The <em>Player</em> has it as the first state in their <em>Idle</em> <a href="../multi-state">Multi-State</a> so that any time they could be playing one of their standard <a href="../locomotion">Locomotion</a> animations (<em>Idle</em>, <em>Walk</em>, <em>Run</em>, or <em>Fall</em>) it will first check if they should be in this state instead.</p>
 <h1 id="fields">Fields</h1>
 <p>The field tooltips explain what they each do:</p>
-<pre><code class="language-cs">public class WallSlideState : CharacterState
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.States/WallSlideState">WallSlideState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField]
     private ClipTransition _Animation;

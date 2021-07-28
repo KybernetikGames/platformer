@@ -228,16 +228,16 @@
 	<section class="content">
 		<img src="locomotion.gif" class="img-responsive img-right">
 <p><img src="locomotion.png" class="img-responsive"></p>
-<p>The <code>LocomotionState</code> allows the character to move around like the <code>MobileIdleState</code>, but instead of only having one animation, it has several different ones and can swap between <a href="/animancer/docs/playing/states">Animancer's Animation States</a> while remaining in this single <a href="../../">Character State</a>. This approach has several advantages compared to using a separate component for each animation:</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></code> allows the character to move around like the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/MobileIdleState">MobileIdleState</a></code>, but instead of only having one animation, it has several different ones and can swap between <a href="/animancer/docs/playing/states">Animancer's Animation States</a> while remaining in this single <a href="../../">Character State</a>. This approach has several advantages compared to using a separate component for each animation:</p>
 <ul>
 <li>It doesn't require another script to continuously check which state the character should be in (this could be done with a <a href="../multi-state">Multi State</a> though).</li>
-<li>Avoiding that extra script and not needing each state to have its own reference to the <code>Character</code> is slightly better for performance (though the difference is extremely small).</li>
+<li>Avoiding that extra script and not needing each state to have its own reference to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> is slightly better for performance (though the difference is extremely small).</li>
 <li>It makes it clear that these are the character's standard animations for moving around the environment and you can simply look at the <code>CurrentAnimation</code> property to see how it decides which one to use instead of needing to look through multiple very short scripts to check each of their conditions.</li>
 <li>Only needing to manage a single component is also a bit easier for development and avoids cluttering the Inspector.</li>
 </ul>
 <h1 id="fields">Fields</h1>
 <p>The fields are <a href="/animancer/docs/manual/transitions">Transitions</a> for each of the animations involved in this state:</p>
-<pre><code class="language-cs">public class LocomotionState : CharacterState
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField]
     private ClipTransition _Idle;
@@ -256,7 +256,7 @@
     public ClipTransition Fall =&gt; _Fall;
 </code></pre>
 <p>Note that the characters in the Platformer Game Kit don't actually have separate sprites for <em>Walk</em> and <em>Run</em> animations so they simply use the same one for both with the <a href="/animancer/docs/manual/transitions">Transition</a>'s <code>Speed</code> changed.</p>
-<p>It also uses an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method to <a href="/animancer/docs/manual/playing/edit-mode">apply the currently assigned <em>Idle</em> animation's first frame</a> just like the <code>IdleState</code>:</p>
+<p>It also uses an <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html"><code>OnValidate</code></a> method to <a href="/animancer/docs/manual/playing/edit-mode">apply the currently assigned <em>Idle</em> animation's first frame</a> just like the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/IdleState">IdleState</a></code>:</p>
 <pre><code class="language-cs">#if UNITY_EDITOR
     protected override void OnValidate()
     {

@@ -231,7 +231,7 @@
 <p>This state simply plays a quick animation when the character lands on a platform before going to their regular <em>Idle</em> state. It's self-contained and automatically starts itself as necessary like the <a href="../../introduction">Introduction</a> state. The video to the right is slowed down to properly show the animation since it is so quick.</p>
 <h1 id="fields">Fields</h1>
 <p>The field tooltips explain what they each do:</p>
-<pre><code class="language-cs">public class LandState : CharacterState
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.States/LandState">LandState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField]
     private ClipTransition _Animation;
@@ -262,7 +262,7 @@
 #endif
 </code></pre>
 <h1 id="initialization">Initialization</h1>
-<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to enter the character's default state (the <code>Character.Idle</code> state) and also registers its <code>OnGroundedChanged</code> method to be called when the <a href="../../../physics#character-body">Character Body</a> changes from <em>grounded</em> to <em>airborne</em> or vide versa:</p>
+<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to enter the character's default state (the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/5667C1C1">Character.Idle</a></code> state) and also registers its <code>OnGroundedChanged</code> method to be called when the <a href="../../../physics#character-body">Character Body</a> changes from <em>grounded</em> to <em>airborne</em> or vide versa:</p>
 <pre><code class="language-cs">    private void Awake()
     {
         _Animation.Events.OnEnd += Character.StateMachine.ForceSetDefaultState;

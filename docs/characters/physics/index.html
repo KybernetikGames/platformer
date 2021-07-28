@@ -319,7 +319,7 @@
 </table>
 <p>A <em>MawFlower</em> is a plant enemy which doesn't move, so it doesn't have a <code>Rigidbody2D</code> at all.</p>
 <h1 id="character-body">Character Body</h1>
-<p>Every character that can move has a <code>CharacterBody2D</code> component which manages the movements of a character. It has references to a <code>Collider</code> and <code>Rigidbody</code>, as well as properties to access its <code>Position</code>, <code>Velocity</code>, and various other details, but perhaps most important is the <code>IsGrounded</code> property which other scripts can use to check if the character is currently touching a surface that is considered to be ground.</p>
+<p>Every character that can move has a <code><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a></code> component which manages the movements of a character. It has references to a <code>Collider</code> and <code>Rigidbody</code>, as well as properties to access its <code>Position</code>, <code>Velocity</code>, and various other details, but perhaps most important is the <code>IsGrounded</code> property which other scripts can use to check if the character is currently touching a surface that is considered to be ground.</p>
 <table class="table">
   <thead>
     <tr><th style="width:50%">Component</th>
@@ -327,11 +327,11 @@
   </tr></thead>
   <tbody>
     <tr>
-      <td><p>The base <code>CharacterBody2D</code> component doesn't actually do anything on its own, it simply allows other scripts to access its details. It doesn't even update the <code>IsGrounded</code> property which always returns <code>false</code>.</p>The flying <em>Gobbat</em> enemy uses this component because it doesn't care about the ground so there is no point in wasting performance on ground checks.</td>
+      <td><p>The base <code><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a></code> component doesn't actually do anything on its own, it simply allows other scripts to access its details. It doesn't even update the <code>IsGrounded</code> property which always returns <code>false</code>.</p>The flying <em>Gobbat</em> enemy uses this component because it doesn't care about the ground so there is no point in wasting performance on ground checks.</td>
       <td><img src="character-body.png" class="img-responsive"></td>
     </tr>
     <tr>
-      <td>The <code>BoxCharacterBody2D</code> component <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code>CharacterBody2D</code>. It performs ground checking and step detection as explained in the table below.</td>
+      <td>The <code><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D">BoxCharacterBody2D</a></code> component <a href="/animancer/docs/introduction/cs/inheritance">Inherits</a> from the base <code><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a></code>. It performs ground checking and step detection as explained in the table below.</td>
       <td><img src="box-character-body.png" class="img-responsive"></td>
     </tr>
     <tr>
@@ -395,9 +395,9 @@
 <ul>
 <li>The horizontal <code>CharacterBrain.MovementDirection</code> determines which direction the character's <a href="../brains">Brain</a> wants to move them (and how fast in case the player is using a controller with the joystick not tilted all the way).</li>
 <li>The <code>CharacterBrain.Run</code> flag determines whether the <code>Walk Speed</code> or <code>Run Speed</code> is used.</li>
-<li>That speed is multiplied by the <code>CharacterState.MovementSpeedMultiplier</code> of the character's current <a href="../states">State</a>.
+<li>That speed is multiplied by the <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState/1B8C03CB">CharacterState.MovementSpeedMultiplier</a></code> of the character's current <a href="../states">State</a>.
 <ul>
-<li>For example, <code>LocomotionState</code> and <code>JumpState</code> have a multiplier of <code>1</code> to allow movement at the character's full speed while <code>AttackState</code> and <code>DieState</code> have a multiplier of <code>0</code> to prevent characters from moving while attacking, getting hit, or dying.</li>
+<li>For example, <code><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></code> and <code><a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a></code> have a multiplier of <code>1</code> to allow movement at the character's full speed while <code><a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a></code> and <code>DieState</code> have a multiplier of <code>0</code> to prevent characters from moving while attacking, getting hit, or dying.</li>
 </ul>
 </li>
 <li>The <code>CharacterBody.IsGrounded</code> and the <code>CharacterBrain.Run</code> determine which of the <a href="#smoothing">Smoothing</a> values are used. The <code>Grip Friction</code> also affects the <a href="#smoothing">Smoothing</a> based on the <code>Friction</code> of the ground's <a href="https://docs.unity3d.com/Manual/class-PhysicsMaterial2D.html">Physics Material</a> as explained in the table below.</li>
@@ -430,7 +430,7 @@
 <p>This component is used by the <em>Gobbat</em> enemy and controls its velocity according to the following factors:</p>
 <ul>
 <li>The <code>CharacterBrain.MovementDirection</code> determines which direction the character's <a href="../brains">Brain</a> wants tomove them (and how fast in case the player is using a controller with the joystick not tilted all the way, though this component iscurrently only used by the <em>Gobbat</em> enemy).</li>
-<li>The <code>CharacterState.MovementSpeedMultiplier</code> is used just like in the <code>GroundCharacterMovement</code> component.</li>
+<li>The <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState/1B8C03CB">CharacterState.MovementSpeedMultiplier</a></code> is used just like in the <code><a href="/platformer/api/PlatformerGameKit.Characters/GroundCharacterMovement">GroundCharacterMovement</a></code> component.</li>
 <li>The <code>Horizontal Speed</code> determines the target left/right speed.</li>
 <li>The <code>Ascent Speed</code> determines the target speed while moving upwards and the <code>Descent Speed</code> does the samewhile moving downwards.</li>
 </ul>

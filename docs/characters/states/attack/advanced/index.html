@@ -231,8 +231,8 @@
 <p><img src="advanced.gif" class="img-responsive"></p>
 <p>This is the <em>Player</em>'s attack state which has combos and separate animations for ground, air, and while aiming upwards. It could be used by other characters, but none of the enemies have more than one attack animation and their <a href="../../../brains">Brains</a> would also need to be changed to make use of combos and jumping.</p>
 <h1 id="fields">Fields</h1>
-<p>The fields are all arrays of <code>AttackTransition</code>s, though the <code>Ground Animations</code> are the only group with multiple animations to perform a combo:</p>
-<pre><code class="language-cs">public sealed class AdvancedAttackState : AttackState
+<p>The fields are all arrays of <code><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></code>s, though the <code>Ground Animations</code> are the only group with multiple animations to perform a combo:</p>
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters.States/AdvancedAttackState">AdvancedAttackState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a>
 {
     const string TooltipPrefix = "The animation combo used when the character is";
 

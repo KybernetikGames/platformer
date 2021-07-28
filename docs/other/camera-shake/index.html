@@ -226,14 +226,14 @@
 		</section>
 	<section class="content">
 		<img src="shake.gif" class="img-responsive img-right">
-<p>The <em>Main Camera</em> prefab has a <code>CameraShake</code> component to make it shake in response to certain events based on the GDC talk:</p>
+<p>The <em>Main Camera</em> prefab has a <code><a href="/platformer/api/PlatformerGameKit/CameraShake">CameraShake</a></code> component to make it shake in response to certain events based on the GDC talk:</p>
 <iframe width="200" height="113" src="https://www.youtube.com/embed/tu-Qe66AvtY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<p>Currently, the only event that causes it is the <em>Player</em> getting hit, which is implemented by the <code>CameraShakeWhenHit</code> component attached to the <em>Player</em> prefab, but any other script could easily add to the <code>CameraShake.Instance.Magnitude</code>.</p>
+<p>Currently, the only event that causes it is the <em>Player</em> getting hit, which is implemented by the <code><a href="/platformer/api/PlatformerGameKit/CameraShakeWhenHit">CameraShakeWhenHit</a></code> component attached to the <em>Player</em> prefab, but any other script could easily add to the <code>CameraShake.Instance.Magnitude</code>.</p>
 <h1 id="fields">Fields</h1>
 <p>As explained in the video above, shaking the X and Y Position and the Z Rotation works well for a 2D platformer:</p>
 <p><img src="shake.png" class="img-responsive"></p>
 <p>The fields have tooltips explaining what they do and <a href="/animancer/docs/manual/other/units">Units Attributes</a> where appropriate (unfortunately, they don't work on <code>Vector3</code> fields so the tooltips need to specify their units):</p>
-<pre><code class="language-cs">public sealed class CameraShake : MonoBehaviour
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit/CameraShake">CameraShake</a> : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("The maximum distance the shake can move the camera on each axis (in meters)")]
@@ -302,7 +302,7 @@
         ...
 </code></pre>
 <p>It has a static <code>Instance</code> property which it assigns itself to on startup so that other scripts (such as the <a href="#on-hit">Camera Shake On Hit</a> component) can access it:</p>
-<pre><code class="language-cs">    public static CameraShake Instance { get; private set; }
+<pre><code class="language-cs">    public static <a href="/platformer/api/PlatformerGameKit/CameraShake">CameraShake</a> Instance { get; private set; }
 
     private void Awake()
     {
@@ -377,12 +377,12 @@
 </code></pre>
 <img src="shake-when-hit.png" class="img-responsive img-right">
 <h1 id="when-hit">When Hit</h1>
-<p>The <em>Player</em> prefab has a <code>CameraShakeWhenHit</code> component which registers a callback to their <code>Health.OnHitReceived</code> prefab to add to the <code>CameraShake.Magnitude</code>. There isn't really anything else in the script that needs explaining.</p>
-<pre><code class="language-cs">public sealed class CameraShakeWhenHit : MonoBehaviour
+<p>The <em>Player</em> prefab has a <code><a href="/platformer/api/PlatformerGameKit/CameraShakeWhenHit">CameraShakeWhenHit</a></code> component which registers a callback to their <code>Health.OnHitReceived</code> prefab to add to the <code><a href="/platformer/api/PlatformerGameKit/CameraShake/8FEAAB15">CameraShake.Magnitude</a></code>. There isn't really anything else in the script that needs explaining.</p>
+<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit/CameraShakeWhenHit">CameraShakeWhenHit</a> : MonoBehaviour
 {
     [SerializeField]
-    private Health _Health;
-    public Health Health =&gt; _Health;
+    private <a href="/platformer/api/PlatformerGameKit/Health">Health</a> _Health;
+    public <a href="/platformer/api/PlatformerGameKit/Health">Health</a> <a href="/platformer/api/PlatformerGameKit/Health">Health</a> =&gt; _Health;
 
     [SerializeField, Multiplier]
     [Tooltip("The shake magnitude to apply regardless of damage taken")]

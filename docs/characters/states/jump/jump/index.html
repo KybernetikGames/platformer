@@ -232,7 +232,7 @@
 <p>This state requires the character to be on the ground and launches them into the air with an amount of force calculated so that they will reach a specific <code>Height</code> at the top of their jump arc. The <em>Player</em> doesn't actually use this state directly, but all the other jump states <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from it to build upon its basic functionality.</p>
 <h1 id="fields">Fields</h1>
 <p>The field tooltips explain what they each do:</p>
-<pre><code class="language-cs">public class JumpState : CharacterState
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a> : <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>
 {
     [SerializeField]
     private ClipTransition _Animation;
@@ -259,7 +259,7 @@
 #endif
 </code></pre>
 <h1 id="initialization">Initialization</h1>
-<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return to the character's default state (the <code>Character.Idle</code> state):</p>
+<p>On startup, it sets the animation's <a href="/animancer/docs/manual/events/end">End Event</a> to return to the character's default state (the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character/5667C1C1">Character.Idle</a></code> state):</p>
 <pre><code class="language-cs">    protected virtual void Awake()
     {
         _Animation.Events.OnEnd += Character.StateMachine.ForceSetDefaultState;

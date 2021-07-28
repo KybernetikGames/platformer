@@ -224,7 +224,7 @@
 			<h1>Hits</h1>
 		</section>
 	<section class="content">
-		<p>The <code>Hit</code> struct is used to pass the details about an attack (such as the amount of damage being dealt) to the target being attacked. It uses the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods"><code>partial</code></a> keyword to split its definition into two scripts:</p>
+		<p>The <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> struct is used to pass the details about an attack (such as the amount of damage being dealt) to the target being attacked. It uses the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods"><code>partial</code></a> keyword to split its definition into two scripts:</p>
 <table class="table">
 <thead>
 <tr>
@@ -246,16 +246,16 @@
 </tr>
 </tbody>
 </table>
-<p>Using the system simply involves creating a <code>new Hit</code> and calling one of its methods. For example, <a href="melee#hit-triggers">Hit Triggers</a> use something like this:</p>
+<p>Using the system simply involves creating a <code>new <a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> and calling one of its methods. For example, <a href="melee#hit-triggers">Hit Triggers</a> use something like this:</p>
 <pre><code class="language-cs">private void OnTriggerStay2D(Collider2D collider)
 {
     var hit = new Hit(..., ..., ...);
     hit.TryHitComponent(collider);
 }
 </code></pre>
-<p><code>Hit.TryHitComponent</code> gets any component that implements the <code>Hit.ITarget</code> interface, checks if it <code>CanBeHit</code> by the current attack, and then calls <code>ReceiveHit</code> on it if allowed. There are various other <code>TryHit</code> methods which are listed in the API Documentation for <code>Hit</code>.</p>
-<p>Since <code>Hit</code> is a struct, using it like this won't create any <a href="/animancer/docs/introduction/cs/other#garbage-collection">Garbage</a> so its performance is good.</p>
-<p>There are two components that implement <code>Hit.ITarget</code>:</p>
+<p><code>Hit.TryHitComponent</code> gets any component that implements the <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code> interface, checks if it <code>CanBeHit</code> by the current attack, and then calls <code>ReceiveHit</code> on it if allowed. There are various other <code>TryHit</code> methods which are listed in the API Documentation for <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code>.</p>
+<p>Since <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> is a struct, using it like this won't create any <a href="/animancer/docs/introduction/cs/other#garbage-collection">Garbage</a> so its performance is good.</p>
+<p>There are two components that implement <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code>:</p>
 <table class="table">
 <thead>
 <tr>
@@ -266,19 +266,19 @@
 </thead>
 <tbody>
 <tr>
-<td><code>Health</code></td>
+<td><code><a href="/platformer/api/PlatformerGameKit/Health">Health</a></code></td>
 <td>Characters</td>
-<td><code>ReceiveHit</code> reduces the <code>Health.CurrentHealth</code> by the <code>Hit.damage</code> and calls <code>Health.OnCurrentHealthChanged</code>.</td>
+<td><code>ReceiveHit</code> reduces the <code><a href="/platformer/api/PlatformerGameKit/Health/754830B3">Health.CurrentHealth</a></code> by the <code>Hit.damage</code> and calls <code>Health.OnCurrentHealthChanged</code>.</td>
 </tr>
 <tr>
-<td><code>Destructible</code></td>
+<td><code><a href="/platformer/api/PlatformerGameKit/Destructible">Destructible</a></code></td>
 <td>Destructible Blocks</td>
 <td>Has no health, <code>ReceiveHit</code> simply destroys the <code>GameObject</code>.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="hit-modifiers">Hit Modifiers</h1>
-<p>The <code>Hit.ITarget</code> methods take the <code>Hit</code> data as a <code>ref</code> parameter, meaning that they can modify the data for the caller. This is currently unused, but it allows for various possibilities if the system were to be used in a more complex game:</p>
+<p>The <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code> methods take the <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> data as a <code>ref</code> parameter, meaning that they can modify the data for the caller. This is currently unused, but it allows for various possibilities if the system were to be used in a more complex game:</p>
 <ul>
 <li>If a character has armour, it could reduce the <code>Hit.damage</code> so that afterwards the attacker could check how much damage was actually applied.</li>
 <li>If a Paladin has an ability to intercept an attack targeting their allies, they could change the <code>Hit.target</code> during the <code>Hit.ITarget.CanHit</code> method.</li>
