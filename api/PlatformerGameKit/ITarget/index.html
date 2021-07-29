@@ -212,8 +212,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/platformer/api/PlatformerGameKit/Health">Health</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit/Destructible">Destructible</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit/Health">Health</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -223,10 +223,10 @@
 							graph BT
 	Type["Hit.ITarget"]
 class Type type-node
-	Implementing0["Health"]-.-&gt;Type
-	click Implementing0 "/platformer/api/PlatformerGameKit/Health"
-	Implementing1["Destructible"]-.-&gt;Type
-	click Implementing1 "/platformer/api/PlatformerGameKit/Destructible"
+	Implementing0["Destructible"]-.-&gt;Type
+	click Implementing0 "/platformer/api/PlatformerGameKit/Destructible"
+	Implementing1["Health"]-.-&gt;Type
+	click Implementing1 "/platformer/api/PlatformerGameKit/Health"
 
 						</div>
 					</div>
@@ -291,43 +291,54 @@ class Type type-node
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                <strong><div style="text-align:left; display:flex">
+                <strong>
+  <div style="text-align:left; display:flex">
 
-<div>
-<p>Documentation</p>
-<p><a href="/platformer/docs/examples">Examples</a></p>
-<p><a href="/platformer/docs/manual">User Manual</a></p>
-<p><a href="/platformer/docs/changes">Change Log</a></p>
-</div>
+    <div>
+      <p>Download</p>
+      <p>
+        <a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a>
+      </p>
+      <p>
+        <a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a>
+      </p>
+      <p>
+        <a href="/animancer">Animancer</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Download</p>
-<p><a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a></p>
-<p><a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a></p>
-<p><a href="/animancer">Animancer</a></p>
-</div>
+    <div>
+      <p>Contact</p>
+      <p>
+        <a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a>
+      </p>
+      <p>
+        <a href="/platformer/forum">Unity Forum</a>
+      </p>
+      <p>
+        <a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Contact</p>
-<p><a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a></p>
-<p><a href="/platformer/forum">Unity Forum</a></p>
-<p><a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a></p>
-</div>
+    <div>
+      <p>Other Assets</p>
+      <p>
+        <a href="/inspector-gadgets">Inspector Gadgets</a>
+      </p>
+      <p>
+        <a href="/weaver">Weaver</a>
+      </p>
+      <p>
+        <a href="/ultevents">UltEvents</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
-
-<div>
-<p>Other Assets</p>
-<p><a href="/inspector-gadgets">Inspector Gadgets</a></p>
-<p><a href="/weaver">Weaver</a></p>
-<p><a href="/ultevents">UltEvents</a></p>
-</div>
-
-</div></strong>
+  </div>
+</strong>
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -276,7 +276,7 @@
 <ol>
 <li><p></p><details><summary>Back up your project.</summary><p>Animancer and the Platformer Game Kit are no more likely than anything else to cause problems, but this is simply a good habit whenever you make significant changes to a project. Better yet, you should be using a proper version control system such as Git to track all changes.</p></details><p></p>
 </li>
-<li><p></p><details><summary>Get Unity 2019.4 or newer.</summary><p>Animancer has been tested in Unity <code>2019.4</code>, <code>2020.3</code>, and <code>2021.1</code>. Other versions newer than 2019 are likely to work fine, but have not been specifically tested.</p></details><p></p>
+<li><p></p><details><summary>Get Unity 2019.4 or newer.</summary><p>This system has been tested in Unity <code>2019.4</code>, <code>2020.3</code>, and <code>2021.1</code>. Other versions newer than 2019 are likely to work fine, but have not been specifically tested.</p></details><p></p>
 </li>
 <li><p></p><details><summary><strong>Delete any previous versions of Animancer and the Platformer Game Kit.</strong></summary><p>This is mandatory since Unity's package importer system doesn't delete or rename existing files so any old scripts that aren't directly overwritten would cause compile errors that prevent anything from working. Check the <a href="../../changes">Change Log</a> to find out what has changed between versions.</p></details><p></p>
 </li>
@@ -299,17 +299,17 @@
     </tr>
     <tr>
       <td><a href="/animancer/docs/manual/events/animancer">Animancer Events</a></td>
-      <td>The combat system uses events to activate the hit triggers corresponding to each frame of the attack animations.</td>
+      <td>The combat system uses events to activate the <a href="../../combat/melee">Hit Boxes</a> corresponding to each frame of the attack animations.</td>
       <td>In Runtime Builds, the attack animations will still play but they will not actually deal damage to enemies or break destructible blocks.</td>
     </tr>
     <tr>
       <td><a href="/animancer/docs/manual/timeline">Timeline</a></td>
-      <td>When the player spawns, they play an <em>Introduction</em> animation made using Unity's Timeline package.</td>
+      <td>When the player spawns, they play an <a href="../../characters/states/introduction">Introduction</a> animation made using Unity's Timeline package.</td>
       <td>In Runtime Builds, the player simply goes straight to their <em>Idle</em> state on startup.</td>
     </tr>
     <tr>
       <td>Animation Speed</td>
-      <td>The player character <em>Runs</em> by playing the <em>Walk</em> animation at a faster speed.</td>
+      <td>The <em>Player</em> character <em>Runs</em> by playing the <em>Walk</em> animation at a faster speed.</td>
       <td>In Runtime Builds, the animation speed doesn't change. To avoid this, we would need to either have a separate <em>Run</em> animation or make another copy of the <em>Walk</em> animation with the modified speed (though that would waste a bit of memory for the duplicated animation data).</td>
     </tr>
   </tbody>
@@ -317,13 +317,13 @@
 <h1 id="download-the-platformer-game-kit">5. Download the Platformer Game Kit</h1>
 <p></p><table class="title-table">
   <thead>
-    <tr><th style="white-space:nowrap"><a href="https://kybernetik.itch.io/animancer-lite"><img src="itch.png"> itch.io (Recommended)
+    <tr><th style="white-space:nowrap"><a href="https://kybernetik.itch.io/platformer"><img src="itch.png"> itch.io (Recommended)
 <small><ul>
 <li>Faster updates (no approval process)</li>
 <li>Direct download using Web Browser</li>
 </ul></small></a></th>
     <th width="100%"></th>
-    <th style="white-space:nowrap"><a href="https://assetstore.unity.com/packages/tools/animation/animancer-lite-116516?aid=1100l8ah5"><img src="unity.png"> Unity Asset Store
+    <th style="white-space:nowrap"><a href="https://assetstore.unity.com?aid=1100l8ah5"><img src="unity.png"> Unity Asset Store (Coming Soon)
 <small><ul>
 <li>Updates take a few days or more for approval</li>
 <li>Must download inside the Unity Editor</li>
@@ -343,43 +343,54 @@
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                <strong><div style="text-align:left; display:flex">
+                <strong>
+  <div style="text-align:left; display:flex">
 
-<div>
-<p>Documentation</p>
-<p><a href="/platformer/docs/examples">Examples</a></p>
-<p><a href="/platformer/docs/manual">User Manual</a></p>
-<p><a href="/platformer/docs/changes">Change Log</a></p>
-</div>
+    <div>
+      <p>Download</p>
+      <p>
+        <a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a>
+      </p>
+      <p>
+        <a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a>
+      </p>
+      <p>
+        <a href="/animancer">Animancer</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Download</p>
-<p><a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a></p>
-<p><a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a></p>
-<p><a href="/animancer">Animancer</a></p>
-</div>
+    <div>
+      <p>Contact</p>
+      <p>
+        <a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a>
+      </p>
+      <p>
+        <a href="/platformer/forum">Unity Forum</a>
+      </p>
+      <p>
+        <a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Contact</p>
-<p><a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a></p>
-<p><a href="/platformer/forum">Unity Forum</a></p>
-<p><a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a></p>
-</div>
+    <div>
+      <p>Other Assets</p>
+      <p>
+        <a href="/inspector-gadgets">Inspector Gadgets</a>
+      </p>
+      <p>
+        <a href="/weaver">Weaver</a>
+      </p>
+      <p>
+        <a href="/ultevents">UltEvents</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
-
-<div>
-<p>Other Assets</p>
-<p><a href="/inspector-gadgets">Inspector Gadgets</a></p>
-<p><a href="/weaver">Weaver</a></p>
-<p><a href="/ultevents">UltEvents</a></p>
-</div>
-
-</div></strong>
+  </div>
+</strong>
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

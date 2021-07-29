@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - API - CharacterBody2D.CharacterBody2D.Editor Class</title>
+        <title>Platformer Game Kit - API - Character.Character.Editor Class</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -172,8 +172,8 @@
 
 
 <section class="content-header">
-			<h3><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D">CharacterBody2D</a>.</h3>
-	<h1>CharacterBody2D<wbr>.Editor <small>Class</small></h1>
+			<h3><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a>.</h3>
+	<h1>Character<wbr>.Editor <small>Class</small></h1>
 </section>
 <section class="content">
 	
@@ -207,7 +207,7 @@
 						<div class="mermaid">
 							graph BT
 	Type--&gt;Base0["Editor"]
-	Type["CharacterBody2D.Editor"]
+	Type["Character.Editor"]
 class Type type-node
 
 						</div>
@@ -217,16 +217,26 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[UnityEditor.CustomEditor(typeof(CharacterBody2D), true)]
-public class CharacterBody2D.Editor : Editor</code></pre>
+	<pre><code>[UnityEditor.CustomEditor(typeof(Character), true)]
+public class Character.Editor : Editor</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
     <code class="cs">https://kybernetik.com.au/inspector-gadgets/pro</code> would allow this to
     be implemented much easier by simply placing
-    <code class="cs">https://kybernetik.com.au/inspector-gadgets/docs/script-inspector/inspectable-attributes</code> on the properties we want to display like so:
+    <code class="cs">https://kybernetik.com.au/inspector-gadgets/docs/script-inspector/inspectable-attributes</code> on the fields and properties we want to display like so:
     <p></p><pre><code class="cs">[Inspectable]
-public bool IsGrounded ...</code></pre>
+public Vector2 MovementDirection ...
+
+[Inspectable]
+public bool Run { get; set; }
+
+[Inspectable]
+public CharacterState CurrentState
+{
+    get =&gt; StateMachine.CurrentState;
+    set =&gt; StateMachine.TrySetState(value);
+}</code></pre>
     </div>
 
 
@@ -267,7 +277,7 @@ public bool IsGrounded ...</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters/Editor/2967CC65">OnInspectorGUI<wbr>()<wbr></a></td>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/Editor/D92979BF">OnInspectorGUI<wbr>()<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div></div>
@@ -292,43 +302,54 @@ public bool IsGrounded ...</code></pre>
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                <strong><div style="text-align:left; display:flex">
+                <strong>
+  <div style="text-align:left; display:flex">
 
-<div>
-<p>Documentation</p>
-<p><a href="/platformer/docs/examples">Examples</a></p>
-<p><a href="/platformer/docs/manual">User Manual</a></p>
-<p><a href="/platformer/docs/changes">Change Log</a></p>
-</div>
+    <div>
+      <p>Download</p>
+      <p>
+        <a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a>
+      </p>
+      <p>
+        <a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a>
+      </p>
+      <p>
+        <a href="/animancer">Animancer</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Download</p>
-<p><a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a></p>
-<p><a href="https://assetstore.unity.com/packages/tools/animation/animancer-pro-116514?aid=1100l8ah5">Asset Store</a></p>
-<p><a href="/animancer">Animancer</a></p>
-</div>
+    <div>
+      <p>Contact</p>
+      <p>
+        <a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a>
+      </p>
+      <p>
+        <a href="/platformer/forum">Unity Forum</a>
+      </p>
+      <p>
+        <a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
+    <div style="width:10%"></div>
 
-<div>
-<p>Contact</p>
-<p><a href="https://github.com/KybernetikGames/platformer/issues">Github Issues</a></p>
-<p><a href="/platformer/forum">Unity Forum</a></p>
-<p><a href="mailto:mail@kybernetik.com.au?subject=Platformer%20Game%20Kit">Email</a></p>
-</div>
+    <div>
+      <p>Other Assets</p>
+      <p>
+        <a href="/inspector-gadgets">Inspector Gadgets</a>
+      </p>
+      <p>
+        <a href="/weaver">Weaver</a>
+      </p>
+      <p>
+        <a href="/ultevents">UltEvents</a>
+      </p>
+    </div>
 
-<div style="width:10%"></div>
-
-<div>
-<p>Other Assets</p>
-<p><a href="/inspector-gadgets">Inspector Gadgets</a></p>
-<p><a href="/weaver">Weaver</a></p>
-<p><a href="/ultevents">UltEvents</a></p>
-</div>
-
-</div></strong>
+  </div>
+</strong>
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
