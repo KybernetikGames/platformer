@@ -230,10 +230,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront">IsEnemyInFront</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront">IsGroundInFront</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront">IsWallInFront</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle">IsIdle</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront">IsGroundInFront</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront">IsEnemyInFront</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront">IsWallInFront</a></li>								
 									</ul>
 								</dd>			
 							
@@ -248,14 +248,14 @@
 	Type-.-&gt;Interface1["IPolymorphic"]
 	Type["ConditionNode"]
 class Type type-node
-	Derived0["IsEnemyInFront"]--&gt;Type
-	click Derived0 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront"
+	Derived0["IsIdle"]--&gt;Type
+	click Derived0 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle"
 	Derived1["IsGroundInFront"]--&gt;Type
 	click Derived1 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront"
-	Derived2["IsWallInFront"]--&gt;Type
-	click Derived2 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront"
-	Derived3["IsIdle"]--&gt;Type
-	click Derived3 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle"
+	Derived2["IsEnemyInFront"]--&gt;Type
+	click Derived2 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront"
+	Derived3["IsWallInFront"]--&gt;Type
+	click Derived3 "/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront"
 
 						</div>
 					</div>
@@ -371,9 +371,7 @@ public abstract class ConditionNode : IBehaviourNode, IPolymorphic</code></pre>
         <a href="https://kybernetik.itch.io/platformer">Itch.io (Recommended)</a>
       </p>
       <p>
-        <strike>
-          <a href="https://assetstore.unity.com">Asset Store (Coming Soon)</a>
-        </strike>
+        <a href="https://assetstore.unity.com/packages/tools/game-toolkits/platformer-game-kit-200756?aid=1100l8ah5">Asset Store</a>
       </p>
       <p>
         <a href="/animancer">Animancer</a>
