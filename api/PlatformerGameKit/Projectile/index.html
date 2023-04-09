@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -161,10 +161,11 @@
 				<li><a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/MovingObject2D">MovingObject2D</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/NextExampleTrigger">NextExampleTrigger</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PassiveHitCollider">PassiveHitCollider</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PlatformerGameKitReadMe">Platformer<wbr>Game<wbr>Kit<wbr>Read<wbr>Me</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/PlatformerUtilities">PlatformerUtilities</a></li>
 				<li class="selected"><a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">Projectile<wbr>Attack<wbr>Transition</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit/ReadMe">ReadMe</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/SetupDemoLayers">SetupDemoLayers</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Strings">Strings</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Team">Team</a></li>
@@ -290,6 +291,20 @@ public sealed class Projectile : MonoBehaviour</code></pre>
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/Projectile/87370E9F">Direction</a></td>
+								<td>Vector2</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/Projectile/DC771CA6">Force</a></td>
+								<td>float</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit/Projectile/139469B7">Ignore</a></td>
 								<td>HashSet<wbr>&lt;<a href="/platformer/api/PlatformerGameKit/ITarget">Hit<wbr>.ITarget</a>&gt;<wbr></td>
 								<td>
@@ -348,7 +363,14 @@ public sealed class Projectile : MonoBehaviour</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/platformer/api/PlatformerGameKit/Projectile/DF6933E4">Fire<wbr>(Vector2, <wbr>Team, <wbr>int, <wbr>HashSet<wbr>&lt;Hit<wbr>.ITarget&gt;<wbr>)<wbr></a></td>
+								<td><a href="/platformer/api/PlatformerGameKit/Projectile/585EF28E">Fire<wbr>(Vector2, <wbr>Team, <wbr>int, <wbr>float, <wbr>HashSet<wbr>&lt;Hit<wbr>.ITarget&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Launches this projectile.</div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/Projectile/2E07866E">Fire<wbr>(Vector2, <wbr>Team, <wbr>int, <wbr>float, <wbr>Vector2, <wbr>HashSet<wbr>&lt;Hit<wbr>.ITarget&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>Launches this projectile.</div>

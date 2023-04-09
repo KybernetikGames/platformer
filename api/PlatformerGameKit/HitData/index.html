@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -161,10 +161,11 @@
 				<li><a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/MovingObject2D">MovingObject2D</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/NextExampleTrigger">NextExampleTrigger</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PassiveHitCollider">PassiveHitCollider</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PlatformerGameKitReadMe">Platformer<wbr>Game<wbr>Kit<wbr>Read<wbr>Me</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/PlatformerUtilities">PlatformerUtilities</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">Projectile<wbr>Attack<wbr>Transition</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit/ReadMe">ReadMe</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/SetupDemoLayers">SetupDemoLayers</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Strings">Strings</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Team">Team</a></li>
@@ -278,11 +279,20 @@ public sealed class HitData</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/platformer/api/PlatformerGameKit/HitData/109D0337">Angle</a></td>
+								<td>float</td>
+								<td>
+									<div>[<code class="cs">UnityEngine.SerializeField</code>]
+    The direction in which the <code class="cs">PlatformerGameKit.HitData.Force</code> is applied (in degrees).
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit/HitData/83D4778D">Area</a></td>
 								<td>Vector2[]</td>
 								<td>
 									<div>[<code class="cs">UnityEngine.SerializeField</code>]
-    A series of points defining the outline of the area affected by this hit.
+    The outline of the area affected by this hit.
     </div>
 								</td>
 							</tr>
@@ -301,6 +311,15 @@ public sealed class HitData</code></pre>
 								<td>
 									<div>[<code class="cs">UnityEngine.SerializeField</code>]
     The <code class="cs">Animancer.AnimancerState.Time</code> when this hit becomes inactive.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/HitData/315BEAA0">Force</a></td>
+								<td>float</td>
+								<td>
+									<div>[<code class="cs">UnityEngine.SerializeField</code>]
+    The knockback <code class="cs">PlatformerGameKit.Hit.force</code> applied to objects by this hit.
     </div>
 								</td>
 							</tr>
@@ -330,6 +349,30 @@ public sealed class HitData</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/platformer/api/PlatformerGameKit/HitData/138CA551">AngleToDirection<wbr>(float, <wbr>bool)<wbr></a></td>
+								<td>Vector2</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/HitData/0A949E1C">AngleToDirection<wbr>(float, <wbr>Quaternion, <wbr>bool)<wbr></a></td>
+								<td>Vector2</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/HitData/8F358F60">DirectionToAngle<wbr>(Vector2, <wbr>bool)<wbr></a></td>
+								<td>float</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit/HitData/91FAA7DE">GetDescription<wbr>(string)<wbr></a></td>
 								<td>string</td>
 								<td>

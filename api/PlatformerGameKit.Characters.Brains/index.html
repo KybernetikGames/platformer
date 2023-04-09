@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -152,7 +152,8 @@
 				<ul class="treeview-menu">
 						<li class=" selected"><a href="/platformer/api/PlatformerGameKit.Characters.Brains">PlatformerGameKit<wbr>.Characters<wbr>.Brains</a></li>
 			<li><a href="/platformer/api/PlatformerGameKit.Characters.States">PlatformerGameKit<wbr>.Characters<wbr>.States</a></li>
-</ul></li></ul></li>      
+</ul></li>			<li><a href="/platformer/api/PlatformerGameKit.Editor">PlatformerGameKit<wbr>.Editor</a></li>
+</ul></li>      
 
                     </ul>
                             
@@ -197,8 +198,17 @@
 									<td>Base class for components that decide what a <code class="cs">PlatformerGameKit.Characters.Character</code> wants to do.</td>
 							</tr>
 							<tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></td>
-									<td>A brain for characters controlled by local player <code class="cs">UnityEngine.Input</code> (keyboard and mouse).</td>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain">PlayerBrain</a></td>
+									<td>
+    A <code class="cs">PlatformerGameKit.Characters.Brains.CharacterBrain</code> which manages the states of a player to be controlled by a
+    <code class="cs">PlatformerGameKit.Characters.Brains.PlayerInputManager</code> or <code class="cs">PlayerInputSystem</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputManager">PlayerInputManager</a></td>
+									<td>
+    A component which controls <code class="cs">PlatformerGameKit.Characters.Brains.PlayerBrain</code> using the legacy <code class="cs">UnityEngine.Input</code> manager.
+    </td>
 							</tr>
 					</tbody></table>
 				</div>

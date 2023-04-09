@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -86,6 +86,7 @@
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#fields">Fields</a></p>
 <p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -161,10 +162,11 @@
 				<li><a href="/platformer/api/PlatformerGameKit/HitTrigger">HitTrigger</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/MovingObject2D">MovingObject2D</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/NextExampleTrigger">NextExampleTrigger</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PassiveHitCollider">PassiveHitCollider</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/PlatformerGameKitReadMe">Platformer<wbr>Game<wbr>Kit<wbr>Read<wbr>Me</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/PlatformerUtilities">PlatformerUtilities</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Projectile">Projectile</a></li>
 				<li class="selected"><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">Projectile<wbr>Attack<wbr>Transition</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit/ReadMe">ReadMe</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/SetupDemoLayers">SetupDemoLayers</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Strings">Strings</a></li>
 				<li><a href="/platformer/api/PlatformerGameKit/Team">Team</a></li>
@@ -212,6 +214,7 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li>I<wbr>Serialization<wbr>Callback<wbr>Receiver</li>								
+											<li>ICopyable<wbr>&lt;<a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">Projectile<wbr>Attack<wbr>Transition</a>&gt;<wbr></li>								
 											<li>ITransitionGUI</li>								
 									</ul>
 								</dd>
@@ -231,7 +234,8 @@
 							graph BT
 	Type--&gt;Base0["ClipTransition"]
 	Type-.-&gt;Interface0["ISerializationCallbackReceiver"]
-	Type-.-&gt;Interface1["ITransitionGUI"]
+	Type-.-&gt;Interface1["ICopyable&lt;ProjectileAttackTransition&gt;"]
+	Type-.-&gt;Interface2["ITransitionGUI"]
 	Type["ProjectileAttackTransition"]
 class Type type-node
 
@@ -245,7 +249,7 @@ class Type type-node
 	<pre><code>[Serializable]
 [EventNames(EventName)]
 public class ProjectileAttackTransition : ClipTransition, ISerializationCallbackReceiver, 
-    ITransitionGUI</code></pre>
+    ICopyable&lt;ProjectileAttackTransition&gt;, ITransitionGUI</code></pre>
 
 
 	<h1 id="Remarks">Remarks</h1>
@@ -323,6 +327,13 @@ public class ProjectileAttackTransition : ClipTransition, ISerializationCallback
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition/B39AC467">Force</a></td>
+								<td>float</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition/22D8AE36">LaunchPoint</a></td>
 								<td>Vector2</td>
 								<td>
@@ -348,6 +359,28 @@ public class ProjectileAttackTransition : ClipTransition, ISerializationCallback
 			</div>
 		
 
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition/73076FCD">CopyFrom<wbr>(<wbr>Projectile<wbr>Attack<wbr>Transition)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 
 

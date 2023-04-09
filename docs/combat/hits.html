@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -124,7 +124,15 @@
                     <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/player">Player Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player/player-input-manager">Player Input Manager</a></li>
+                <li><a href="/platformer/docs/characters/brains/player/player-input-system">Player Input System</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -242,7 +250,7 @@
 <tr>
 <td><code>Hit.Details.cs</code></td>
 <td>Extra details like the amount of damage and the <a href="teams">Team</a> the attacker is on.</td>
-<td>This file is intended to be modified if you bring the system into another project and want to add more details such as damage types or direction and force for a knockback system.</td>
+<td>This file is intended to be modified if you bring the system into another project and want to add more details such as damage types.</td>
 </tr>
 </tbody>
 </table>
@@ -254,7 +262,7 @@
 }
 </code></pre>
 <p><code>Hit.TryHitComponent</code> gets any component that implements the <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code> interface, checks if it <code>CanBeHit</code> by the current attack, and then calls <code>ReceiveHit</code> on it if allowed. There are various other <code>TryHit</code> methods which are listed in the API Documentation for <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code>.</p>
-<p>Since <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> is a struct, using it like this won't create any <a href="/animancer/docs/introduction/cs/other#garbage-collection">Garbage</a> so its performance is good.</p>
+<p>Since <code><a href="/platformer/api/PlatformerGameKit/Hit">Hit</a></code> is a struct, using it like this won't create any <a href="/cs-unity/docs/introduction/other/memory-management#garbage-collection">Garbage</a> so its performance is good.</p>
 <p>There are two components that implement <code><a href="/platformer/api/PlatformerGameKit/ITarget">Hit.ITarget</a></code>:</p>
 <table class="table">
 <thead>

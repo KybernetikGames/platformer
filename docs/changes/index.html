@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -80,7 +80,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#platformer-game-kit-v1.0">Platformer Game Kit v1.0</a></p>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#platformer-game-kit-v1.1">Platformer Game Kit v1.1</a></p>
+<p><a href="#platformer-game-kit-v1.0">Platformer Game Kit v1.0</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -124,7 +125,15 @@
                     <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/player">Player Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player/player-input-manager">Player Input Manager</a></li>
+                <li><a href="/platformer/docs/characters/brains/player/player-input-system">Player Input System</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -224,12 +233,50 @@
 			<h1>Changes</h1>
 		</section>
 	<section class="content">
-		<h1 id="platformer-game-kit-v1.0">Platformer Game Kit v1.0</h1>
+		<h1 id="platformer-game-kit-v1.1">Platformer Game Kit v1.1</h1>
+<blockquote class="blockquote">
+<p>Released 2023-04-09</p>
+</blockquote>
+<ul>
+<li>Added knockback force to hits. <a href="https://github.com/KybernetikGames/platformer/issues/3">#3</a></li>
+<li>Added Trampolines. <a href="https://github.com/KybernetikGames/platformer/issues/10">#10</a></li>
+</ul>
+<p><img src="spikes.gif" class="img-responsive"></p>
+<ul>
+<li>Improved Player Input:
+<ul>
+<li>Split <code>PlayerInputBrain</code> into <code>PlayerBrainStates</code> which references the states and <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputManager">PlayerInputManager</a></code> which reads the raw input.</li>
+<li>Added <code>PlayerInputSystem</code> to support the new Input System package. <a href="https://github.com/KybernetikGames/platformer/issues/2">#2</a></li>
+<li>Added input buffering.</li>
+</ul>
+</li>
+<li>Added custom <code>LayerMask</code>s to <code><a href="/platformer/api/PlatformerGameKit.Characters.States/WallJumpState">WallJumpState</a></code>, <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront">IsGroundInFront</a></code>, and <code><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront">IsWallInFront</a></code> instead of directly using the character's collision mask. <a href="https://github.com/KybernetikGames/platformer/issues/9">#9</a></li>
+<li>Fixed <code>WallJumpState.CheckForWallJump</code> to ignore triggers. <a href="https://github.com/KybernetikGames/platformer/issues/9">#9</a></li>
+<li>Fixed <code>SpriteRenderer</code> Sorting Order for all characters.</li>
+<li>Fixed potential <code>NullReferenceException</code> in <code>CharacterAnimancerComponent.RemoveHitBox</code>. <a href="https://github.com/KybernetikGames/platformer/issues/4">#4</a></li>
+</ul>
+<h1 id="platformer-game-kit-v1.0">Platformer Game Kit v1.0</h1>
 <blockquote class="blockquote">
 <p>Released 2021-07-29</p>
 </blockquote>
 <ul>
 <li>Initial release.</li>
+<li>Player: Idle, Walk, Run, Attack Combo, Up Attack, Sword Throw, Jump, Air Jump, Wall Jump, Wall Cling, Flinch, Die
+<ul>
+<li>Controlled by the Input Manager (Legacy)</li>
+<li>Camera shake when you get hit</li>
+</ul>
+</li>
+<li>Enemies: Gobbler, Gobbat, Maw Flower, Scarecrow, Naga
+<ul>
+<li>Controlled by Behaviour Trees</li>
+</ul>
+</li>
+<li>Characters can walk up and down steps</li>
+<li>Polygonal hit boxes</li>
+<li>Teams to prevent most enemies from attacking each other</li>
+<li>Moving platforms</li>
+<li>Ice</li>
 </ul>
 
 	</section>

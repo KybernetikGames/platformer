@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -122,7 +122,15 @@
                     <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li class="treeview">
+                    <a href="/platformer/docs/characters/brains/player">Player Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player/player-input-manager">Player Input Manager</a></li>
+                <li><a href="/platformer/docs/characters/brains/player/player-input-system">Player Input System</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -284,7 +292,7 @@
       <td><a href="physics">Physics</a> components which manage the character's movements and prevent them from passing through other objects. These components don't decide which way the character wants to move, they simply execute the desired movement of the character's <a href="brains">Brain</a>.</td>
     </tr>
     <tr>
-      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/BehaviourTreeBrain">BehaviourTreeBrain</a></code></td>
+      <td><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a></code><br><code>PlayerBrainStates</code><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputManager">PlayerInputManager</a></code><code>PlayerInputSystem</code><br><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/BehaviourTreeBrain">BehaviourTreeBrain</a></code></td>
       <td>Each character has a <a href="brains">Brain</a> which decides which way they want to move and which actions they want to perform. This includes player input, AI, or anything else that would decide what a character <em>wants</em> to do. These components don't directly execute any of the logic involved in actually moving or performing an action, they simply indicate what they <em>want</em> for other components to execute.</td>
     </tr>
     <tr>

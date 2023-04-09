@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - Player Input Brain</title>
+        <title>Platformer Game Kit - Player Brain</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.0</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -81,9 +81,8 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#fields">Fields</a></p>
-<p><a href="#jumping">Jumping</a></p>
-<p><a href="#attacking">Attacking</a></p>
-<p><a href="#movement">Movement</a></p>
+<p><a href="#input-buffering">Input Buffering</a></p>
+<p><a href="#actions">Actions</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -127,7 +126,15 @@
                     <a href="/platformer/docs/characters/brains">Brains</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                         
-                <li class="selected"><a href="/platformer/docs/characters/brains/player">Player Input Brain</a></li>
+                <li class="treeview active selected">
+                    <a href="/platformer/docs/characters/brains/player">Player Brain</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/platformer/docs/characters/brains/player/player-input-manager">Player Input Manager</a></li>
+                <li><a href="/platformer/docs/characters/brains/player/player-input-system">Player Input System</a></li>
+
+                    </ul>
+                </li>
                 <li class="treeview">
                     <a href="/platformer/docs/characters/brains/behaviour">Behaviour Tree Brain</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
@@ -224,100 +231,80 @@
 
 
 		<section class="content-header">
-			<h1>Player Input Brain</h1>
+			<h1>Player Brain</h1>
 		</section>
 	<section class="content">
-		<img src="inspector.png" class="img-responsive img-right">
-<p>This brain controls the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> using Unity's inbuilt <a href="https://docs.unity3d.com/Manual/class-InputManager.html">Input Manager</a> to detect keyboard and mouse input.</p>
-<p>If you want to use Unity's new <a href="https://docs.unity3d.com/Manual/com.unity.inputsystem.html">Input System</a>, you could make a copy of this script which uses that system instead but you wouldn't need to make any modifications elsewhere since the rest of the character doesn't care what's controlling it.</p>
+		<img src="player-brain.png" class="img-responsive img-right">
+<p>This brain consists of several scripts which control the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> using keyboard and mouse input.</p>
+<p><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain">PlayerBrain</a></code> holds references to the actions the character can perform and manages the <a href="/animancer/docs/manual/fsm/utilities/input-buffer">Input Buffering</a> but doesn't make any decisions on its own, it's set up to be controlled by another component depending on which system you want to use:</p>
+<table class="table">
+  <thead>
+    <tr><th style="width:50%"><code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputManager">PlayerInputManager</a></code></th>
+    <th style="width:50%"><code>PlayerInputSystem</code></th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Uses Unity's inbuilt <a href="https://docs.unity3d.com/Manual/class-InputManager.html">Input Manager</a>.</td>
+      <td>Uses Unity's newer <a href="https://docs.unity3d.com/Manual/com.unity.inputsystem.html">Input System</a> package.</td>
+    </tr>
+    <tr>
+      <td>The <a href="player-input-manager">Player Input Manager</a> page explains this script.</td>
+      <td>The <a href="player-input-system">Player Input System</a> page explains this script.</td>
+    </tr>
+    <tr>
+      <td><p><img src="player-input-manager.png" class="img-responsive"></p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputManager">PlayerInputManager</a></code> is used in the <code>Player</code> prefab by default, but if you want to use the <a href="https://docs.unity3d.com/Manual/com.unity.inputsystem.html">Input System</a> package you can simply remove it and add a <code>PlayerInputSystem</code> component instead.</td>
+      <td><img src="player-input-system.png" class="img-responsive"></td>
+    </tr>
+  </tbody>
+</table>
 <h1 id="fields">Fields</h1>
-<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code> script has <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> to choose which buttons it will use. The Platformer Game Kit is currently only designed for a single <em>Player</em>, but this would allow it to support multiple players by simply giving them each different button names.</p>
-<pre><code class="language-cs">public sealed class <a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a> : <a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a>
+<p>The <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain">PlayerBrain</a></code> script has <a href="/animancer/docs/introduction/cs/variables#serialized-fields">Serialized Fields</a> to reference <code><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a></code>s for each action the character can perform.</p>
+<pre><code class="language-cs">public class <a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain">PlayerBrain</a> : <a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a>
 {
-    [Header("Input Names")]
+    [SerializeField, Seconds(Rule = IsNotNegative)] private float _InputBufferTimeOut = 0.5f;
 
-    [SerializeField]
-    [Tooltip("Space by default")]
-    private string _JumpButton = "Jump";
-
-    [SerializeField]
-    [Tooltip("Left Click by default")]
-    private string _PrimaryAttackButton = "Fire1";
-
-    [SerializeField]
-    [Tooltip("Right Click by default")]
-    private string _SecondaryAttackButton = "Fire2";
-
-    [SerializeField]
-    [Tooltip("Left Shift by default")]
-    private string _RunButton = "Fire3";
-
-    [SerializeField]
-    [Tooltip("A/D and Left/Right Arrows by default")]
-    private string _XAxisName = "Horizontal";
-
-    [SerializeField]
-    [Tooltip("W/S and Up/Down Arrows by default")]
-    private string _YAxisName = "Vertical";
-</code></pre>
-<p>The other fields are listed in each of their appropriate sections.</p>
-<h1 id="jumping">Jumping</h1>
-<img src="../../states/jump/all.gif" class="img-responsive img-right">
-<p>The <em>Player</em> has a <a href="../../states/multi">Multi State</a> assigned to the <code>_Jump</code> field so that when the <code>_JumpButton</code> button is pressed, the character will automatically activate the correct type of jump action depending on their circumstances:</p>
-<ul>
-<li><a href="../../states/jump/wall">Wall Jump</a> if they are in the air next to a wall.</li>
-<li><a href="../../states/jump/air">Air Jump</a> if they are in the air and haven't already jumped too many times.</li>
-<li><a href="../../states/jump/hold">Hold Jump</a> if they are on the ground.</li>
-</ul>
-<p>Using a <a href="../../states/multi">Multi State</a> means that the <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/PlayerInputBrain">PlayerInputBrain</a></code> doesn't need to be aware of any of that logic, but since they all <a href="/animancer/docs/introduction/cs/inheritance">Inherit</a> from <a href="../../states/jump/hold">Hold Jump</a> the brain does need to end the state if the <code>_JumpButton</code> is released early so that the <em>Player</em> can quickly tap the button for a short jump or hold it to jump higher.</p>
-<pre><code class="language-cs">    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _Jump;
-    
-    private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _CurrentJumpState;
-    
-    private void Update()
-    {
-        if (_Jump != null)
-        {
-</code></pre>
-<p>When the <code>_JumpButton</code> is pressed, try to enter the <code>_Jump</code> state, and if it was successful, store the state that was actually entered (because entering the <a href="../../multi-state">Multi State</a> immediately enters whichever one of its sub-states was actually allowed):</p>
-<pre><code class="language-cs">            if (Input.GetButtonDown(_JumpButton) &amp;&amp;
-                Character.StateMachine.TrySetState(_Jump))
-                _CurrentJumpState = Character.StateMachine.CurrentState;
-</code></pre>
-<p>Then if the character is still in that state and the <code>_JumpButton</code> is released, return to the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code>'s default state (<code>Idle</code>):</p>
-<pre><code class="language-cs">            if (_CurrentJumpState == Character.StateMachine.CurrentState &amp;&amp;
-                Input.GetButtonUp(_JumpButton))
-                Character.StateMachine.TrySetDefaultState();
-        }
-</code></pre>
-<p>The <a href="../../states/jump/hold">Hold Jump State</a> can be interrupted by anything, so returning to the <a href="../../idle">Idle State</a> simply causes it to stop applying its additional upwards acceleration.</p>
-<h1 id="attacking">Attacking</h1>
-<img src="../../states/attack/attack.gif" class="img-responsive img-right">
-<p><a href="../../states/attack">Attacking</a> is simple: if a state is assigned and the corresponding button is pressed, try to enter that state:</p>
-<pre><code class="language-cs">    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _PrimaryAttack;
+    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _Jump;
+    [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _PrimaryAttack;
     [SerializeField] private <a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a> _SecondaryAttack;
-    
-    private void Update()
-    {
-        ...
-
-        if (_PrimaryAttack != null &amp;&amp; Input.GetButtonDown(_PrimaryAttackButton))
-            Character.StateMachine.TryResetState(_PrimaryAttack);
-
-        if (_SecondaryAttack != null &amp;&amp; Input.GetButtonDown(_SecondaryAttackButton))
-            Character.StateMachine.TryResetState(_SecondaryAttack);
 </code></pre>
-<h1 id="movement">Movement</h1>
-<img src="../../states/idle/locomotion/locomotion.gif" class="img-responsive img-right">
-<p>Movement is also simple: just use the corresponding buttons to set the <a href="../../character#movement">Character Movement</a> properties:</p>
-<pre><code class="language-cs">        <a href="/platformer/api/PlatformerGameKit.Characters/Character/D083B402">Character.Run</a> = Input.GetButton(_RunButton);
+<p>Note that inheriting from <code><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain">CharacterBrain</a></code> means it also has the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> reference field from that class.</p>
+<h1 id="input-buffering">Input Buffering</h1>
+<p>Rather than only attempting to perform an action once when a button is pressed, this brain uses Animancer's <a href="/animancer/docs/manual/fsm/utilities/input-buffer">Input Buffer</a> system to continually attempt the action each frame for a short time so that players have a bit of leeway in timing their button presses for consecutive actions.</p>
+<pre><code class="language-cs">private StateMachine&lt;<a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>&gt;.InputBuffer _InputBuffer;
 
-        <a href="/platformer/api/PlatformerGameKit.Characters/Character/F72DA959">Character.MovementDirection</a> = new Vector2(
-            Input.GetAxisRaw(_XAxisName),
-            Input.GetAxisRaw(_YAxisName));
-    }
+protected virtual void Awake()
+{
+    _InputBuffer = new StateMachine&lt;<a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState">CharacterState</a>&gt;.InputBuffer(Character.StateMachine);
+}
+
+protected virtual void Update()
+{
+    _InputBuffer.Update();
+}
+        
+public void Buffer(CharacterState state)
+{
+    if (state == null)
+        return;
+
+    _InputBuffer.Buffer(state, _InputBufferTimeOut);
 }
 </code></pre>
+<h1 id="actions">Actions</h1>
+<p>Returning to the <em>Idle</em> state is used to <a href="../../states/jump/hold">cancel jumping early</a> and has no reason to be buffered, but the other actions all use the above <code>Buffer</code> method.</p>
+<pre><code class="language-cs">public void TryIdle()
+    =&gt; Character.StateMachine.TrySetDefaultState();
+
+public void TryJump()
+    =&gt; Buffer(_Jump);
+
+public void TryPrimaryAttack()
+    =&gt; Buffer(_PrimaryAttack);
+
+public void TrySecondaryAttack()
+    =&gt; Buffer(_SecondaryAttack);
+</code></pre>
+<p>Those methods are <code>public</code> so that they can be called by the <a href="player-input-manager">Player Input Manager</a> or <a href="player-input-system">Player Input System</a>.</p>
 
 	</section>
                 
