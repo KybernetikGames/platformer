@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -220,15 +220,15 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/FlinchState">FlinchState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/IdleState">IdleState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/WallSlideState">WallSlideState</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/LandState">LandState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/FlinchState">FlinchState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/JumpState">JumpState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/IdleState">IdleState</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/LocomotionState">LocomotionState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/MultiState">MultiState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/IntroductionState">IntroductionState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/WallSlideState">WallSlideState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.Characters.States/AttackState">AttackState</a></li>								
 									</ul>
 								</dd>			
 							
@@ -241,24 +241,24 @@
 	Type-.-&gt;Interface0["IOwnedState&lt;CharacterState&gt;"]
 	Type["CharacterState"]
 class Type type-node
-	Derived0["FlinchState"]--&gt;Type
-	click Derived0 "/platformer/api/PlatformerGameKit.Characters.States/FlinchState"
-	Derived1["IntroductionState"]--&gt;Type
-	click Derived1 "/platformer/api/PlatformerGameKit.Characters.States/IntroductionState"
-	Derived2["MultiState"]--&gt;Type
-	click Derived2 "/platformer/api/PlatformerGameKit.Characters.States/MultiState"
-	Derived3["AttackState"]--&gt;Type
-	click Derived3 "/platformer/api/PlatformerGameKit.Characters.States/AttackState"
-	Derived4["IdleState"]--&gt;Type
-	click Derived4 "/platformer/api/PlatformerGameKit.Characters.States/IdleState"
-	Derived5["JumpState"]--&gt;Type
-	click Derived5 "/platformer/api/PlatformerGameKit.Characters.States/JumpState"
-	Derived6["WallSlideState"]--&gt;Type
-	click Derived6 "/platformer/api/PlatformerGameKit.Characters.States/WallSlideState"
-	Derived7["LandState"]--&gt;Type
-	click Derived7 "/platformer/api/PlatformerGameKit.Characters.States/LandState"
-	Derived8["LocomotionState"]--&gt;Type
-	click Derived8 "/platformer/api/PlatformerGameKit.Characters.States/LocomotionState"
+	Derived0["LandState"]--&gt;Type
+	click Derived0 "/platformer/api/PlatformerGameKit.Characters.States/LandState"
+	Derived1["FlinchState"]--&gt;Type
+	click Derived1 "/platformer/api/PlatformerGameKit.Characters.States/FlinchState"
+	Derived2["JumpState"]--&gt;Type
+	click Derived2 "/platformer/api/PlatformerGameKit.Characters.States/JumpState"
+	Derived3["IdleState"]--&gt;Type
+	click Derived3 "/platformer/api/PlatformerGameKit.Characters.States/IdleState"
+	Derived4["LocomotionState"]--&gt;Type
+	click Derived4 "/platformer/api/PlatformerGameKit.Characters.States/LocomotionState"
+	Derived5["MultiState"]--&gt;Type
+	click Derived5 "/platformer/api/PlatformerGameKit.Characters.States/MultiState"
+	Derived6["IntroductionState"]--&gt;Type
+	click Derived6 "/platformer/api/PlatformerGameKit.Characters.States/IntroductionState"
+	Derived7["WallSlideState"]--&gt;Type
+	click Derived7 "/platformer/api/PlatformerGameKit.Characters.States/WallSlideState"
+	Derived8["AttackState"]--&gt;Type
+	click Derived8 "/platformer/api/PlatformerGameKit.Characters.States/AttackState"
 
 						</div>
 					</div>
@@ -267,13 +267,15 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[HelpURL(APIDocumentation + nameof(CharacterState))]
+	<pre><code>[PlatformerHelpUrl(typeof(CharacterState))]
 public abstract class CharacterState : StateBehaviour, IOwnedState&lt;CharacterState&gt;</code></pre>
 
 
 	<h1 id="Remarks">Remarks</h1>
 	<div>
-    Documentation: <a href="https://kybernetik.com.au/platformer/docs/characters/states">States</a>
+    <strong>Documentation:</strong>
+    <a href="https://kybernetik.com.au/platformer/docs/characters/states">
+    States</a>
     </div>
 
 	<h1 id="Attributes">Attributes</h1>
@@ -287,8 +289,10 @@ public abstract class CharacterState : StateBehaviour, IOwnedState&lt;CharacterS
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>HelpURLAttribute</td>
-						<td></td>
+						<td><a href="/platformer/api/PlatformerGameKit/PlatformerHelpUrlAttribute">Platformer<wbr>Help<wbr>Url<wbr>Attribute</a></td>
+						<td>[Assert-Conditional]
+    A <code class="cs">UnityEngine.HelpURLAttribute</code> which points to Platformer Game Kit's documentation.
+    </td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -311,14 +315,6 @@ public abstract class CharacterState : StateBehaviour, IOwnedState&lt;CharacterS
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState/90E0914B">APIDocumentation</a></td>
-								<td>https://kybernetik.com.au/platformer/api/PlatformerGameKit.Characters.States/</td>
-								<td>
-									<div>The URL of the website where the <code class="cs">PlatformerGameKit.Characters.States</code> API documentation is hosted.</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState/2E1FB89E">MenuPrefix</a></td>
 								<td>Platformer Game Kit/Characters/States/</td>
 								<td>
@@ -353,7 +349,7 @@ public abstract class CharacterState : StateBehaviour, IOwnedState&lt;CharacterS
 								<td><a href="/platformer/api/PlatformerGameKit.Characters.States/CharacterState/82EAF91B">Character</a></td>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></td>
 								<td>
-									<div>The <code class="cs">Examples.PlatformerCharacter</code> that owns this state.</div>
+									<div>The <code class="cs">Samples.PlatformerCharacter</code> that owns this state.</div>
 								</td>
 							</tr>
 							<tr>

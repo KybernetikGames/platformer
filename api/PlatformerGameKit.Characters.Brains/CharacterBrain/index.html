@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -225,14 +225,16 @@ class Type type-node
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>[AddComponentMenu(MenuPrefix + "Character Brain")]
-[HelpURL(APIDocumentation + nameof(CharacterBrain))]
+[PlatformerHelpUrl(typeof(CharacterBrain))]
 [DefaultExecutionOrder(DefaultExecutionOrder)]
 public abstract class CharacterBrain : MonoBehaviour</code></pre>
 
 
 	<h1 id="Remarks">Remarks</h1>
 	<div>
-    Documentation: <a href="https://kybernetik.com.au/platformer/docs/characters/brains">Brains</a>
+    <strong>Documentation:</strong>
+    <a href="https://kybernetik.com.au/platformer/docs/characters/brains">
+    Brains</a>
     </div>
 
 	<h1 id="Attributes">Attributes</h1>
@@ -250,8 +252,10 @@ public abstract class CharacterBrain : MonoBehaviour</code></pre>
 						<td></td>
 					</tr>
 					<tr>
-						<td>HelpURLAttribute</td>
-						<td></td>
+						<td><a href="/platformer/api/PlatformerGameKit/PlatformerHelpUrlAttribute">Platformer<wbr>Help<wbr>Url<wbr>Attribute</a></td>
+						<td>[Assert-Conditional]
+    A <code class="cs">UnityEngine.HelpURLAttribute</code> which points to Platformer Game Kit's documentation.
+    </td>
 					</tr>
 					<tr>
 						<td>Default<wbr>Execution<wbr>Order</td>
@@ -278,14 +282,6 @@ public abstract class CharacterBrain : MonoBehaviour</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain/4CBE6B06">APIDocumentation</a></td>
-								<td>https://kybernetik.com.au/platformer/api/PlatformerGameKit.Characters.Brains/</td>
-								<td>
-									<div>The URL of the website where the <code class="cs">PlatformerGameKit.Characters.Brains</code> API documentation is hosted.</div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters.Brains/CharacterBrain/4B28CA01">Default<wbr>Execution<wbr>Order</a></td>
 								<td>-10000</td>
 								<td>

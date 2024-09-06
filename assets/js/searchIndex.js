@@ -39,132 +39,118 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"HoldJumpState",
-            content:"HoldJumpState",
+            title:"HitTrigger",
+            content:"HitTrigger",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/HoldJumpState',
-            title:"HoldJumpState",
+            url:'/platformer/api/PlatformerGameKit/HitTrigger',
+            title:"HitTrigger",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"TrySetState",
-            content:"TrySetState",
+            title:"Hit ITarget",
+            content:"Hit ITarget",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState',
-            title:"TrySetState",
+            url:'/platformer/api/PlatformerGameKit/ITarget',
+            title:"Hit.ITarget",
             description:""
         }
     );
     a(
         {
             id:2,
-            title:"AttackTransition",
-            content:"AttackTransition",
+            title:"IsGroundInFront",
+            content:"IsGroundInFront",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/AttackTransition',
-            title:"AttackTransition",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront',
+            title:"IsGroundInFront",
             description:""
         }
     );
     a(
         {
             id:3,
-            title:"PlatformerGameKitReadMe",
-            content:"PlatformerGameKitReadMe",
+            title:"IsEnemyInFront",
+            content:"IsEnemyInFront",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/PlatformerGameKitReadMe',
-            title:"PlatformerGameKitReadMe",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront',
+            title:"IsEnemyInFront",
             description:""
         }
     );
     a(
         {
             id:4,
-            title:"HealthDisplay",
-            content:"HealthDisplay",
+            title:"AirCharacterMovement",
+            content:"AirCharacterMovement",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/HealthDisplay',
-            title:"HealthDisplay",
+            url:'/platformer/api/PlatformerGameKit.Characters/AirCharacterMovement',
+            title:"AirCharacterMovement",
             description:""
         }
     );
     a(
         {
             id:5,
-            title:"Sequence",
-            content:"Sequence",
+            title:"IsIdle",
+            content:"IsIdle",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence',
-            title:"Sequence",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle',
+            title:"IsIdle",
             description:""
         }
     );
     a(
         {
             id:6,
-            title:"CameraShake",
-            content:"CameraShake",
+            title:"LeafNode",
+            content:"LeafNode",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/CameraShake',
-            title:"CameraShake",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/LeafNode',
+            title:"LeafNode",
             description:""
         }
     );
     a(
         {
             id:7,
-            title:"Team",
-            content:"Team",
+            title:"CharacterBody Editor",
+            content:"CharacterBody Editor",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/Team',
-            title:"Team",
+            url:'/platformer/api/PlatformerGameKit.Characters/Editor',
+            title:"CharacterBody2D.Editor",
             description:""
         }
     );
     a(
         {
             id:8,
-            title:"NextExampleTrigger",
-            content:"NextExampleTrigger",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/NextExampleTrigger',
-            title:"NextExampleTrigger",
-            description:""
-        }
-    );
-    a(
-        {
-            id:9,
             title:"CharacterBrain",
             content:"CharacterBrain",
             description:'',
@@ -178,57 +164,71 @@ var searchModule = function() {
     );
     a(
         {
-            id:10,
-            title:"GroundCharacterMovement",
-            content:"GroundCharacterMovement",
+            id:9,
+            title:"CameraShake",
+            content:"CameraShake",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters/GroundCharacterMovement',
-            title:"GroundCharacterMovement",
+            url:'/platformer/api/PlatformerGameKit/CameraShake',
+            title:"CameraShake",
+            description:""
+        }
+    );
+    a(
+        {
+            id:10,
+            title:"IntroductionState",
+            content:"IntroductionState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/IntroductionState',
+            title:"IntroductionState",
             description:""
         }
     );
     a(
         {
             id:11,
-            title:"PlatformContact",
-            content:"PlatformContact",
+            title:"UnityEventNode",
+            content:"UnityEventNode",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters/PlatformContact2D',
-            title:"PlatformContact2D",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode',
+            title:"UnityEventNode",
             description:""
         }
     );
     a(
         {
             id:12,
-            title:"BasicActionState",
-            content:"BasicActionState",
+            title:"Wait",
+            content:"Wait",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/BasicActionState',
-            title:"BasicActionState",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Wait',
+            title:"Wait",
             description:""
         }
     );
     a(
         {
             id:13,
-            title:"BehaviourTreeBrain",
-            content:"BehaviourTreeBrain",
+            title:"PassiveHitCollider",
+            content:"PassiveHitCollider",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.Brains/BehaviourTreeBrain',
-            title:"BehaviourTreeBrain",
+            url:'/platformer/api/PlatformerGameKit/PassiveHitCollider',
+            title:"PassiveHitCollider",
             description:""
         }
     );
@@ -249,112 +249,112 @@ var searchModule = function() {
     a(
         {
             id:15,
-            title:"CharacterBody Editor",
-            content:"CharacterBody Editor",
+            title:"WallJumpState",
+            content:"WallJumpState",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters/Editor',
-            title:"CharacterBody2D.Editor",
+            url:'/platformer/api/PlatformerGameKit.Characters.States/WallJumpState',
+            title:"WallJumpState",
             description:""
         }
     );
     a(
         {
             id:16,
-            title:"HitTrigger",
-            content:"HitTrigger",
+            title:"AttackState",
+            content:"AttackState",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/HitTrigger',
-            title:"HitTrigger",
+            url:'/platformer/api/PlatformerGameKit.Characters.States/AttackState',
+            title:"AttackState",
             description:""
         }
     );
     a(
         {
             id:17,
-            title:"Hit ITarget",
-            content:"Hit ITarget",
+            title:"PlatformerHelpUrlAttribute",
+            content:"PlatformerHelpUrlAttribute",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/ITarget',
-            title:"Hit.ITarget",
+            url:'/platformer/api/PlatformerGameKit/PlatformerHelpUrlAttribute',
+            title:"PlatformerHelpUrlAttribute",
             description:""
         }
     );
     a(
         {
             id:18,
-            title:"ConditionNode",
-            content:"ConditionNode",
+            title:"IsWallInFront",
+            content:"IsWallInFront",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/ConditionNode',
-            title:"ConditionNode",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront',
+            title:"IsWallInFront",
             description:""
         }
     );
     a(
         {
             id:19,
-            title:"Hit",
-            content:"Hit",
+            title:"HoldJumpState",
+            content:"HoldJumpState",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/Hit',
-            title:"Hit",
+            url:'/platformer/api/PlatformerGameKit.Characters.States/HoldJumpState',
+            title:"HoldJumpState",
             description:""
         }
     );
     a(
         {
             id:20,
-            title:"MovingObject",
-            content:"MovingObject",
+            title:"Health",
+            content:"Health",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/MovingObject2D',
-            title:"MovingObject2D",
+            url:'/platformer/api/PlatformerGameKit/Health',
+            title:"Health",
             description:""
         }
     );
     a(
         {
             id:21,
-            title:"PlayerBrain",
-            content:"PlayerBrain",
+            title:"FlinchState",
+            content:"FlinchState",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain',
-            title:"PlayerBrain",
+            url:'/platformer/api/PlatformerGameKit.Characters.States/FlinchState',
+            title:"FlinchState",
             description:""
         }
     );
     a(
         {
             id:22,
-            title:"IdleState",
-            content:"IdleState",
+            title:"BasicActionState",
+            content:"BasicActionState",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/IdleState',
-            title:"IdleState",
+            url:'/platformer/api/PlatformerGameKit.Characters.States/BasicActionState',
+            title:"BasicActionState",
             description:""
         }
     );
@@ -375,594 +375,6 @@ var searchModule = function() {
     a(
         {
             id:24,
-            title:"IsGroundInFront",
-            content:"IsGroundInFront",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsGroundInFront',
-            title:"IsGroundInFront",
-            description:""
-        }
-    );
-    a(
-        {
-            id:25,
-            title:"LocomotionState",
-            content:"LocomotionState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/LocomotionState',
-            title:"LocomotionState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:26,
-            title:"CharacterState",
-            content:"CharacterState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/CharacterState',
-            title:"CharacterState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:27,
-            title:"GroupNode",
-            content:"GroupNode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/GroupNode',
-            title:"GroupNode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:28,
-            title:"FaceAttacker",
-            content:"FaceAttacker",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker',
-            title:"FaceAttacker",
-            description:""
-        }
-    );
-    a(
-        {
-            id:29,
-            title:"ProjectileAttackTransition",
-            content:"ProjectileAttackTransition",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/ProjectileAttackTransition',
-            title:"ProjectileAttackTransition",
-            description:""
-        }
-    );
-    a(
-        {
-            id:30,
-            title:"SideAttackState",
-            content:"SideAttackState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/SideAttackState',
-            title:"SideAttackState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:31,
-            title:"CharacterAnimancerComponent",
-            content:"CharacterAnimancerComponent",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent',
-            title:"CharacterAnimancerComponent",
-            description:""
-        }
-    );
-    a(
-        {
-            id:32,
-            title:"ITeam",
-            content:"ITeam",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/ITeam',
-            title:"ITeam",
-            description:""
-        }
-    );
-    a(
-        {
-            id:33,
-            title:"ModifierNode",
-            content:"ModifierNode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/ModifierNode',
-            title:"ModifierNode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:34,
-            title:"HitData Drawer",
-            content:"HitData Drawer",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Drawer',
-            title:"HitData.Drawer",
-            description:""
-        }
-    );
-    a(
-        {
-            id:35,
-            title:"JumpState",
-            content:"JumpState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/JumpState',
-            title:"JumpState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:36,
-            title:"Result",
-            content:"Result",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Result',
-            title:"Result",
-            description:""
-        }
-    );
-    a(
-        {
-            id:37,
-            title:"Strings",
-            content:"Strings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Strings',
-            title:"Strings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:38,
-            title:"Ignore",
-            content:"Ignore",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Ignore',
-            title:"Ignore",
-            description:""
-        }
-    );
-    a(
-        {
-            id:39,
-            title:"UnityEventNode",
-            content:"UnityEventNode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode',
-            title:"UnityEventNode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:40,
-            title:"Projectile",
-            content:"Projectile",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Projectile',
-            title:"Projectile",
-            description:""
-        }
-    );
-    a(
-        {
-            id:41,
-            title:"MixedValueFieldGUI",
-            content:"MixedValueFieldGUI",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Editor/MixedValueFieldGUI_1',
-            title:"MixedValueFieldGUI<T>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:42,
-            title:"AirJumpState",
-            content:"AirJumpState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/AirJumpState',
-            title:"AirJumpState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:43,
-            title:"FuncNode",
-            content:"FuncNode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode',
-            title:"FuncNode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:44,
-            title:"TurnAround",
-            content:"TurnAround",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround',
-            title:"TurnAround",
-            description:""
-        }
-    );
-    a(
-        {
-            id:45,
-            title:"BehaviourTreeUtilities",
-            content:"BehaviourTreeUtilities",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/BehaviourTreeUtilities',
-            title:"BehaviourTreeUtilities",
-            description:""
-        }
-    );
-    a(
-        {
-            id:46,
-            title:"SetMovementForward",
-            content:"SetMovementForward",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward',
-            title:"SetMovementForward",
-            description:""
-        }
-    );
-    a(
-        {
-            id:47,
-            title:"BoxCharacterBody",
-            content:"BoxCharacterBody",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D',
-            title:"BoxCharacterBody2D",
-            description:""
-        }
-    );
-    a(
-        {
-            id:48,
-            title:"Health HealthChangeMode",
-            content:"Health HealthChangeMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/HealthChangeMode',
-            title:"Health.HealthChangeMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:49,
-            title:"AirCharacterMovement",
-            content:"AirCharacterMovement",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters/AirCharacterMovement',
-            title:"AirCharacterMovement",
-            description:""
-        }
-    );
-    a(
-        {
-            id:50,
-            title:"Destructible",
-            content:"Destructible",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Destructible',
-            title:"Destructible",
-            description:""
-        }
-    );
-    a(
-        {
-            id:51,
-            title:"LeafNode",
-            content:"LeafNode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/LeafNode',
-            title:"LeafNode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:52,
-            title:"AttackTransition Drawer",
-            content:"AttackTransition Drawer",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Drawer',
-            title:"AttackTransition.Drawer",
-            description:""
-        }
-    );
-    a(
-        {
-            id:53,
-            title:"PassiveHitCollider",
-            content:"PassiveHitCollider",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/PassiveHitCollider',
-            title:"PassiveHitCollider",
-            description:""
-        }
-    );
-    a(
-        {
-            id:54,
-            title:"CameraMan",
-            content:"CameraMan",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/CameraMan',
-            title:"CameraMan",
-            description:""
-        }
-    );
-    a(
-        {
-            id:55,
-            title:"Strings Tooltips",
-            content:"Strings Tooltips",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Tooltips',
-            title:"Strings.Tooltips",
-            description:""
-        }
-    );
-    a(
-        {
-            id:56,
-            title:"Invert",
-            content:"Invert",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Invert',
-            title:"Invert",
-            description:""
-        }
-    );
-    a(
-        {
-            id:57,
-            title:"IsWallInFront",
-            content:"IsWallInFront",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsWallInFront',
-            title:"IsWallInFront",
-            description:""
-        }
-    );
-    a(
-        {
-            id:58,
-            title:"PlatformerUtilities",
-            content:"PlatformerUtilities",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/PlatformerUtilities',
-            title:"PlatformerUtilities",
-            description:""
-        }
-    );
-    a(
-        {
-            id:59,
-            title:"MobileIdleState",
-            content:"MobileIdleState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/MobileIdleState',
-            title:"MobileIdleState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:60,
-            title:"WallSlideState",
-            content:"WallSlideState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/WallSlideState',
-            title:"WallSlideState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:61,
-            title:"Selector",
-            content:"Selector",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Selector',
-            title:"Selector",
-            description:""
-        }
-    );
-    a(
-        {
-            id:62,
-            title:"FlinchState",
-            content:"FlinchState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/FlinchState',
-            title:"FlinchState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:63,
-            title:"CameraShakeWhenHit",
-            content:"CameraShakeWhenHit",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/CameraShakeWhenHit',
-            title:"CameraShakeWhenHit",
-            description:""
-        }
-    );
-    a(
-        {
-            id:64,
-            title:"SetMovementSine",
-            content:"SetMovementSine",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine',
-            title:"SetMovementSine",
-            description:""
-        }
-    );
-    a(
-        {
-            id:65,
-            title:"IntroductionState",
-            content:"IntroductionState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/IntroductionState',
-            title:"IntroductionState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:66,
             title:"IBehaviourNode",
             content:"IBehaviourNode",
             description:'',
@@ -976,77 +388,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:67,
-            title:"Wait",
-            content:"Wait",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Wait',
-            title:"Wait",
-            description:""
-        }
-    );
-    a(
-        {
-            id:68,
-            title:"MultiState",
-            content:"MultiState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/MultiState',
-            title:"MultiState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:69,
-            title:"Character",
-            content:"Character",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters/Character',
-            title:"Character",
-            description:""
-        }
-    );
-    a(
-        {
-            id:70,
-            title:"Character Editor",
-            content:"Character Editor",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters/Editor',
-            title:"Character.Editor",
-            description:""
-        }
-    );
-    a(
-        {
-            id:71,
-            title:"AttackState",
-            content:"AttackState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/AttackState',
-            title:"AttackState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:72,
+            id:25,
             title:"ActionNode",
             content:"ActionNode",
             description:'',
@@ -1060,119 +402,63 @@ var searchModule = function() {
     );
     a(
         {
-            id:73,
-            title:"AdvancedAttackState",
-            content:"AdvancedAttackState",
+            id:26,
+            title:"BoxCharacterBody",
+            content:"BoxCharacterBody",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/AdvancedAttackState',
-            title:"AdvancedAttackState",
+            url:'/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D',
+            title:"BoxCharacterBody2D",
             description:""
         }
     );
     a(
         {
-            id:74,
-            title:"SetupDemoLayers",
-            content:"SetupDemoLayers",
+            id:27,
+            title:"MixedValueFieldGUI",
+            content:"MixedValueFieldGUI",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/SetupDemoLayers',
-            title:"SetupDemoLayers",
+            url:'/platformer/api/PlatformerGameKit.Editor/MixedValueFieldGUI_1',
+            title:"MixedValueFieldGUI<T>",
             description:""
         }
     );
     a(
         {
-            id:75,
-            title:"Context",
-            content:"Context",
+            id:28,
+            title:"Ignore",
+            content:"Ignore",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/Context_1',
-            title:"Context<T>",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Ignore',
+            title:"Ignore",
             description:""
         }
     );
     a(
         {
-            id:76,
-            title:"HitTrigger Editor",
-            content:"HitTrigger Editor",
+            id:29,
+            title:"Result",
+            content:"Result",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit/Editor',
-            title:"HitTrigger.Editor",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Result',
+            title:"Result",
             description:""
         }
     );
     a(
         {
-            id:77,
-            title:"HitData",
-            content:"HitData",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/HitData',
-            title:"HitData",
-            description:""
-        }
-    );
-    a(
-        {
-            id:78,
-            title:"WallJumpState",
-            content:"WallJumpState",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.Characters.States/WallJumpState',
-            title:"WallJumpState",
-            description:""
-        }
-    );
-    a(
-        {
-            id:79,
-            title:"Health",
-            content:"Health",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit/Health',
-            title:"Health",
-            description:""
-        }
-    );
-    a(
-        {
-            id:80,
-            title:"IsEnemyInFront",
-            content:"IsEnemyInFront",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsEnemyInFront',
-            title:"IsEnemyInFront",
-            description:""
-        }
-    );
-    a(
-        {
-            id:81,
+            id:30,
             title:"PlayerInputManager",
             content:"PlayerInputManager",
             description:'',
@@ -1186,21 +472,105 @@ var searchModule = function() {
     );
     a(
         {
-            id:82,
-            title:"IsIdle",
-            content:"IsIdle",
+            id:31,
+            title:"ModifierNode",
+            content:"ModifierNode",
             description:'',
             tags:''
         },
         {
-            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/IsIdle',
-            title:"IsIdle",
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/ModifierNode',
+            title:"ModifierNode",
             description:""
         }
     );
     a(
         {
-            id:83,
+            id:32,
+            title:"Selector",
+            content:"Selector",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Selector',
+            title:"Selector",
+            description:""
+        }
+    );
+    a(
+        {
+            id:33,
+            title:"Hit",
+            content:"Hit",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Hit',
+            title:"Hit",
+            description:""
+        }
+    );
+    a(
+        {
+            id:34,
+            title:"Team",
+            content:"Team",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Team',
+            title:"Team",
+            description:""
+        }
+    );
+    a(
+        {
+            id:35,
+            title:"CharacterState",
+            content:"CharacterState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/CharacterState',
+            title:"CharacterState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:36,
+            title:"AttackTransition",
+            content:"AttackTransition",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/AttackTransition',
+            title:"AttackTransition",
+            description:""
+        }
+    );
+    a(
+        {
+            id:37,
+            title:"AdvancedAttackState",
+            content:"AdvancedAttackState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/AdvancedAttackState',
+            title:"AdvancedAttackState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:38,
             title:"CharacterMovement",
             content:"CharacterMovement",
             description:'',
@@ -1214,7 +584,567 @@ var searchModule = function() {
     );
     a(
         {
-            id:84,
+            id:39,
+            title:"Strings",
+            content:"Strings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Strings',
+            title:"Strings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:40,
+            title:"BehaviourTreeBrain",
+            content:"BehaviourTreeBrain",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.Brains/BehaviourTreeBrain',
+            title:"BehaviourTreeBrain",
+            description:""
+        }
+    );
+    a(
+        {
+            id:41,
+            title:"PlayerBrain",
+            content:"PlayerBrain",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.Brains/PlayerBrain',
+            title:"PlayerBrain",
+            description:""
+        }
+    );
+    a(
+        {
+            id:42,
+            title:"Projectile",
+            content:"Projectile",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Projectile',
+            title:"Projectile",
+            description:""
+        }
+    );
+    a(
+        {
+            id:43,
+            title:"Character",
+            content:"Character",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters/Character',
+            title:"Character",
+            description:""
+        }
+    );
+    a(
+        {
+            id:44,
+            title:"GroupNode",
+            content:"GroupNode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/GroupNode',
+            title:"GroupNode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:45,
+            title:"CameraMan",
+            content:"CameraMan",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/CameraMan',
+            title:"CameraMan",
+            description:""
+        }
+    );
+    a(
+        {
+            id:46,
+            title:"IdleState",
+            content:"IdleState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/IdleState',
+            title:"IdleState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:47,
+            title:"ConditionNode",
+            content:"ConditionNode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/ConditionNode',
+            title:"ConditionNode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:48,
+            title:"SetMovementSine",
+            content:"SetMovementSine",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine',
+            title:"SetMovementSine",
+            description:""
+        }
+    );
+    a(
+        {
+            id:49,
+            title:"TurnAround",
+            content:"TurnAround",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround',
+            title:"TurnAround",
+            description:""
+        }
+    );
+    a(
+        {
+            id:50,
+            title:"AirJumpState",
+            content:"AirJumpState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/AirJumpState',
+            title:"AirJumpState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:51,
+            title:"NextExampleTrigger",
+            content:"NextExampleTrigger",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/NextExampleTrigger',
+            title:"NextExampleTrigger",
+            description:""
+        }
+    );
+    a(
+        {
+            id:52,
+            title:"FuncNode",
+            content:"FuncNode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode',
+            title:"FuncNode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:53,
+            title:"FaceAttacker",
+            content:"FaceAttacker",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker',
+            title:"FaceAttacker",
+            description:""
+        }
+    );
+    a(
+        {
+            id:54,
+            title:"Strings Tooltips",
+            content:"Strings Tooltips",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Tooltips',
+            title:"Strings.Tooltips",
+            description:""
+        }
+    );
+    a(
+        {
+            id:55,
+            title:"SetupDemoLayers",
+            content:"SetupDemoLayers",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/SetupDemoLayers',
+            title:"SetupDemoLayers",
+            description:""
+        }
+    );
+    a(
+        {
+            id:56,
+            title:"ProjectileAttackTransition",
+            content:"ProjectileAttackTransition",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/ProjectileAttackTransition',
+            title:"ProjectileAttackTransition",
+            description:""
+        }
+    );
+    a(
+        {
+            id:57,
+            title:"MobileIdleState",
+            content:"MobileIdleState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/MobileIdleState',
+            title:"MobileIdleState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:58,
+            title:"HitTrigger Editor",
+            content:"HitTrigger Editor",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Editor',
+            title:"HitTrigger.Editor",
+            description:""
+        }
+    );
+    a(
+        {
+            id:59,
+            title:"PlatformerGameKitReadMe",
+            content:"PlatformerGameKitReadMe",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/PlatformerGameKitReadMe',
+            title:"PlatformerGameKitReadMe",
+            description:""
+        }
+    );
+    a(
+        {
+            id:60,
+            title:"SideAttackState",
+            content:"SideAttackState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/SideAttackState',
+            title:"SideAttackState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:61,
+            title:"CameraShakeWhenHit",
+            content:"CameraShakeWhenHit",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/CameraShakeWhenHit',
+            title:"CameraShakeWhenHit",
+            description:""
+        }
+    );
+    a(
+        {
+            id:62,
+            title:"Sequence",
+            content:"Sequence",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Sequence',
+            title:"Sequence",
+            description:""
+        }
+    );
+    a(
+        {
+            id:63,
+            title:"CharacterAnimancerComponent",
+            content:"CharacterAnimancerComponent",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent',
+            title:"CharacterAnimancerComponent",
+            description:""
+        }
+    );
+    a(
+        {
+            id:64,
+            title:"HitData",
+            content:"HitData",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/HitData',
+            title:"HitData",
+            description:""
+        }
+    );
+    a(
+        {
+            id:65,
+            title:"BehaviourTreeUtilities",
+            content:"BehaviourTreeUtilities",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/BehaviourTreeUtilities',
+            title:"BehaviourTreeUtilities",
+            description:""
+        }
+    );
+    a(
+        {
+            id:66,
+            title:"WallSlideState",
+            content:"WallSlideState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/WallSlideState',
+            title:"WallSlideState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:67,
+            title:"HealthDisplay",
+            content:"HealthDisplay",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/HealthDisplay',
+            title:"HealthDisplay",
+            description:""
+        }
+    );
+    a(
+        {
+            id:68,
+            title:"SetMovementForward",
+            content:"SetMovementForward",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward',
+            title:"SetMovementForward",
+            description:""
+        }
+    );
+    a(
+        {
+            id:69,
+            title:"MovingObject",
+            content:"MovingObject",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/MovingObject2D',
+            title:"MovingObject2D",
+            description:""
+        }
+    );
+    a(
+        {
+            id:70,
+            title:"Health HealthChangeMode",
+            content:"Health HealthChangeMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/HealthChangeMode',
+            title:"Health.HealthChangeMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:71,
+            title:"Destructible",
+            content:"Destructible",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Destructible',
+            title:"Destructible",
+            description:""
+        }
+    );
+    a(
+        {
+            id:72,
+            title:"LocomotionState",
+            content:"LocomotionState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/LocomotionState',
+            title:"LocomotionState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:73,
+            title:"GroundCharacterMovement",
+            content:"GroundCharacterMovement",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters/GroundCharacterMovement',
+            title:"GroundCharacterMovement",
+            description:""
+        }
+    );
+    a(
+        {
+            id:74,
+            title:"PlatformerUtilities",
+            content:"PlatformerUtilities",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/PlatformerUtilities',
+            title:"PlatformerUtilities",
+            description:""
+        }
+    );
+    a(
+        {
+            id:75,
+            title:"HitData Drawer",
+            content:"HitData Drawer",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Drawer',
+            title:"HitData.Drawer",
+            description:""
+        }
+    );
+    a(
+        {
+            id:76,
+            title:"PlatformContact",
+            content:"PlatformContact",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters/PlatformContact2D',
+            title:"PlatformContact2D",
+            description:""
+        }
+    );
+    a(
+        {
+            id:77,
+            title:"MultiState",
+            content:"MultiState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/MultiState',
+            title:"MultiState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:78,
+            title:"ITeam",
+            content:"ITeam",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/ITeam',
+            title:"ITeam",
+            description:""
+        }
+    );
+    a(
+        {
+            id:79,
             title:"ValueChangeEvent",
             content:"ValueChangeEvent",
             description:'',
@@ -1223,6 +1153,90 @@ var searchModule = function() {
         {
             url:'/platformer/api/PlatformerGameKit/ValueChangeEvent_1',
             title:"ValueChangeEvent<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:80,
+            title:"Character Editor",
+            content:"Character Editor",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters/Editor',
+            title:"Character.Editor",
+            description:""
+        }
+    );
+    a(
+        {
+            id:81,
+            title:"TrySetState",
+            content:"TrySetState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState',
+            title:"TrySetState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:82,
+            title:"Context",
+            content:"Context",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Context_1',
+            title:"Context<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:83,
+            title:"AttackTransition Drawer",
+            content:"AttackTransition Drawer",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit/Drawer',
+            title:"AttackTransition.Drawer",
+            description:""
+        }
+    );
+    a(
+        {
+            id:84,
+            title:"JumpState",
+            content:"JumpState",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.Characters.States/JumpState',
+            title:"JumpState",
+            description:""
+        }
+    );
+    a(
+        {
+            id:85,
+            title:"Invert",
+            content:"Invert",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/platformer/api/PlatformerGameKit.BehaviourTrees/Invert',
+            title:"Invert",
             description:""
         }
     );

@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -179,7 +179,10 @@
 	
 	
 		<h1 id="Summary">Summary</h1>
-	<div class="lead">An <code class="cs">Animancer.AnimancerComponent</code> which also manages a <code class="cs">UnityEngine.SpriteRenderer</code> and hit boxes.</div>
+	<div class="lead">
+    An <code class="cs">Animancer.AnimancerComponent</code>
+    which also manages a <code class="cs">UnityEngine.SpriteRenderer</code> and hit boxes.
+    </div>
 
 		<div class="panel panel-default">
   			<div class="panel-body">
@@ -218,13 +221,14 @@ class Type type-node
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>[AddComponentMenu(Character.MenuPrefix + "Character Animancer Component")]
-[HelpURL(Character.APIDocumentation + nameof(CharacterAnimancerComponent))]
-public sealed class CharacterAnimancerComponent : AnimancerComponent</code></pre>
+public class CharacterAnimancerComponent : AnimancerComponent</code></pre>
 
 
 	<h1 id="Remarks">Remarks</h1>
 	<div>
-    Documentation: <a href="https://kybernetik.com.au/platformer/docs/characters/animancer">Animancer Component</a>
+    <strong>Documentation:</strong>
+    <a href="https://kybernetik.com.au/platformer/docs/characters/animancer">
+    Animancer Component</a>
     </div>
 
 	<h1 id="Attributes">Attributes</h1>
@@ -239,10 +243,6 @@ public sealed class CharacterAnimancerComponent : AnimancerComponent</code></pre
 				</thead>
 					<tbody><tr>
 						<td>AddComponentMenu</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>HelpURLAttribute</td>
 						<td></td>
 					</tr>
 			</tbody></table>
@@ -341,18 +341,18 @@ public sealed class CharacterAnimancerComponent : AnimancerComponent</code></pre
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/070B5EBA">Get<wbr>(AnimancerNode)<wbr></a></td>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/5F514075">Get<wbr>(AnimancerGraph)<wbr></a></td>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a></td>
 								<td>
-									<div>Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the `node`.</div>
+									<div>Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the `animancer`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/8148B291">Get<wbr>(AnimancerPlayable)<wbr></a></td>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/070B5EBA">Get<wbr>(AnimancerNode)<wbr></a></td>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a></td>
 								<td>
-									<div>Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the `animancer`.</div>
+									<div>Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the `node`.</div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -362,7 +362,7 @@ public sealed class CharacterAnimancerComponent : AnimancerComponent</code></pre
 								<td>
 									<div>
     Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the
-    <code class="cs">Animancer.AnimancerEvent.CurrentState</code>.
+    <code class="cs">Animancer.AnimancerEvent.Current</code> state.
     </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -375,10 +375,26 @@ public sealed class CharacterAnimancerComponent : AnimancerComponent</code></pre
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/0CF17705">OnValidate<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>[Editor-Only] Ensures that all fields have valid values and finds missing components nearby.</div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/820B782B">RemoveHitBox<wbr>(HitData)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>Deactivates a <code class="cs">PlatformerGameKit.HitTrigger</code> for the `data`.</div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/2750DBB2">Update<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Updates the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent.Facing</code> if the current state <code class="cs">PlatformerGameKit.Characters.States.CharacterState.CanTurn</code>.
+    </div>
 								</td>
 							</tr>
 					</tbody></table>

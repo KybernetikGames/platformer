@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - API - AttackTransition.Apply(AnimancerState) Method</title>
+        <title>Platformer Game Kit - API - CameraMan.OnValidate() Method</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -80,8 +80,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -146,15 +146,21 @@
 		<li class="header">Namespace</li>
 		<li><a href="/platformer/api/PlatformerGameKit">PlatformerGameKit</a></li>
 		<li class="header">Type</li>
-		<li><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></li>
+		<li><a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Property Members</li>
-				<li><a href="/platformer/api/PlatformerGameKit/AttackTransition/A898508C">Hits</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/5FFC56D1">Camera</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/87C6AE3D">DynamicAcceleration</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/8771BE32">LinearAcceleration</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/8AD840B3">Offset</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/64F236B0">OffsetFactor</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/A63D25AC">Target</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/709590F8">TargetRigidbody</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/18F51206">VelocityFactor</a></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/platformer/api/PlatformerGameKit/AttackTransition/E330AABD">Apply<wbr>(AnimancerState)<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit/AttackTransition/E6522174">CopyFrom<wbr>(AttackTransition)<wbr></a></li>
-			<li class="header">NamedType Members</li>
-				<li><a href="/platformer/api/PlatformerGameKit/Drawer">AttackTransition<wbr>.Drawer</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/C975B23B">Awake<wbr>()<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit/CameraMan/02139CBC">LateUpdate<wbr>()<wbr></a></li>
+				<li class="selected"><a href="/platformer/api/PlatformerGameKit/CameraMan/7E858B89">OnValidate<wbr>()<wbr></a></li>
 
 
                     </ul>
@@ -169,13 +175,15 @@
 
 
 <section class="content-header">
-			<h3><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a>.</h3>
-	<h1>Apply<wbr>(AnimancerState)<wbr> <small>Method</small></h1>
+			<h3><a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a>.</h3>
+	<h1>OnValidate<wbr>()<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">[Editor-Only] Ensures that all fields have valid values and finds missing components nearby.</div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -186,38 +194,19 @@
 						<dd><a href="/platformer/api/PlatformerGameKit">PlatformerGameKit</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></dd>		
+						<dd><a href="/platformer/api/PlatformerGameKit/CameraMan">CameraMan</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public override void Apply(AnimancerState state)</code></pre>
+	<pre><code>protected virtual void OnValidate()</code></pre>
 
 
 
 
 
-	<h1 id="Parameters">Parameters</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover three-cols">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr>
-						<td>state</td>
-						<td>AnimancerState</td>
-						<td></td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
 
 	<h1 id="ReturnValue">Return Value</h1>
 	<div class="box">

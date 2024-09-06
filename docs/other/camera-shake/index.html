@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -235,7 +235,7 @@
 	<section class="content">
 		<img src="shake.gif" class="img-responsive img-right">
 <p>The <em>Main Camera</em> prefab has a <code><a href="/platformer/api/PlatformerGameKit/CameraShake">CameraShake</a></code> component to make it shake in response to certain events based on the GDC talk:</p>
-<iframe width="200" height="113" src="https://www.youtube.com/embed/tu-Qe66AvtY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" title="Math for Game Programmers: Juicing Your Cameras With Math"></iframe>
+<iframe width="200" height="113" src="https://www.youtube.com/embed/tu-Qe66AvtY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" title="Math for Game Programmers: Juicing Your Cameras With Math"></iframe>
 <p>Currently, the only event that causes it is the <em>Player</em> getting hit, which is implemented by the <code><a href="/platformer/api/PlatformerGameKit/CameraShakeWhenHit">CameraShakeWhenHit</a></code> component attached to the <em>Player</em> prefab, but any other script could easily add to the <code>CameraShake.Instance.Magnitude</code>.</p>
 <h1 id="fields">Fields</h1>
 <p>As explained in the video above, shaking the X and Y Position and the Z Rotation works well for a 2D platformer:</p>

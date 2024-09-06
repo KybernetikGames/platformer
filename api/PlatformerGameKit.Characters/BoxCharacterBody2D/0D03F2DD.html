@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/platformer/assets/img/favicon.ico" type="image/x-icon">
-        <title>Platformer Game Kit - API - CharacterAnimancerComponent.Get(AnimancerPlayable) Method</title>
+        <title>Platformer Game Kit - API - BoxCharacterBody2D.OnCollisionEnter2D(Collision2D) Method</title>
         <link href="/platformer/assets/css/highlight.css" rel="stylesheet">
         <link href="/platformer/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/platformer/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -80,8 +80,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -147,23 +146,36 @@
 		<li class="header">Namespace</li>
 		<li><a href="/platformer/api/PlatformerGameKit.Characters">PlatformerGameKit<wbr>.Characters</a></li>
 		<li class="header">Type</li>
-		<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a></li>
+		<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D">BoxCharacterBody2D</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Property Members</li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/7637CDE6">Character</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/F0FEC2F6">Facing</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/CEE27B4E">FacingLeft</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/A906F90A">FacingX</a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/5E7FBD2C">Renderer</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/A32ABCCF">Collider</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/88C784E6">DebugLineDuration</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/CCEE2FA5">Gravity</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/AFA1AFA8">GripAngle</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/F47F36A1">GroundContact</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/CF7C45C7">IsGrounded</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/45F972D3">Mass</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/818BAD43">Position</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/FD592157">Rigidbody</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/85F7FD2C">Rotation</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/6180A0C0">StepHeight</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/F03332F5">TerrainFilter</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/DDB959BB">Velocity</a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/F43914FA">VerifyAvailableSpace</a></li>
 			<li class="header">Method Members</li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/8023D34B">AddHitBox<wbr>(HitData)<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/643C3E5B">ClearHitBoxes<wbr>()<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/23FB01D5">EndHitSequence<wbr>()<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/070B5EBA">Get<wbr>(AnimancerNode)<wbr></a></li>
-				<li class="selected"><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/8148B291">Get<wbr>(AnimancerPlayable)<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/CDED8BEC">GetCurrent<wbr>()<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/BF6A4998">OnDisable<wbr>()<wbr></a></li>
-				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent/820B782B">RemoveHitBox<wbr>(HitData)<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/5E631B33">Awake<wbr>()<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/77966875">FixedUpdate<wbr>()<wbr></a></li>
+				<li class="selected"><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/0D03F2DD">OnCollisionEnter2D<wbr>(Collision2D)<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/7115EE88">OnCollisionStay2D<wbr>(Collision2D)<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/A98E026F">OnDisable<wbr>()<wbr></a></li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D/DA9AAF81">OnValidate<wbr>()<wbr></a></li>
+			<li class="header">Field Members</li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/0409FCCB">Default<wbr>Execution<wbr>Order</a></li>
+			<li class="header">Event Members</li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/CharacterBody2D/E8893659">OnGroundedChanged</a></li>
+			<li class="header">NamedType Members</li>
+				<li><a href="/platformer/api/PlatformerGameKit.Characters/Editor">CharacterBody2D<wbr>.Editor</a></li>
 
 
                     </ul>
@@ -178,15 +190,13 @@
 
 
 <section class="content-header">
-			<h3><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a>.</h3>
-	<h1>Get<wbr>(AnimancerPlayable)<wbr> <small>Method</small></h1>
+			<h3><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D">BoxCharacterBody2D</a>.</h3>
+	<h1>OnCollisionEnter2D<wbr>(Collision2D)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
-	<div class="lead">Returns the <code class="cs">PlatformerGameKit.Characters.CharacterAnimancerComponent</code> associated with the `animancer`.</div>
-
+	
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -197,14 +207,14 @@
 						<dd><a href="/platformer/api/PlatformerGameKit.Characters">PlatformerGameKit<wbr>.Characters</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a></dd>		
+						<dd><a href="/platformer/api/PlatformerGameKit.Characters/BoxCharacterBody2D">BoxCharacterBody2D</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static CharacterAnimancerComponent Get(AnimancerPlayable animancer)</code></pre>
+	<pre><code>protected virtual void OnCollisionEnter2D(Collision2D collision)</code></pre>
 
 
 
@@ -222,8 +232,8 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>animancer</td>
-						<td>AnimancerPlayable</td>
+						<td>collision</td>
+						<td>Collision2D</td>
 						<td></td>
 					</tr>
 			</tbody></table>
@@ -241,7 +251,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td><a href="/platformer/api/PlatformerGameKit.Characters/CharacterAnimancerComponent">Character<wbr>Animancer<wbr>Component</a></td>
+					<td>void</td>
 					<td></td>
 				</tr>
 			</tbody></table>

@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/platformer/docs"><img src="/platformer/images/docs.png" height="20px" width="7.5px" style="left:-5px"> Documentation</a></li>
         <li><a href="/platformer/docs/package/download"><img src="/platformer/images/unity-logo.png" height="20px" width="19.0625px" style="left:-4px"> Download</a></li>
-        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.1</a></li>
+        <li class="active"><a href="/platformer/api/PlatformerGameKit"><img src="/platformer/images/api.png" height="20px" width="18.125px" style="left:-3px"> API v1.2</a></li>
         <li><a href="/platformer/docs/package/contact"><img src="/platformer/images/contact.png" height="20px" width="19.6875px" style="left:-4px"> Contact</a></li>
         <li><a href="https://kybernetik.com.au"><img src="/platformer/images/kybernetik.png" height="20px" width="20px" style="left:-2px"> Other Assets</a></li>
 
@@ -226,15 +226,15 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine">SetMovementSine</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Wait">Wait</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker">FaceAttacker</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode">FuncNode</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/ActionNode">ActionNode</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></li>								
-											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine">SetMovementSine</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward">SetMovementForward</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState">TrySetState</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/Wait">Wait</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround">TurnAround</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/ActionNode">ActionNode</a></li>								
 											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode">UnityEventNode</a></li>								
+											<li><a href="/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode">FuncNode</a></li>								
 									</ul>
 								</dd>			
 							
@@ -249,24 +249,24 @@
 	Type-.-&gt;Interface1["IPolymorphic"]
 	Type["LeafNode"]
 class Type type-node
-	Derived0["SetMovementSine"]--&gt;Type
-	click Derived0 "/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine"
-	Derived1["Wait"]--&gt;Type
-	click Derived1 "/platformer/api/PlatformerGameKit.BehaviourTrees/Wait"
-	Derived2["FaceAttacker"]--&gt;Type
-	click Derived2 "/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker"
-	Derived3["FuncNode"]--&gt;Type
-	click Derived3 "/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode"
-	Derived4["ActionNode"]--&gt;Type
-	click Derived4 "/platformer/api/PlatformerGameKit.BehaviourTrees/ActionNode"
-	Derived5["TrySetState"]--&gt;Type
-	click Derived5 "/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState"
-	Derived6["TurnAround"]--&gt;Type
-	click Derived6 "/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround"
-	Derived7["SetMovementForward"]--&gt;Type
-	click Derived7 "/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward"
-	Derived8["UnityEventNode"]--&gt;Type
-	click Derived8 "/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode"
+	Derived0["FaceAttacker"]--&gt;Type
+	click Derived0 "/platformer/api/PlatformerGameKit.BehaviourTrees/FaceAttacker"
+	Derived1["SetMovementSine"]--&gt;Type
+	click Derived1 "/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementSine"
+	Derived2["SetMovementForward"]--&gt;Type
+	click Derived2 "/platformer/api/PlatformerGameKit.BehaviourTrees/SetMovementForward"
+	Derived3["TrySetState"]--&gt;Type
+	click Derived3 "/platformer/api/PlatformerGameKit.BehaviourTrees/TrySetState"
+	Derived4["Wait"]--&gt;Type
+	click Derived4 "/platformer/api/PlatformerGameKit.BehaviourTrees/Wait"
+	Derived5["TurnAround"]--&gt;Type
+	click Derived5 "/platformer/api/PlatformerGameKit.BehaviourTrees/TurnAround"
+	Derived6["ActionNode"]--&gt;Type
+	click Derived6 "/platformer/api/PlatformerGameKit.BehaviourTrees/ActionNode"
+	Derived7["UnityEventNode"]--&gt;Type
+	click Derived7 "/platformer/api/PlatformerGameKit.BehaviourTrees/UnityEventNode"
+	Derived8["FuncNode"]--&gt;Type
+	click Derived8 "/platformer/api/PlatformerGameKit.BehaviourTrees/FuncNode"
 
 						</div>
 					</div>
@@ -281,7 +281,7 @@ public abstract class LeafNode : IBehaviourNode, IPolymorphic</code></pre>
 
 	<h1 id="Remarks">Remarks</h1>
 	<div>
-    Documentation:
+    <strong>Documentation:</strong>
     <a href="https://kybernetik.com.au/platformer/docs/characters/brains/behaviour/general#leaves">
     Behaviour Tree Brains - Leaves</a>
     </div>
