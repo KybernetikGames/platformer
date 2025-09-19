@@ -80,9 +80,10 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#platformer-game-kit-v1.2">Platformer Game Kit v1.2</a></p>
-<p><a href="#platformer-game-kit-v1.1">Platformer Game Kit v1.1</a></p>
-<p><a href="#platformer-game-kit-v1.0">Platformer Game Kit v1.0</a></p>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#platformer-game-kit-v1.2.1">Platformer Game Kit v1.2.1</a></p>
+<p><a href="#platformer-game-kit-v1.2.0">Platformer Game Kit v1.2.0</a></p>
+<p><a href="#platformer-game-kit-v1.1.0">Platformer Game Kit v1.1.0</a></p>
+<p><a href="#platformer-game-kit-v1.0.0">Platformer Game Kit v1.0.0</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -234,10 +235,15 @@
 			<h1>Changes</h1>
 		</section>
 	<section class="content">
-		<ul>
-<li></li>
+		<h1 id="platformer-game-kit-v1.2.1">Platformer Game Kit v1.2.1</h1>
+<blockquote class="blockquote">
+<p>Released 2025-09-19</p>
+</blockquote>
+<ul>
+<li>Removed debug object renaming in the <code><a href="/platformer/api/PlatformerGameKit.Characters/Character">Character</a></code> script because it can potentially cause issues if the direct children are animated objects.</li>
+<li>Fixed <code><a href="/platformer/api/PlatformerGameKit/ProjectileAttackTransition">ProjectileAttackTransition</a></code> to properly initialise its <code>Fire</code> callback.</li>
 </ul>
-<h1 id="platformer-game-kit-v1.2">Platformer Game Kit v1.2</h1>
+<h1 id="platformer-game-kit-v1.2.0">Platformer Game Kit v1.2.0</h1>
 <blockquote class="blockquote">
 <p>Released 2024-09-06</p>
 </blockquote>
@@ -246,7 +252,7 @@
 <li>Changed <code><a href="/platformer/api/PlatformerGameKit/AttackTransition">AttackTransition</a></code> to use the newly <code>virtual</code> <code>Events</code> property to set up its events since doing it in <code>Apply</code> wasn't reliable.</li>
 <li>Added conditional compilation for Unity's 3D Physics module.</li>
 </ul>
-<h1 id="platformer-game-kit-v1.1">Platformer Game Kit v1.1</h1>
+<h1 id="platformer-game-kit-v1.1.0">Platformer Game Kit v1.1.0</h1>
 <blockquote class="blockquote">
 <p>Released 2023-04-09</p>
 </blockquote>
@@ -268,7 +274,7 @@
 <li>Fixed <code>SpriteRenderer</code> Sorting Order for all characters.</li>
 <li>Fixed potential <code>NullReferenceException</code> in <code>CharacterAnimancerComponent.RemoveHitBox</code>. <a href="https://github.com/KybernetikGames/platformer/issues/4">#4</a></li>
 </ul>
-<h1 id="platformer-game-kit-v1.0">Platformer Game Kit v1.0</h1>
+<h1 id="platformer-game-kit-v1.0.0">Platformer Game Kit v1.0.0</h1>
 <blockquote class="blockquote">
 <p>Released 2021-07-29</p>
 </blockquote>
